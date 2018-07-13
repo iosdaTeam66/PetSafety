@@ -18,6 +18,7 @@ class ViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Giulia è stata qui")
         form +++ Section()
             <<< ViewRow<UIImageView>("ciao")
                 
