@@ -1,0 +1,6 @@
+framework module Pods_PetSafetyUITests {
+  umbrella header "Pods-PetSafetyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

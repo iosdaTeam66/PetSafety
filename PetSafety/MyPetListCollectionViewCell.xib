@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MyPetListCollectionViewCell" customModule="PetSafety" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4D-jF-2rS">
+                        <rect key="frame" x="10" y="10" width="280" height="430"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-tm-io3">
+                                <rect key="frame" x="5" y="5" width="270" height="420"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-L1-SRj">
+                                        <rect key="frame" x="15" y="0.0" width="240" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19R-B7-fNc">
+                                        <rect key="frame" x="114" y="128" width="42" height="240.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-mO-KFr">
+                                        <rect key="frame" x="114" y="368.5" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwO-ic-tGG">
+                                        <rect key="frame" x="87.5" y="389" width="95" height="31"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hX-FC-2Qd">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-43-zYx">
+                                                <rect key="frame" x="46" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchMissing:" destination="gTV-IL-0wX" eventType="valueChanged" id="2X0-Mb-5B5"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gFe-tm-io3" firstAttribute="leading" secondItem="w4D-jF-2rS" secondAttribute="leading" constant="5" id="HdB-6J-RA7"/>
+                            <constraint firstItem="gFe-tm-io3" firstAttribute="top" secondItem="w4D-jF-2rS" secondAttribute="top" constant="5" id="JkW-BF-qWU"/>
+                            <constraint firstAttribute="bottom" secondItem="gFe-tm-io3" secondAttribute="bottom" constant="5" id="jeW-0s-wNn"/>
+                            <constraint firstAttribute="trailing" secondItem="gFe-tm-io3" secondAttribute="trailing" constant="5" id="wLl-nq-q0W"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="w4D-jF-2rS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="8WL-CP-a4f"/>
+                <constraint firstAttribute="trailing" secondItem="w4D-jF-2rS" secondAttribute="trailing" constant="10" id="TWe-36-jrW"/>
+                <constraint firstAttribute="bottom" secondItem="w4D-jF-2rS" secondAttribute="bottom" constant="10" id="kUg-Zr-wJh"/>
+                <constraint firstItem="w4D-jF-2rS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="lpe-Fq-dVQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="button" destination="6hX-FC-2Qd" id="nIq-eS-3s6"/>
+                <outlet property="cntView" destination="gFe-tm-io3" id="f2a-l7-LJz"/>
+                <outlet property="image" destination="0gv-L1-SRj" id="r9S-xh-jGc"/>
+                <outlet property="labelNome" destination="19R-B7-fNc" id="cOO-tv-eIM"/>
+                <outlet property="labelRazza" destination="LOF-mO-KFr" id="ZZC-6g-uyj"/>
+                <outlet property="switchMissing" destination="dCw-43-zYx" id="TbY-F5-6TF"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
