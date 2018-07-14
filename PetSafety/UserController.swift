@@ -75,7 +75,7 @@ class UserController: FormViewController {
                     self.pUser.photouuid = imageName
                     let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
                     let imageUrl: URL = URL(fileURLWithPath: imagePath)
-                    let newImage: UIImage = row.value!// create your UIImage here
+                    let newImage: UIImage = row.value!.fixOrientation()!// create your UIImage here
                     try? UIImagePNGRepresentation(newImage)?.write(to: imageUrl)
                     print ("Immagine Salvata!")
                     PersistenceManager.saveContext()
