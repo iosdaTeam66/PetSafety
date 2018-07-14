@@ -14,6 +14,9 @@ import ViewRow
 class ViewController: FormViewController {
 
     var pPet: PPet!
+    let formatter = DateFormatter()
+    // initially set the format based on your datepicker date / server String
+    var image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +29,23 @@ class ViewController: FormViewController {
                     cell.contentView.addSubview(cell.view!)
                     
                     //  Get something to display
-                    let image = UIImageView(image: UIImage(named: "CatMan"))
-                    cell.view = image
+                    if (self.pPet.photouuid == nil){
+                        self.image = UIImageView(image: UIImage(named: "CatMan"))
+                    }
+                    else {
+                        let imageName = self.pPet.photouuid // your image name here
+                        let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+                        print (imagePath)
+                        let imageUrl: URL = URL(fileURLWithPath: imagePath)
+                        guard FileManager.default.fileExists(atPath: imagePath),
+                            let imageData: Data = try? Data(contentsOf: imageUrl),
+                            let photo: UIImage = UIImage(data: imageData, scale: UIScreen.main.scale) else {
+                                print ("Immagine non trovata!")
+                                return // No image found!
+                        }
+                        self.image = UIImageView(image: photo)
+                    }
+                    cell.view = self.image
                     cell.view?.frame = CGRect(x: 0, y: 20, width: 20, height: 250)
                     cell.view?.contentMode = .scaleAspectFit
                     cell.view!.clipsToBounds = true
@@ -41,8 +59,20 @@ class ViewController: FormViewController {
                 row.onChange { photo in
                     guard let imageRow = self.form.rowBy(tag: "ciao") as? ViewRow<UIImageView> else {return}
                     imageRow.cell.view!.image = row.value
-                    }
+                    imageRow.cell.view?.frame = CGRect(x: 0, y: 20, width: 20, height: 250)
+                    imageRow.cell.view?.contentMode = .scaleAspectFit
+                    imageRow.cell.view!.clipsToBounds = true
+                    self.formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    let imageName = self.formatter.string(from: Date())
+                    self.pPet.photouuid = imageName
+                    let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName).png"
+                    let imageUrl: URL = URL(fileURLWithPath: imagePath)
+                    let newImage: UIImage = row.value!// create your UIImage here
+                    try? UIImagePNGRepresentation(newImage)?.write(to: imageUrl)
+                    print ("Immagine Salvata!")
+                    PersistenceManager.saveContext()
                 }
+            }
         
         
             form +++ Section("Informations")

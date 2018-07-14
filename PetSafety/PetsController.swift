@@ -13,6 +13,7 @@ class PetsController: UITableViewController {
     
     var petPList: [PPet]!
     var imageStore: ImageStore!
+    var image: UIImage!
     
     @IBAction func addNewPet(_ sender: UIBarButtonItem) {
         //petList.addEmptyPet()
@@ -71,9 +72,18 @@ class PetsController: UITableViewController {
         cell.lblCellName.text = pet.name
         cell.lblCellRace.text = pet.race
         //let img = imageStore.image(forKey: pet.petKey) ?? UIImage(named: "CatMan")
-        let img = UIImage(named: "CatMan")
-        cell.petThumb.image = img
 
+        let imageName = pet.photouuid // your image name here
+        let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+        print (imagePath)
+        let imageUrl: URL = URL(fileURLWithPath: imagePath)
+        guard FileManager.default.fileExists(atPath: imagePath),
+            let imageData: Data = try? Data(contentsOf: imageUrl),
+            let photo = UIImage(data: imageData, scale: UIScreen.main.scale) else {
+                print ("Immagine non trovata!")
+                return cell
+            }
+        cell.petThumb.image = photo
         return cell
     }
 

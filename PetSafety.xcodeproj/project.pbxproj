@@ -32,11 +32,11 @@
 		0221FA6F20F4B99700F935D7 /* PetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221FA6E20F4B99700F935D7 /* PetsController.swift */; };
 		0221FA7120F4B9E300F935D7 /* PetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221FA7020F4B9E300F935D7 /* PetList.swift */; };
 		0221FA7320F4BE4400F935D7 /* PetEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221FA7220F4BE4400F935D7 /* PetEditCell.swift */; };
-		025149F820F77AFD0074B1D5 /* PPet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025149F620F77AFD0074B1D5 /* PPet+CoreDataClass.swift */; };
-		025149F920F77AFD0074B1D5 /* PPet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025149F720F77AFD0074B1D5 /* PPet+CoreDataProperties.swift */; };
 		025149FB20F77B570074B1D5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025149FA20F77B570074B1D5 /* PersistenceManager.swift */; };
 		02B1D1D620F8BD16005BA296 /* PUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1D1D420F8BD16005BA296 /* PUser+CoreDataClass.swift */; };
 		02B1D1D720F8BD16005BA296 /* PUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1D1D520F8BD16005BA296 /* PUser+CoreDataProperties.swift */; };
+		02B1D1DE20FA4D7A005BA296 /* PPet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1D1DC20FA4D7A005BA296 /* PPet+CoreDataClass.swift */; };
+		02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1D1DD20FA4D7A005BA296 /* PPet+CoreDataProperties.swift */; };
 		02EEC5FC20F6479D001AE51A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEC5FB20F6479D001AE51A /* UserController.swift */; };
 		02EEC5FE20F6692F001AE51A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEC5FD20F6692F001AE51A /* User.swift */; };
 		10420CA25D9406CE973B1A4E /* Pods_PetSafetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D78D66368594BE25373247 /* Pods_PetSafetyTests.framework */; };
@@ -100,11 +100,11 @@
 		0221FA6E20F4B99700F935D7 /* PetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsController.swift; sourceTree = "<group>"; };
 		0221FA7020F4B9E300F935D7 /* PetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetList.swift; sourceTree = "<group>"; };
 		0221FA7220F4BE4400F935D7 /* PetEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEditCell.swift; sourceTree = "<group>"; };
-		025149F620F77AFD0074B1D5 /* PPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPet+CoreDataClass.swift"; sourceTree = "<group>"; };
-		025149F720F77AFD0074B1D5 /* PPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		025149FA20F77B570074B1D5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		02B1D1D420F8BD16005BA296 /* PUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PUser+CoreDataClass.swift"; path = "../PUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		02B1D1D520F8BD16005BA296 /* PUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PUser+CoreDataProperties.swift"; path = "../PUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		02B1D1DC20FA4D7A005BA296 /* PPet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PPet+CoreDataClass.swift"; path = "../PPet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		02B1D1DD20FA4D7A005BA296 /* PPet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PPet+CoreDataProperties.swift"; path = "../PPet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		02EEC5FB20F6479D001AE51A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		02EEC5FD20F6692F001AE51A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		304220CE20082BFA6712549C /* Pods-PetSafetyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,10 +220,10 @@
 		70FED89320F4A56D00C9258D /* PetSafety */ = {
 			isa = PBXGroup;
 			children = (
+				02B1D1DC20FA4D7A005BA296 /* PPet+CoreDataClass.swift */,
+				02B1D1DD20FA4D7A005BA296 /* PPet+CoreDataProperties.swift */,
 				02B1D1D420F8BD16005BA296 /* PUser+CoreDataClass.swift */,
 				02B1D1D520F8BD16005BA296 /* PUser+CoreDataProperties.swift */,
-				025149F620F77AFD0074B1D5 /* PPet+CoreDataClass.swift */,
-				025149F720F77AFD0074B1D5 /* PPet+CoreDataProperties.swift */,
 				70FED89420F4A56D00C9258D /* AppDelegate.swift */,
 				70FED89620F4A56D00C9258D /* ViewController.swift */,
 				70FED89820F4A56D00C9258D /* Main.storyboard */,
@@ -523,7 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				025149F920F77AFD0074B1D5 /* PPet+CoreDataProperties.swift in Sources */,
+				02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */,
 				BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */,
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
 				BBD719C020F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift in Sources */,
@@ -536,10 +536,10 @@
 				70F8869F20F4A61100D09EE4 /* Pet.swift in Sources */,
 				0221FA6F20F4B99700F935D7 /* PetsController.swift in Sources */,
 				BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */,
+				02B1D1DE20FA4D7A005BA296 /* PPet+CoreDataClass.swift in Sources */,
 				02EEC5FE20F6692F001AE51A /* User.swift in Sources */,
 				70FED89720F4A56D00C9258D /* ViewController.swift in Sources */,
 				70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */,
-				025149F820F77AFD0074B1D5 /* PPet+CoreDataClass.swift in Sources */,
 				0221FA7320F4BE4400F935D7 /* PetEditCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,7 +706,7 @@
 			baseConfigurationReference = E1DBA481F0B9877DBFB88E3B /* Pods-PetSafety.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K8WJKQA676;
 				INFOPLIST_FILE = PetSafety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -715,6 +715,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -725,7 +727,7 @@
 			baseConfigurationReference = DF358838579CEBB1D49F9399 /* Pods-PetSafety.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K8WJKQA676;
 				INFOPLIST_FILE = PetSafety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,6 +736,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

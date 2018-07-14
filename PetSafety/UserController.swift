@@ -17,6 +17,7 @@ class UserController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print ("Tutto OK!")
         pUserList = PersistenceManager.fetchDataUser()
         if (pUserList.count == 0) {
             pUser = PersistenceManager.newEmptyUser()
