@@ -13,7 +13,6 @@ import ViewRow
 
 class ViewController: FormViewController {
 
-    var pet: Pet!
     var pPet: PPet!
     
     override func viewDidLoad() {
@@ -47,11 +46,19 @@ class ViewController: FormViewController {
         
         
             form +++ Section("Informations")
-                <<< TextRow(){ name in
+                <<< NameRow(){ name in
                     name.title = "Name"
                     name.tag = "Name"
                     name.placeholder = "Insert pet's name"
-                    name.value = pPet.name
+                    if(pPet.name == nil) {
+                        name.value = ""    // initially selected
+                    } else {
+                        name.value = pPet.name
+                    }
+                    name.onChange{ name in
+                        self.pPet.name = name.value
+                        PersistenceManager.saveContext()
+                    }
                 }
                 <<< ActionSheetRow<String>() { type in
                     type.title = "Type"
@@ -63,29 +70,66 @@ class ViewController: FormViewController {
                    } else {
                        type.value = pPet.type
                    }
+                    type.onChange{ type in
+                        self.pPet.type = type.value
+                        PersistenceManager.saveContext()
+                    }
                 }
-                <<< TextRow(){ race in
+                <<< NameRow(){ race in
                     race.title = "Race"
                     race.tag = "Race"
                     race.placeholder = "Insert pet's race"
-                    race.value = pPet.race
+                    if(pPet.race == nil) {
+                        race.value = ""    // initially selected
+                    } else {
+                        race.value = pPet.race
+                    }
+                    race.onChange{ race in
+                        self.pPet.race = race.value
+                        PersistenceManager.saveContext()
+                    }
                 }
                 <<< DateRow(){ date in
                     date.title = "Date of birth"
                     date.tag = "Date of birth"
-                    date.value = pPet.birthdate! as Date
+                    if(pPet.birthdate == nil) {
+                        date.value = NSDate() as Date  // initially selected
+                    } else {
+                        date.value = pPet.birthdate! as Date
+                    }
+                    date.onChange{ date in
+                        self.pPet.birthdate = date.value! as NSDate
+                        PersistenceManager.saveContext()
+                    }
                 }
                 <<< TextRow(){ microchip in
                     microchip.title = "Microchip ID"
                     microchip.tag = "Microchip ID"
                     microchip.placeholder = "Insert pet's microchip ID"
-                    microchip.value = pPet.microchipid
+                    if(pPet.microchipid == nil) {
+                        microchip.value = ""    // initially selected
+                    } else {
+                        microchip.value = pPet.microchipid
                     }
+                    microchip.onChange{ microchip in
+                        self.pPet.microchipid = microchip.value
+                        PersistenceManager.saveContext()
+                    }
+                }
+                
                 <<< TextRow(){ beacon in
                     beacon.title = "Beacon ID"
                     beacon.tag = "Beacon ID"
                     beacon.placeholder = "Insert pet's beacon ID"
-                    beacon.value = pPet.beaconid
+                    if(pPet.beaconid == nil) {
+                        beacon.value = ""    // initially selected
+                    } else {
+                        beacon.value = pPet.beaconid
+                    }
+                    beacon.onChange{ beacon in
+                        self.pPet.beaconid = beacon.value
+                        PersistenceManager.saveContext()
+                    }
                 }
         
                 
@@ -107,7 +151,7 @@ class ViewController: FormViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        let rowName: TextRow? = form.rowBy(tag: "Name")
+        let rowName: NameRow? = form.rowBy(tag: "Name")
         let valueName = rowName?.value
         pPet.name = valueName ?? "No name"
         
@@ -115,7 +159,7 @@ class ViewController: FormViewController {
         let valueType = rowType?.value
         pPet.type = valueType ?? "Dog"
         
-        let rowRace: TextRow? = form.rowBy(tag: "Race")
+        let rowRace: NameRow? = form.rowBy(tag: "Race")
         let valueRace = rowRace?.value
         pPet.race = valueRace ?? ""
         

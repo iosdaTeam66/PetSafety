@@ -11,7 +11,6 @@ import Eureka
 
 class PetsController: UITableViewController {
     
-    var petList: PetList!
     var petPList: [PPet]!
     var imageStore: ImageStore!
     
@@ -25,11 +24,9 @@ class PetsController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        petList = PetList()
+
           petPList = PersistenceManager.fetchData()
-        
-        //petList.addEmptyPet()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -70,7 +67,6 @@ class PetsController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "petEditCell", for: indexPath) as! PetEditCell
 
-//        let pet = petList.petArray[indexPath.row]
         let pet = petPList[indexPath.row]
         cell.lblCellName.text = pet.name
         cell.lblCellRace.text = pet.race
@@ -103,7 +99,7 @@ class PetsController: UITableViewController {
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        petList.sortPet(index: fromIndexPath.row, newIndex: to.row)
+//        petList.sortPet(index: fromIndexPath.row, newIndex: to.row)
     }
 
     /*

@@ -13,9 +13,17 @@ import ImageRow
 
 class UserController: FormViewController {
     var pUser : PUser!
+    var pUserList : [PUser]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pUserList = PersistenceManager.fetchDataUser()
+        if (pUserList.count == 0) {
+            pUser = PersistenceManager.newEmptyUser()
+        }
+        else{
+            pUser = pUserList[0]
+        }
         
         form +++ Section()
             <<< ViewRow<UIImageView>("user")
@@ -55,21 +63,59 @@ class UserController: FormViewController {
                 name.title = "Name"
                 name.tag = "Name"
                 name.placeholder = "Insert your name"
+                if(pUser.name == nil) {
+                    name.value = ""    // initially selected
+                } else {
+                    name.value = pUser.name
+                }
+                name.onChange{ name in
+                    self.pUser.name = name.value
+                    PersistenceManager.saveContext()
+                }
             }
             <<< NameRow(){ surname in
                 surname.title = "Surname"
                 surname.tag = "Surname"
                 surname.placeholder = "Insert your surname"
+                if(pUser.name == nil) {
+                    surname.value = ""    // initially selected
+                } else {
+                    surname.value = pUser.surname
+                }
+                surname.onChange{ surname in
+                    self.pUser.surname = surname.value
+                    PersistenceManager.saveContext()
+                }
             }
         
         form +++ Section("Contact informations")
             <<< EmailRow(){  email in
                 email.title = "Email Address"
+                email.tag = "Email Address"
                 email.placeholder = "Insert your email address"
+                if(pUser.email == nil) {
+                    email.value = ""    // initially selected
+                } else {
+                    email.value = pUser.email
+                }
+                email.onChange{ email in
+                    self.pUser.email = email.value
+                    PersistenceManager.saveContext()
+                }
             }
             <<< PhoneRow(){ phone in
                 phone.title = "Phone Number"
+                phone.tag = "Phone Number"
                 phone.placeholder = "Insert your phone number"
+                if(pUser.phonenumber == nil) {
+                    phone.value = ""    // initially selected
+                } else {
+                    phone.value = pUser.phonenumber
+                }
+                phone.onChange{ phone in
+                    self.pUser.phonenumber = phone.value
+                    PersistenceManager.saveContext()
+                }
         }
         // Do any additional setup after loading the view.
     }
@@ -79,7 +125,27 @@ class UserController: FormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let rowName: NameRow? = form.rowBy(tag: "Name")
+        let valueName = rowName?.value
+        pUser.name = valueName
+        
+        let rowSurname: NameRow? = form.rowBy(tag: "Surname")
+        let valueSurname = rowSurname?.value
+        pUser.surname = valueSurname
+        
+        let rowEmail: EmailRow? = form.rowBy(tag: "Email Address")
+        let valueEmail = rowEmail?.value
+        pUser.email = valueEmail
+        
+        let rowPhone: PhoneRow? = form.rowBy(tag: "Phone Number")
+        let valuePhone = rowPhone?.value
+        pUser.phonenumber = valuePhone
+        
+        PersistenceManager.saveContext()
+    }
     /*
     // MARK: - Navigation
 

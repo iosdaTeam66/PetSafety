@@ -20,13 +20,16 @@ class PersistenceManager {
     static func newEmptyPet () -> PPet {
         let context = getContext()
         let pPet = NSEntityDescription.insertNewObject(forEntityName: name, into: context) as! PPet
-        
-        pPet.name = "new name"
-        pPet.birthdate = NSDate()
-        pPet.race = "razza"
         pPet.order = 1
         
         return pPet
+    }
+    
+    static func newEmptyUser () -> PUser {
+        let context = getContext()
+        let pUser = NSEntityDescription.insertNewObject(forEntityName: nameUser, into: context) as! PUser
+        
+        return pUser
     }
     
     static func fetchData () -> [PPet]{
