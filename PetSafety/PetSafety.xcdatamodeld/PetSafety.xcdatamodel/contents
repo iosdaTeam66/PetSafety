@@ -14,11 +14,12 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phonenumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photouuid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="PPet" positionX="-27" positionY="18" width="128" height="165"/>
-        <element name="PUser" positionX="-27" positionY="81" width="128" height="120"/>
+        <element name="PUser" positionX="-27" positionY="81" width="128" height="135"/>
     </elements>
 </model>
