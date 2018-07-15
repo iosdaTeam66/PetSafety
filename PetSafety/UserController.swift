@@ -28,6 +28,20 @@ class UserController: FormViewController {
             pUser = pUserList[0]
         }
         
+        LabelRow.defaultCellUpdate = { cell, row in
+            cell.contentView.backgroundColor = .red
+            cell.textLabel?.textColor = .white
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+            cell.textLabel?.textAlignment = .right
+            
+        }
+        
+        TextRow.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .red
+            }
+        }
+        
         form +++ Section()
             <<< ViewRow<UIImageView>("user")
                 
@@ -87,12 +101,24 @@ class UserController: FormViewController {
                 $0.title = $0.tag
                 $0.presentationMode = .segueName(segueName: "petListSegue", onDismiss: nil)
         }
-        form +++ Section("General informations")
             
+        form +++ Section()
+            <<< SwitchRow("Disable Editing"){
+                $0.title = $0.tag
+                $0.value = true
+            }
+            
+        form +++ Section("General informations")
             <<< NameRow(){ name in
                 name.title = "Name"
                 name.tag = "Name"
-                name.placeholder = "Insert your name"
+                name.placeholder = "Required"
+                name.add(rule: RuleRequired())
+                name.validationOptions = .validatesOnChange
+                name.disabled = Eureka.Condition.function(["Disable Editing"], { (form) -> Bool in
+                    let row: SwitchRow! = form.rowBy(tag: "Disable Editing")
+                    return row.value ?? false
+                })
                 if(pUser.name == nil) {
                     name.value = ""    // initially selected
                 } else {
@@ -103,10 +129,37 @@ class UserController: FormViewController {
                     PersistenceManager.saveContext()
                 }
             }
+                .cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                }
+                .onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+            }
+            
             <<< NameRow(){ surname in
                 surname.title = "Surname"
                 surname.tag = "Surname"
-                surname.placeholder = "Insert your surname"
+                surname.placeholder = "Required"
+                surname.add(rule: RuleRequired())
+                surname.validationOptions = .validatesOnChange
+                surname.disabled = Eureka.Condition.function(["Disable Editing"], { (form) -> Bool in
+                    let row: SwitchRow! = form.rowBy(tag: "Disable Editing")
+                    return row.value ?? false
+                })
                 if(pUser.name == nil) {
                     surname.value = ""    // initially selected
                 } else {
@@ -117,12 +170,40 @@ class UserController: FormViewController {
                     PersistenceManager.saveContext()
                 }
             }
+                .cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                }
+                .onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+        }
         
         form +++ Section("Contact informations")
             <<< EmailRow(){  email in
                 email.title = "Email Address"
                 email.tag = "Email Address"
-                email.placeholder = "Insert your email address"
+                email.placeholder = "Required"
+                email.add(rule: RuleRequired())
+                email.add(rule: RuleEmail())
+                email.validationOptions = .validatesOnBlur
+                email.disabled = Eureka.Condition.function(["Disable Editing"], { (form) -> Bool in
+                    let row: SwitchRow! = form.rowBy(tag: "Disable Editing")
+                    return row.value ?? false
+                })
+                
                 if(pUser.email == nil) {
                     email.value = ""    // initially selected
                 } else {
@@ -133,10 +214,37 @@ class UserController: FormViewController {
                     PersistenceManager.saveContext()
                 }
             }
+                .cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                }
+                .onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+            }
+            
             <<< PhoneRow(){ phone in
                 phone.title = "Phone Number"
                 phone.tag = "Phone Number"
-                phone.placeholder = "Insert your phone number"
+                phone.placeholder = "Required"
+                phone.add(rule: RuleRequired())
+                phone.validationOptions = .validatesOnChange
+                phone.disabled = Eureka.Condition.function(["Disable Editing"], { (form) -> Bool in
+                    let row: SwitchRow! = form.rowBy(tag: "Disable Editing")
+                    return row.value ?? false
+                })
                 if(pUser.phonenumber == nil) {
                     phone.value = ""    // initially selected
                 } else {
@@ -146,6 +254,27 @@ class UserController: FormViewController {
                     self.pUser.phonenumber = phone.value
                     PersistenceManager.saveContext()
                 }
+                
+                }
+                .cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                }
+                .onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
         }
         // Do any additional setup after loading the view.
     }

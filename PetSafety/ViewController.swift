@@ -20,6 +20,21 @@ class ViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LabelRow.defaultCellUpdate = { cell, row in
+            cell.contentView.backgroundColor = .red
+            cell.textLabel?.textColor = .white
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+            cell.textLabel?.textAlignment = .right
+            
+        }
+        
+        TextRow.defaultCellUpdate = { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .red
+            }
+        }
+        
         form +++ Section()
             <<< ViewRow<UIImageView>("ciao")
                 
@@ -79,7 +94,9 @@ class ViewController: FormViewController {
                 <<< NameRow(){ name in
                     name.title = "Name"
                     name.tag = "Name"
-                    name.placeholder = "Insert pet's name"
+                    name.placeholder = "Required"
+                    name.add(rule: RuleRequired())
+                    name.validationOptions = .validatesOnChange
                     if(pPet.name == nil) {
                         name.value = ""    // initially selected
                     } else {
@@ -90,6 +107,27 @@ class ViewController: FormViewController {
                         PersistenceManager.saveContext()
                     }
                 }
+                    .cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    .onRowValidationChanged { cell, row in
+                        let rowIndex = row.indexPath!.row
+                        while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                            row.section?.remove(at: rowIndex + 1)
+                        }
+                        if !row.isValid {
+                            for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                                let labelRow = LabelRow() {
+                                    $0.title = validationMsg
+                                    $0.cell.height = { 30 }
+                                }
+                                row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                            }
+                        }
+                }
+                
                 <<< ActionSheetRow<String>() { type in
                     type.title = "Type"
                     type.tag = "Type"
@@ -108,7 +146,9 @@ class ViewController: FormViewController {
                 <<< NameRow(){ race in
                     race.title = "Race"
                     race.tag = "Race"
-                    race.placeholder = "Insert pet's race"
+                    race.placeholder = "Required"
+                    race.add(rule: RuleRequired())
+                    race.validationOptions = .validatesOnChange
                     if(pPet.race == nil) {
                         race.value = ""    // initially selected
                     } else {
@@ -119,6 +159,27 @@ class ViewController: FormViewController {
                         PersistenceManager.saveContext()
                     }
                 }
+                    .cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    .onRowValidationChanged { cell, row in
+                        let rowIndex = row.indexPath!.row
+                        while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                            row.section?.remove(at: rowIndex + 1)
+                        }
+                        if !row.isValid {
+                            for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                                let labelRow = LabelRow() {
+                                    $0.title = validationMsg
+                                    $0.cell.height = { 30 }
+                                }
+                                row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                            }
+                        }
+                }
+                
                 <<< DateRow(){ date in
                     date.title = "Date of birth"
                     date.tag = "Date of birth"
@@ -132,10 +193,13 @@ class ViewController: FormViewController {
                         PersistenceManager.saveContext()
                     }
                 }
+                
                 <<< TextRow(){ microchip in
                     microchip.title = "Microchip ID"
                     microchip.tag = "Microchip ID"
-                    microchip.placeholder = "Insert pet's microchip ID"
+                    microchip.placeholder = "Required"
+                    microchip.add(rule: RuleRequired())
+                    microchip.validationOptions = .validatesOnChange
                     if(pPet.microchipid == nil) {
                         microchip.value = ""    // initially selected
                     } else {
@@ -146,11 +210,33 @@ class ViewController: FormViewController {
                         PersistenceManager.saveContext()
                     }
                 }
+                    .cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    .onRowValidationChanged { cell, row in
+                        let rowIndex = row.indexPath!.row
+                        while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                            row.section?.remove(at: rowIndex + 1)
+                        }
+                        if !row.isValid {
+                            for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                                let labelRow = LabelRow() {
+                                    $0.title = validationMsg
+                                    $0.cell.height = { 30 }
+                                }
+                                row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                            }
+                        }
+                }
                 
                 <<< TextRow(){ beacon in
                     beacon.title = "Beacon ID"
                     beacon.tag = "Beacon ID"
-                    beacon.placeholder = "Insert pet's beacon ID"
+                    beacon.placeholder = "Required"
+                    beacon.add(rule: RuleRequired())
+                    beacon.validationOptions = .validatesOnChange
                     if(pPet.beaconid == nil) {
                         beacon.value = ""    // initially selected
                     } else {
@@ -161,6 +247,26 @@ class ViewController: FormViewController {
                         PersistenceManager.saveContext()
                     }
                 }
+                    .cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    .onRowValidationChanged { cell, row in
+                        let rowIndex = row.indexPath!.row
+                        while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                            row.section?.remove(at: rowIndex + 1)
+                        }
+                        if !row.isValid {
+                            for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                                let labelRow = LabelRow() {
+                                    $0.title = validationMsg
+                                    $0.cell.height = { 30 }
+                                }
+                                row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                            }
+                        }
+                    }
         
                 
         // Do any additional setup after loading the view, typically from a nib.
