@@ -51,6 +51,9 @@
 		70FED8B820F4A56E00C9258D /* PetSafetyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FED8B720F4A56E00C9258D /* PetSafetyUITests.swift */; };
 		7B128A74A8B1D34EC2D26DAB /* Pods_PetSafetyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA0B87D1A9D8D7639AD23EF /* Pods_PetSafetyUITests.framework */; };
 		BB1392DB20F69DBF000C1CDF /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1392DA20F69DBF000C1CDF /* ImageStore.swift */; };
+		BB305DAE20F8E99E007579B7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB305DAD20F8E99E007579B7 /* CloudKit.framework */; };
+		BB50EF2620F8F75A00B15A45 /* PetLost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50EF2520F8F75A00B15A45 /* PetLost.swift */; };
+		BB7252C020F8DC8C00504D3B /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */; };
 		BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */; };
 		BBD719BC20F7981F00EC6935 /* MyPetListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */; };
 		BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719BD20F7984700EC6935 /* MyPetListViewController.swift */; };
@@ -125,6 +128,10 @@
 		70FED8B920F4A56E00C9258D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79ACCA55742F5F99A0EA3AFE /* Pods-PetSafetyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyTests/Pods-PetSafetyTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB1392DA20F69DBF000C1CDF /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		BB305DAD20F8E99E007579B7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BB50EF2520F8F75A00B15A45 /* PetLost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLost.swift; sourceTree = "<group>"; };
+		BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
+		BB857FF720F8E608009F1F82 /* PetSafety.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetSafety.entitlements; sourceTree = "<group>"; };
 		BBC28DC1737072207C8BB2F6 /* Pods-PetSafetyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListCollectionViewCell.swift; sourceTree = "<group>"; };
 		BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPetListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -143,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6816973049B172E0098E81EB /* Pods_PetSafety.framework in Frameworks */,
+				BB305DAE20F8E99E007579B7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +228,7 @@
 		70FED89320F4A56D00C9258D /* PetSafety */ = {
 			isa = PBXGroup;
 			children = (
+				BB857FF720F8E608009F1F82 /* PetSafety.entitlements */,
 				02B1D1D420F8BD16005BA296 /* PUser+CoreDataClass.swift */,
 				02B1D1D520F8BD16005BA296 /* PUser+CoreDataProperties.swift */,
 				025149F620F77AFD0074B1D5 /* PPet+CoreDataClass.swift */,
@@ -242,6 +251,8 @@
 				BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */,
 				BBD719BD20F7984700EC6935 /* MyPetListViewController.swift */,
 				BBD719BF20F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift */,
+				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
+				BB50EF2520F8F75A00B15A45 /* PetLost.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 		AA9C8A2C70D642EB340D24D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB305DAD20F8E99E007579B7 /* CloudKit.framework */,
 				C1D581E9A483A07CEFDC22D9 /* Pods_PetSafety.framework */,
 				C9D78D66368594BE25373247 /* Pods_PetSafetyTests.framework */,
 				6CA0B87D1A9D8D7639AD23EF /* Pods_PetSafetyUITests.framework */,
@@ -359,6 +371,17 @@
 				TargetAttributes = {
 					70FED89020F4A56D00C9258D = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					70FED8A720F4A56E00C9258D = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -528,6 +551,7 @@
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
 				BBD719C020F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift in Sources */,
 				0221FA7120F4B9E300F935D7 /* PetList.swift in Sources */,
+				BB7252C020F8DC8C00504D3B /* BeaconManager.swift in Sources */,
 				02EEC5FC20F6479D001AE51A /* UserController.swift in Sources */,
 				02B1D1D620F8BD16005BA296 /* PUser+CoreDataClass.swift in Sources */,
 				BB1392DB20F69DBF000C1CDF /* ImageStore.swift in Sources */,
@@ -537,6 +561,7 @@
 				0221FA6F20F4B99700F935D7 /* PetsController.swift in Sources */,
 				BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */,
 				02EEC5FE20F6692F001AE51A /* User.swift in Sources */,
+				BB50EF2620F8F75A00B15A45 /* PetLost.swift in Sources */,
 				70FED89720F4A56D00C9258D /* ViewController.swift in Sources */,
 				70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */,
 				025149F820F77AFD0074B1D5 /* PPet+CoreDataClass.swift in Sources */,
@@ -706,7 +731,8 @@
 			baseConfigurationReference = E1DBA481F0B9877DBFB88E3B /* Pods-PetSafety.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PetSafety/PetSafety.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K8WJKQA676;
 				INFOPLIST_FILE = PetSafety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -715,6 +741,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -725,7 +753,8 @@
 			baseConfigurationReference = DF358838579CEBB1D49F9399 /* Pods-PetSafety.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = PetSafety/PetSafety.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = K8WJKQA676;
 				INFOPLIST_FILE = PetSafety/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,6 +763,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
