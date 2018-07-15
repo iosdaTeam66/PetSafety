@@ -66,9 +66,6 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
         let options = [CBCentralManagerOptionShowPowerAlertKey:0]
         bluetoothPeripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
         
-        
-        //radarImg = UIImageView(image: UIImage(named: "radar"))
-        //self.view = radarImg
         // simulazione animali smarriti
         let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B", ownerID: "PippoID")
         lostPets.append(petLost1)
@@ -191,23 +188,23 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             updateDistance(beacons[0].proximity)
             
             // implementazione pet trovato
-            let lp1String: String = beacons[0].proximityUUID.uuidString
-            let alert = UIAlertController(title: "Beacon Detected", message: "Founded \(beacons.count) lost pet near you", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            //let lp1String: String = beacons[0].proximityUUID.uuidString
+            let alert = UIAlertController(title: "Beacon Detected", message: "Found \(beacons.count) lost pet near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
                 switch action.style{
-                case .default:
-                    print("default")
+                    case .default:
+                        print("default")
+                        let viewControllerPetsFound = self.storyboard?.instantiateViewController(withIdentifier: "PetsFound")
+                        self.present(viewControllerPetsFound!, animated: true, completion: nil)
                     
-                case .cancel:
-                    print("cancel")
+                    case .cancel:
+                        print("cancel")
                     
-                case .destructive:
-                    print("destructive")
-                }}))
-            
-            
-            //alert.message = "Trovato \(lp1String)"
-            self.present(alert, animated: true)
+                    case .destructive:
+                        print("destructive")
+            }}))
+        
+            self.present(alert, animated: true, completion: nil)
         } else {
             updateDistance(.unknown)
         }
