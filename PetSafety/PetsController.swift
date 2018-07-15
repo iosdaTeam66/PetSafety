@@ -71,19 +71,26 @@ class PetsController: UITableViewController {
         let pet = petPList[indexPath.row]
         cell.lblCellName.text = pet.name
         cell.lblCellRace.text = pet.race
-        //let img = imageStore.image(forKey: pet.petKey) ?? UIImage(named: "CatMan")
+        
 
-        let imageName = pet.photouuid // your image name here
-        let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
-        print (imagePath)
-        let imageUrl: URL = URL(fileURLWithPath: imagePath)
-        guard FileManager.default.fileExists(atPath: imagePath),
-            let imageData: Data = try? Data(contentsOf: imageUrl),
-            let photo = UIImage(data: imageData, scale: UIScreen.main.scale) else {
-                print ("Immagine non trovata!")
-                return cell
+        if (pet.photouuid == nil){
+            image = UIImage(named: "CatMan")
+        }
+        else {
+            let imageName = pet.photouuid // your image name here
+            let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+            print (imagePath)
+            let imageUrl: URL = URL(fileURLWithPath: imagePath)
+            guard FileManager.default.fileExists(atPath: imagePath),
+                let imageData: Data = try? Data(contentsOf: imageUrl),
+                let photo = UIImage(data: imageData, scale: UIScreen.main.scale) else {
+                    print ("Immagine non trovata!")
+                    return cell
             }
-        cell.petThumb.image = photo
+            image = photo
+        }
+        
+        cell.petThumb.image = image
         return cell
     }
 
