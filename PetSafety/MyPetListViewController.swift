@@ -24,12 +24,13 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         petPList = PersistenceManager.fetchData()
         
         let layout = UPCarouselFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 90.0, height: collectionView.frame.size.height - 20)
-        
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 90.0, height: collectionView.frame.size.height - 90)
+
         layout.scrollDirection = .horizontal
         layout.sideItemAlpha = 1.0
         layout.sideItemScale = 0.8
-        layout.spacingMode = .fixed(spacing: 10.0)
+        layout.spacingMode = .fixed(spacing: 5)
+        
         collectionView.collectionViewLayout = layout
         
         collectionView.delegate = self
@@ -63,7 +64,23 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         cell.labelRazza.text = "Razza: \(petPList![indexPath.row].race ?? "error")"
         
         //cell.image.image = UIImage(named: petPList![indexPath.row].photo)
-        cell.image.image = UIImage(named: "CatMan")
+        if (petPList![indexPath.row].photouuid == nil){
+            cell.image.image = UIImage(named: "CatMan")
+        }
+        else {
+            let imageName = petPList![indexPath.row].photouuid // your image name here
+            let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+            print (imagePath)
+            let imageUrl: URL = URL(fileURLWithPath: imagePath)
+            guard FileManager.default.fileExists(atPath: imagePath),
+                let imageData: Data = try? Data(contentsOf: imageUrl),
+                let photo: UIImage = UIImage(data: imageData, scale: UIScreen.main.scale) else {
+                    print ("Immagine non trovata!")
+                    return  cell// No image found!
+            }
+            cell.image.image = photo
+        }
+        
         return cell
     }
     
