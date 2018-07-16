@@ -54,6 +54,11 @@
 		BB1392DB20F69DBF000C1CDF /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1392DA20F69DBF000C1CDF /* ImageStore.swift */; };
 		BB305DAE20F8E99E007579B7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB305DAD20F8E99E007579B7 /* CloudKit.framework */; };
 		BB50EF2620F8F75A00B15A45 /* PetLost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50EF2520F8F75A00B15A45 /* PetLost.swift */; };
+		BB53E84120FC8B5F00DA1B30 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */; };
+		BB53E84320FC8B8F00DA1B30 /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */; };
+		BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */; };
+		BB53E84820FC8C9E00DA1B30 /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53E84620FC8C9E00DA1B30 /* CustomPage.xib */; };
+		BB53E84920FC8C9E00DA1B30 /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */; };
 		BB7252C020F8DC8C00504D3B /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */; };
 		BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */; };
 		BBD719BC20F7981F00EC6935 /* MyPetListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */; };
@@ -132,8 +137,12 @@
 		BB1392DA20F69DBF000C1CDF /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		BB305DAD20F8E99E007579B7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BB50EF2520F8F75A00B15A45 /* PetLost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetLost.swift; sourceTree = "<group>"; };
+		BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPage.swift; sourceTree = "<group>"; };
+		BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		BB53E84620FC8C9E00DA1B30 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPage.xib; sourceTree = "<group>"; };
+		BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlay.xib; sourceTree = "<group>"; };
 		BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
-		BB857FF720F8E608009F1F82 /* PetSafety.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetSafety.entitlements; sourceTree = "<group>"; };
 		BBC28DC1737072207C8BB2F6 /* Pods-PetSafetyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListCollectionViewCell.swift; sourceTree = "<group>"; };
 		BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPetListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -252,6 +261,8 @@
 				70F8869E20F4A61100D09EE4 /* Pet.swift */,
 				0221FA6E20F4B99700F935D7 /* PetsController.swift */,
 				0221FA7020F4B9E300F935D7 /* PetList.swift */,
+				BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */,
+				BB53E84620FC8C9E00DA1B30 /* CustomPage.xib */,
 				0221FA7220F4BE4400F935D7 /* PetEditCell.swift */,
 				02EEC5FB20F6479D001AE51A /* UserController.swift */,
 				02EEC5FD20F6692F001AE51A /* User.swift */,
@@ -263,6 +274,9 @@
 				BBD719BF20F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift */,
 				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				BB50EF2520F8F75A00B15A45 /* PetLost.swift */,
+				BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */,
+				BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */,
+				BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -435,6 +449,7 @@
 				0221FA5620F4B5B200F935D7 /* SFCompactText-Bold.otf in Resources */,
 				0221FA6620F4B5B200F935D7 /* SFCompactText-Regular.otf in Resources */,
 				0221FA5420F4B5B200F935D7 /* SFCompactDisplay-Light.otf in Resources */,
+				BB53E84920FC8C9E00DA1B30 /* CustomOverlay.xib in Resources */,
 				0221FA6220F4B5B200F935D7 /* SFCompactDisplay-Heavy.otf in Resources */,
 				0221FA5D20F4B5B200F935D7 /* SFCompactText-SemiboldItalic.otf in Resources */,
 				0221FA5E20F4B5B200F935D7 /* SFCompactText-Medium.otf in Resources */,
@@ -445,6 +460,7 @@
 				0221FA6520F4B5B200F935D7 /* SFCompactDisplay-Black.otf in Resources */,
 				0221FA6B20F4B60500F935D7 /* SF Pro in Resources */,
 				0221FA5820F4B5B200F935D7 /* SFCompactText-BoldItalic.otf in Resources */,
+				BB53E84820FC8C9E00DA1B30 /* CustomPage.xib in Resources */,
 				0221FA5720F4B5B200F935D7 /* SFCompactDisplay-Thin.otf in Resources */,
 				0221FA5A20F4B5B200F935D7 /* SFCompactDisplay-Regular.otf in Resources */,
 				0221FA6720F4B5B200F935D7 /* SFCompactText-HeavyItalic.otf in Resources */,
@@ -536,12 +552,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PetSafety/Pods-PetSafety-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewRow/ViewRow.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewRow.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,12 +577,14 @@
 				02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */,
 				BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */,
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
+				BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */,
 				BBD719C020F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift in Sources */,
 				02B1D1F120FA6E6F005BA296 /* UIImage+fixOrientation.swift in Sources */,
 				0221FA7120F4B9E300F935D7 /* PetList.swift in Sources */,
 				BB7252C020F8DC8C00504D3B /* BeaconManager.swift in Sources */,
 				02EEC5FC20F6479D001AE51A /* UserController.swift in Sources */,
 				02B1D1D620F8BD16005BA296 /* PUser+CoreDataClass.swift in Sources */,
+				BB53E84320FC8B8F00DA1B30 /* CustomPage.swift in Sources */,
 				BB1392DB20F69DBF000C1CDF /* ImageStore.swift in Sources */,
 				025149FB20F77B570074B1D5 /* PersistenceManager.swift in Sources */,
 				70F8869F20F4A61100D09EE4 /* Pet.swift in Sources */,
@@ -573,6 +593,7 @@
 				BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */,
 				02B1D1DE20FA4D7A005BA296 /* PPet+CoreDataClass.swift in Sources */,
 				02EEC5FE20F6692F001AE51A /* User.swift in Sources */,
+				BB53E84120FC8B5F00DA1B30 /* CustomOverlay.swift in Sources */,
 				BB50EF2620F8F75A00B15A45 /* PetLost.swift in Sources */,
 				70FED89720F4A56D00C9258D /* ViewController.swift in Sources */,
 				70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */,

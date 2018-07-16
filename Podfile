@@ -8,6 +8,7 @@ target 'PetSafety' do
 pod 'ImageRow', '~> 3.0'
 pod 'Eureka'
 pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
+pod 'SwiftyOnboard'
   # Pods for PetSafety
 
   target 'PetSafetyTests' do
