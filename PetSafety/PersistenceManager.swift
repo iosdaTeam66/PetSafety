@@ -20,7 +20,9 @@ class PersistenceManager {
     static func newEmptyPet () -> PPet {
         let context = getContext()
         let pPet = NSEntityDescription.insertNewObject(forEntityName: name, into: context) as! PPet
-        pPet.order = 1
+        let pets = fetchData()
+        let index = pets.count-1
+        pPet.order = Int16(index)
         
         return pPet
     }
@@ -40,6 +42,9 @@ class PersistenceManager {
             try pets = context.fetch(fetchRequest)
         } catch let error as NSError{
             print("Errore in fetch \(error.code)")
+        }
+        pets = pets.sorted{
+            $0.order < $1.order
         }
         return pets
     }
@@ -70,4 +75,21 @@ class PersistenceManager {
         let context = getContext()
         context.delete(pet)
     }
+    
+    static func oderPet(index: Int, newIndex: Int, petArray: [PPet]) -> [PPet] {
+        var tmpPetArray: [PPet] = petArray
+        let sortedPet: PPet = tmpPetArray.remove(at: index)
+        tmpPetArray.insert(sortedPet, at: newIndex)
+        
+        var i = 0
+        for _ in tmpPetArray {
+            tmpPetArray[i].order = Int16(i)
+            //print("ordino \(tmpPetArray[i].name ?? "none") - index \(tmpPetArray[i].order)")
+            i+=1
+        }
+        
+        return tmpPetArray
+    }
+    
+    
 }

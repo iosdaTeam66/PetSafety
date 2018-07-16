@@ -117,6 +117,7 @@ class PetsController: UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 //        petList.sortPet(index: fromIndexPath.row, newIndex: to.row)
+        petPList = PersistenceManager.oderPet(index: fromIndexPath.row, newIndex: to.row, petArray: petPList)
     }
 
     /*
