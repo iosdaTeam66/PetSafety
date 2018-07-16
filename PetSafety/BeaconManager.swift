@@ -55,6 +55,8 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
                 }
                 .cellUpdate({ (cell, row) in
                     cell.backgroundColor = nil
+                    cell.contentView.backgroundColor = nil
+                    cell.textLabel?.textColor = .black
                     cell.textLabel?.textAlignment = .center
                 })
         
