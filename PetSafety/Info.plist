@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Ciao</string>
+	<string>ciao</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Ciaone</string>
 	<key>UILaunchStoryboardName</key>
@@ -45,5 +45,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>prova</string>
 </dict>
 </plist>
