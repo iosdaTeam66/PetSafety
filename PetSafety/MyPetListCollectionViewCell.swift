@@ -22,19 +22,21 @@ class MyPetListCollectionViewCell: UICollectionViewCell {
         // Initialization code
 
         DispatchQueue.main.async {
+            
             self.cntView.layer.cornerRadius = 20
             self.cntView.layer.shadowColor = UIColor.lightGray.cgColor
-            self.cntView.layer.shadowOpacity = 0.1
+            self.cntView.layer.shadowOpacity = 0.5
             self.cntView.layer.shadowOffset = .zero
             self.cntView.layer.shadowPath = UIBezierPath(rect: self.cntView.bounds).cgPath
-        
-            
         }
     }
 
     @IBAction func switchMissing(_ sender: UISwitch) {
-//        let pvc = MyPetListViewController()
-//        pvc.switchClicked(clicked: sender.isOn)
-       print("Lo switch è \(sender.isOn)")
+       print("Lo switch con tag \(sender.tag) è \(sender.isOn)")
+    }
+    
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        print("Il bottone con tag \(sender.tag) è stato cliccato")
     }
 }

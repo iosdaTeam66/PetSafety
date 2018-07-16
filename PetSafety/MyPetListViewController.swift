@@ -14,7 +14,6 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var pageControl: UIPageControl!
     
     var petPList: [PPet]?
-    fileprivate var idPaginaAttuale: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +34,8 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        
 
     }
     
@@ -81,6 +82,9 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.image.image = photo
         }
         
+        cell.switchMissing.tag = indexPath.row
+        cell.button.tag = indexPath.row
+        
         return cell
     }
     
@@ -100,26 +104,9 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     fileprivate var currentPage: Int = 0 {
         didSet {
 //            print("page at centre = \(currentPage)")
-            
             pageControl.currentPage = currentPage
-            idPaginaAttuale = currentPage
-            print("id pagina attuale: \(idPaginaAttuale)")
         }
     }
-   /*
-    func getActualPet() -> PPet {
-        let daRestituire: PPet = petPList![currentPage]
-        print(daRestituire.name)
-        return daRestituire
-    }
- 
-
-    func switchClicked(clicked: Bool) {
-        print("current page: \(idPaginaAttuale)")
-        print("Hai cliccato: \(petPList![idPaginaAttuale].name  ?? "error")")
-        print("Lo switch è \(clicked)")
-    }
-    */
     
     fileprivate var pageSize: CGSize {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout

@@ -112,7 +112,7 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
     func swiftyOnboardOverlayForPosition(_ swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
         let currentPage = round(position)
         overlay.pageControl.currentPage = Int(currentPage)
-        print(Int(currentPage))
+//        print(Int(currentPage))
         overlay.continueButton.tag = Int(position)
         
         if currentPage == 0.0 || currentPage == 1.0 {
@@ -126,9 +126,7 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
     }
     
     func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, tapped index: Int) {
-        print(index)
+//        print(index)
     }
-    
-    
     
 }
