@@ -59,6 +59,9 @@
 		BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */; };
 		BB53E84820FC8C9E00DA1B30 /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53E84620FC8C9E00DA1B30 /* CustomPage.xib */; };
 		BB53E84920FC8C9E00DA1B30 /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */; };
+		BB53E84B20FC97CB00DA1B30 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84A20FC97CB00DA1B30 /* MapController.swift */; };
+		BB53E84D20FC987600DA1B30 /* StoreMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84C20FC987600DA1B30 /* StoreMap.swift */; };
+		BB53E84F20FC98C300DA1B30 /* PetAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53E84E20FC98C300DA1B30 /* PetAnnotation.swift */; };
 		BB7252C020F8DC8C00504D3B /* BeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */; };
 		BBD719BB20F7981F00EC6935 /* MyPetListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */; };
 		BBD719BC20F7981F00EC6935 /* MyPetListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */; };
@@ -142,6 +145,9 @@
 		BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		BB53E84620FC8C9E00DA1B30 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPage.xib; sourceTree = "<group>"; };
 		BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlay.xib; sourceTree = "<group>"; };
+		BB53E84A20FC97CB00DA1B30 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		BB53E84C20FC987600DA1B30 /* StoreMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMap.swift; sourceTree = "<group>"; };
+		BB53E84E20FC98C300DA1B30 /* PetAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAnnotation.swift; sourceTree = "<group>"; };
 		BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconManager.swift; sourceTree = "<group>"; };
 		BBC28DC1737072207C8BB2F6 /* Pods-PetSafetyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BBD719B920F7981F00EC6935 /* MyPetListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 				70FED8A320F4A56E00C9258D /* Info.plist */,
 				70FED89B20F4A56D00C9258D /* PetSafety.xcdatamodeld */,
 				70F8869E20F4A61100D09EE4 /* Pet.swift */,
+				BB53E84E20FC98C300DA1B30 /* PetAnnotation.swift */,
 				0221FA6E20F4B99700F935D7 /* PetsController.swift */,
 				0221FA7020F4B9E300F935D7 /* PetList.swift */,
 				BB53E84720FC8C9E00DA1B30 /* CustomOverlay.xib */,
@@ -277,6 +284,8 @@
 				BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */,
 				BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */,
 				BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */,
+				BB53E84A20FC97CB00DA1B30 /* MapController.swift */,
+				BB53E84C20FC987600DA1B30 /* StoreMap.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -575,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */,
+				BB53E84F20FC98C300DA1B30 /* PetAnnotation.swift in Sources */,
 				BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */,
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
 				BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */,
@@ -597,6 +607,8 @@
 				BB50EF2620F8F75A00B15A45 /* PetLost.swift in Sources */,
 				70FED89720F4A56D00C9258D /* ViewController.swift in Sources */,
 				70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */,
+				BB53E84B20FC97CB00DA1B30 /* MapController.swift in Sources */,
+				BB53E84D20FC987600DA1B30 /* StoreMap.swift in Sources */,
 				0221FA7320F4BE4400F935D7 /* PetEditCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

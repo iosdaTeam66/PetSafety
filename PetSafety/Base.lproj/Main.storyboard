@@ -179,6 +179,72 @@
             </objects>
             <point key="canvasLocation" x="-413.04347826086962" y="797.28260869565224"/>
         </scene>
+        <!--Map Controller-->
+        <scene sceneID="D2j-iQ-PoL">
+            <objects>
+                <viewController id="sw7-eo-SHb" customClass="MapController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZRa-E3-bT8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mbG-AZ-eSl">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sw7-eo-SHb" id="j9z-ah-SmQ"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnL-lv-m9m">
+                                <rect key="frame" x="20" y="35" width="374" height="95"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-4x-Er1">
+                                        <rect key="frame" x="16" y="8" width="98" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLY-pw-JCZ">
+                                        <rect key="frame" x="184" y="57" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zB-3s-zmR">
+                                        <rect key="frame" x="300" y="8" width="36" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mbG-AZ-eSl" firstAttribute="top" secondItem="MO6-W1-dGf" secondAttribute="top" id="Lz1-zR-hmL"/>
+                            <constraint firstItem="MO6-W1-dGf" firstAttribute="trailing" secondItem="BnL-lv-m9m" secondAttribute="trailing" constant="20" id="N1q-k8-YW8"/>
+                            <constraint firstItem="MO6-W1-dGf" firstAttribute="trailing" secondItem="mbG-AZ-eSl" secondAttribute="trailing" id="ZTu-h8-Kmi"/>
+                            <constraint firstItem="MO6-W1-dGf" firstAttribute="bottom" secondItem="mbG-AZ-eSl" secondAttribute="bottom" id="g6X-gu-Mwi"/>
+                            <constraint firstItem="mbG-AZ-eSl" firstAttribute="leading" secondItem="MO6-W1-dGf" secondAttribute="leading" id="ofY-oG-k7Z"/>
+                            <constraint firstItem="BnL-lv-m9m" firstAttribute="centerX" secondItem="ZRa-E3-bT8" secondAttribute="centerX" id="ou7-X8-MHb"/>
+                            <constraint firstItem="MO6-W1-dGf" firstAttribute="bottom" secondItem="BnL-lv-m9m" secondAttribute="bottom" constant="606" id="rNx-WS-Zch"/>
+                            <constraint firstItem="BnL-lv-m9m" firstAttribute="top" secondItem="MO6-W1-dGf" secondAttribute="top" constant="15" id="y91-pc-Z1j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MO6-W1-dGf"/>
+                    </view>
+                    <connections>
+                        <outlet property="BigMap" destination="mbG-AZ-eSl" id="LkH-S0-o5r"/>
+                        <outlet property="addressUlt" destination="VLY-pw-JCZ" id="g1R-77-1XE"/>
+                        <outlet property="dataUlt" destination="6zB-3s-zmR" id="daa-WM-aeG"/>
+                        <outlet property="viewUlt" destination="BnL-lv-m9m" id="tfd-O6-Nko"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Npq-xr-1iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.92753623188412" y="797.28260869565224"/>
+        </scene>
         <!--Beacon Search-->
         <scene sceneID="GIH-jf-QBL">
             <objects>
