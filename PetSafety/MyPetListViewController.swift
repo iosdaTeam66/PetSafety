@@ -11,8 +11,10 @@ import UIKit
 class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var petPList: [PPet]?
+    fileprivate var idPaginaAttuale: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,23 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         
         collectionView.delegate = self
         collectionView.dataSource = self
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        petPList = PersistenceManager.fetchData()
+        collectionView.reloadData()
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        PersistenceManager.saveContext()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pageControl.numberOfPages = (petPList?.count)!
         return (petPList?.count)!
     }
     
@@ -64,26 +79,30 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         let offset = (layout.scrollDirection == .horizontal) ? scrollView.contentOffset.x : scrollView.contentOffset.y
         currentPage = Int(floor((offset - pageSide / 2) / pageSide) + 1)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        
     fileprivate var currentPage: Int = 0 {
         didSet {
-            print("page at centre = \(currentPage)")
+//            print("page at centre = \(currentPage)")
             
-            //            let character = self.items[self.currentPage]
-            //            self.infoLabel.text = character.name.uppercased()
-            //            self.detailLabel.text = character.movie.uppercased()
+            pageControl.currentPage = currentPage
+            idPaginaAttuale = currentPage
+            print("id pagina attuale: \(idPaginaAttuale)")
         }
     }
+   /*
+    func getActualPet() -> PPet {
+        let daRestituire: PPet = petPList![currentPage]
+        print(daRestituire.name)
+        return daRestituire
+    }
+ 
+
+    func switchClicked(clicked: Bool) {
+        print("current page: \(idPaginaAttuale)")
+        print("Hai cliccato: \(petPList![idPaginaAttuale].name  ?? "error")")
+        print("Lo switch è \(clicked)")
+    }
+    */
     
     fileprivate var pageSize: CGSize {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout

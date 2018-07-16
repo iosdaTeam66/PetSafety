@@ -16,7 +16,7 @@ class OnBoardingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     var swiftyOnboard: SwiftyOnboard!
-    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),#colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)]
+    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1)]
     var titleArray: [String] = ["Welcome on PetSafety!", "We will help you monitoring your pets...", "...and find them if they run away"]
     var subTitleArray: [String] = ["1","2","3"]
     

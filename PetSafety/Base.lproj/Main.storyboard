@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -140,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-uC-8yH">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-uC-8yH">
                                 <rect key="frame" x="0.0" y="70" width="414" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wI6-vZ-AAY">
@@ -160,11 +161,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-IB-K41">
+                                <rect key="frame" x="188" y="587" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AdT-IB-K41" secondAttribute="height" multiplier="39:37" id="9M5-kw-ylH"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IQc-wr-60g" firstAttribute="bottom" secondItem="XkG-uC-8yH" secondAttribute="bottom" constant="100" id="G5U-Br-UdL"/>
+                            <constraint firstItem="AdT-IB-K41" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="VVU-lu-Lpc"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="leading" secondItem="IQc-wr-60g" secondAttribute="leading" id="f6j-UI-PHg"/>
+                            <constraint firstItem="AdT-IB-K41" firstAttribute="top" secondItem="XkG-uC-8yH" secondAttribute="bottom" id="fs8-et-M3H"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="top" secondItem="IQc-wr-60g" secondAttribute="top" constant="50" id="gQW-UC-mh9"/>
                             <constraint firstItem="IQc-wr-60g" firstAttribute="trailing" secondItem="XkG-uC-8yH" secondAttribute="trailing" id="hAr-gy-kKI"/>
                         </constraints>
@@ -173,6 +184,7 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="TRK-Cg-cNc"/>
                     <connections>
                         <outlet property="collectionView" destination="XkG-uC-8yH" id="n00-1K-vTi"/>
+                        <outlet property="pageControl" destination="AdT-IB-K41" id="KTo-rR-xEm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggD-Py-elO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="-2890" y="1150"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="yV7-lo-fgJ">
             <objects>
-                <tabBarController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="ueO-rW-FSi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="ueO-rW-FSi" customClass="MyTabBarController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pJv-qi-cnl">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
