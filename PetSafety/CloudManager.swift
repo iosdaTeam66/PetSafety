@@ -19,14 +19,14 @@ class CloudManager{
     static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate){
         let petID = CKRecordID(recordName: beaconID)
         let petRecord = CKRecord(recordType: "Pet", recordID: petID)
-        petRecord["birthDate"] = birthDate
-        petRecord["microchipID"] = microchipID
-        petRecord["name"] = name
-        petRecord["race"] = race
-        petRecord["type"] = type
+        petRecord["birthDate"] = birthDate as CKRecordValue
+        petRecord["microchipID"] = microchipID as CKRecordValue
+        petRecord["name"] = name as CKRecordValue
+        petRecord["race"] = race as CKRecordValue
+        petRecord["type"] = type as CKRecordValue
         publicDB.save(petRecord){
             (record,error) in
-            if let error = error{
+            if error != nil{
 //                handling not configured
                 return
             }
@@ -36,14 +36,14 @@ class CloudManager{
     //    Upload: Public Database -> Owners list
     static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
         let userID = CKRecordID(recordName: emailAddress)
-        let userRecord = CKRecord(recordType: "Users", recordID: emailAddress)
-        userRecord["name"] = name
-        userRecord["surname"] = surname
-        userRecord["phoneNumber"] = phoneNumber
-        userRecord["userID"] = userID
-        publicDB.save(petRecord){
+        let userRecord = CKRecord(recordType: "Users", recordID: userID)
+        userRecord["name"] = name as CKRecordValue
+        userRecord["surname"] = surname as CKRecordValue
+        userRecord["phoneNumber"] = phoneNumber as CKRecordValue
+        userRecord["userID"] = userID as? CKRecordValue
+        publicDB.save(userRecord){
             (record,error) in
-            if let error = error{
+            if error != nil{
                 //                handling not configured
                 return
             }
@@ -53,12 +53,12 @@ class CloudManager{
     //    Upload: Public Database -> Missing list
     static func upload(emailAddress: String, beaconID: String){
         let missingID = CKRecordID(recordName: beaconID)
-        let missingRecord = CKRecord(recordType: "Missing", recordID: emailAddress)
-        missingRecord["emailAddress"] = emailAddress
+        let missingRecord = CKRecord(recordType: "Missing", recordID: missingID)
+        missingRecord["emailAddress"] = emailAddress as CKRecordValue
 //        missingRecord["missing_data"] = oggetto date-time -> current timestamp
-        publicDB.save(petRecord){
+        publicDB.save(missingRecord){
             (record,error) in
-            if let error = error{
+            if error != nil{
                 //                handling not configured
                 return
             }
@@ -68,13 +68,13 @@ class CloudManager{
     //    Upload: Public Database -> Coordinate list
     static func upload(beaconID: String, emailAddress: String, location: CLLocation){
         let coordinateID = CKRecordID(recordName: beaconID)
-        let coordinateRecord = CKRecord(recordType: "Coordinate", recordID: beaconID)
-        coordinateRecord["emailAddress"] = emailAddress
-        coordinateRecord["position"] = location
+        let coordinateRecord = CKRecord(recordType: "Coordinate", recordID: coordinateID)
+        coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
+        coordinateRecord["position"] = location as CKRecordValue
         //        missingRecord["missing_data"] = oggetto date-time -> current timestamp
-        publicDB.save(petRecord){
+        publicDB.save(coordinateRecord){
             (record,error) in
-            if let error = error{
+            if error != nil{
                 //                handling not configured
                 return
             }
