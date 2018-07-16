@@ -17,9 +17,12 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     
     var locationManager: CLLocationManager!
     
-    var lostPets = Dictionary<String, String>()//[PetLost]()
+    var lostPets = Dictionary<String, String>()
     var foundPets = [String]()
     var foundID = [String]()
+    var currentLocation: CLLocation!
+    var oldLocation: CLLocation = CLLocation(latitude: 0.0,longitude: 0.0)
+    var pUser: PUser!
     
     var bluetoothPeripheralManager: CBPeripheralManager!
     
@@ -27,6 +30,14 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let pUserList = PersistenceManager.fetchDataUser()
+        if (pUserList.count == 0) {
+            pUser = PersistenceManager.newEmptyUser()
+        }
+        else{
+            pUser = pUserList[0]
+        }
         
         // sfondo bianco
         let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
@@ -189,8 +200,6 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     func startScanning() {
         let uuid = UUID(uuidString: "36996E77-5789-6AA5-DF5E-25FB5D92B34B")
         
-        //let uuid = UUID(uuidString: lostPets[0].beaconUUID)
-        
         let beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "iOSBeacon")
         
         locationManager.startMonitoring(for: beaconRegion)
@@ -202,13 +211,10 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             updateDistance(beacons[0].proximity)
             
             // implementazione pet trovato
-            print("trovati \(beacons.count)")
-            
             var tempStr: String = ""
             
             var i = 0
             for _ in beacons {
-                //foundID.append("\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)")
                 tempStr="\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)"
                 print(lostPets.keys.contains(tempStr))
                 if lostPets.keys.contains(tempStr) {
@@ -219,7 +225,15 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
                 i+=1
             }
             
-            let alert = UIAlertController(title: "Beacon Detected", message: "Found \(foundID.count) lost pet near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
+            let locationObj = manager.location
+            let coord = locationObj?.coordinate
+            currentLocation = CLLocation(latitude: (coord?.latitude)!,longitude: (coord?.longitude)!)
+            if(currentLocation.distance(from: oldLocation) > 50) { // se la nuova posizione è maggiore di 50 metri dall'ultimo rilievo
+                // inserire QUI le coordinate nella tabella ONLINE
+                oldLocation = currentLocation
+            }
+            
+            let alert = UIAlertController(title: "iBeacons Detected", message: "Found lost pets near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
                 switch action.style{
                 case .default:
