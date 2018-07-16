@@ -68,6 +68,7 @@
 		BBD719BC20F7981F00EC6935 /* MyPetListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */; };
 		BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719BD20F7984700EC6935 /* MyPetListViewController.swift */; };
 		BBD719C020F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD719BF20F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift */; };
+		D146EFB520FCDBB700D6FE89 /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D146EFB420FCDBB700D6FE89 /* CloudManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		C1D581E9A483A07CEFDC22D9 /* Pods_PetSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D78D66368594BE25373247 /* Pods_PetSafetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B6BC82B597D7D63F143B14 /* Pods-PetSafetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyTests/Pods-PetSafetyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D146EFB420FCDBB700D6FE89 /* CloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
 		DF358838579CEBB1D49F9399 /* Pods-PetSafety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafety.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafety/Pods-PetSafety.release.xcconfig"; sourceTree = "<group>"; };
 		E1DBA481F0B9877DBFB88E3B /* Pods-PetSafety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafety.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafety/Pods-PetSafety.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -291,6 +293,7 @@
 				BB53E84420FC8BB700DA1B30 /* OnBoardingViewController.swift */,
 				BB53E84A20FC97CB00DA1B30 /* MapController.swift */,
 				BB53E84C20FC987600DA1B30 /* StoreMap.swift */,
+				D146EFB420FCDBB700D6FE89 /* CloudManager.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */,
 				BB53E84F20FC98C300DA1B30 /* PetAnnotation.swift in Sources */,
 				BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */,
+				D146EFB520FCDBB700D6FE89 /* CloudManager.swift in Sources */,
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
 				BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */,
 				BBD719C020F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift in Sources */,
