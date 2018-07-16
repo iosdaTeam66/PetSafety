@@ -24,11 +24,10 @@ class MyPetListCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.cntView.layer.cornerRadius = 20
             self.cntView.layer.shadowColor = UIColor.lightGray.cgColor
-            self.cntView.layer.shadowOpacity = 0.5
-            self.cntView.layer.shadowOpacity = 10
+            self.cntView.layer.shadowOpacity = 0.1
             self.cntView.layer.shadowOffset = .zero
             self.cntView.layer.shadowPath = UIBezierPath(rect: self.cntView.bounds).cgPath
-            self.cntView.layer.shouldRasterize = true
+        
             
         }
     }
