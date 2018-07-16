@@ -52,6 +52,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fb-Wt-rcG">
                                                 <rect key="frame" x="0.0" y="1" width="46" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="buttonClicked:" destination="UTG-qH-y2c" eventType="touchUpInside" id="E2i-1c-Led"/>
+                                                </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-P3-PjY">
                                                 <rect key="frame" x="116" y="0.0" width="51" height="31"/>

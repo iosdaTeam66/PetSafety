@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "confess2.png",
+      "filename" : "bear.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "confess2@2x.png",
+      "filename" : "bear@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "confess2@3x.png",
+      "filename" : "bear@3x.png",
       "scale" : "3x"
     }
   ],
