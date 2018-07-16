@@ -1,9 +1,9 @@
 //
-//  BeaconManager.swift
-//  PetSafety
+// BeaconManager.swift
+// PetSafety
 //
-//  Created by Marciano Filippo on 13/07/18.
-//  Copyright © 2018 De Cristofaro Paolo. All rights reserved.
+// Created by Marciano Filippo on 13/07/18.
+// Copyright © 2018 De Cristofaro Paolo. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,9 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     
     var locationManager: CLLocationManager!
     
-    var lostPets = [PetLost]()
+    var lostPets = Dictionary<String, String>()//[PetLost]()
+    var foundPets = [String]()
+    var foundID = [String]()
     
     var bluetoothPeripheralManager: CBPeripheralManager!
     
@@ -36,19 +38,19 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             <<< ViewRow<UIImageView>("radar")
                 
                 .cellSetup { (cell, row) in
-                    //  Construct the view for the cell
+                    // Construct the view for the cell
                     cell.view = UIImageView()
                     cell.contentView.addSubview(cell.view!)
-                    cell.backgroundColor = nil  // sfondo trasparente
+                    cell.backgroundColor = nil // sfondo trasparente
                     
-                    //  Get something to display
+                    // Get something to display
                     let image = UIImageView(image: UIImage(named: "radar"))
                     cell.view = image
                     cell.view?.frame = CGRect(x: 0, y: 40, width: 20, height: 200)
                     cell.view?.contentMode = .scaleAspectFit
                     cell.view!.clipsToBounds = true
-                }
-        
+            }
+            
             <<< LabelRow() {
                 $0.title = "Searching missing pets in your area..."
                 $0.cellStyle = .default
@@ -69,8 +71,13 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
         bluetoothPeripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
         
         // simulazione animali smarriti
-        let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B", ownerID: "PippoID")
-        lostPets.append(petLost1)
+        //let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1", ownerID: "PippoID")
+        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
+        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1"] = "PippoID"
+        //let petLost2 = PetLost.init(lostDate: Date(), microchipID: "chip-mint", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:2", ownerID: "PlutoID")
+        //lostPets.append(petLost2)
+        //let petLost3 = PetLost.init(lostDate: Date(), microchipID: "chip-blueberry", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3", ownerID: "TopolinoID")
+        //lostPets.append(petLost3)
         
     }
     
@@ -137,6 +144,11 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             break
         case .authorizedWhenInUse:
             print("Location: Authorized when in use")
+            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    startScanning()
+                }
+            }
             break
         case .authorizedAlways:
             print("Location: Authorized always")
@@ -175,11 +187,11 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     }
     
     func startScanning() {
-        //let uuid = UUID(uuidString: "36996E77-5789-6AA5-DF5E-25FB5D92B34B")!
+        let uuid = UUID(uuidString: "36996E77-5789-6AA5-DF5E-25FB5D92B34B")
         
-        let uuid = UUID(uuidString: lostPets[0].beaconUUID)
+        //let uuid = UUID(uuidString: lostPets[0].beaconUUID)
         
-        let beaconRegion = CLBeaconRegion(proximityUUID: uuid!, major: 1, minor: 1, identifier: "iOSBeacon")
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid!, identifier: "iOSBeacon")
         
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
@@ -190,22 +202,38 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             updateDistance(beacons[0].proximity)
             
             // implementazione pet trovato
-            //let lp1String: String = beacons[0].proximityUUID.uuidString
-            let alert = UIAlertController(title: "Beacon Detected", message: "Found \(beacons.count) lost pet near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
+            print("trovati \(beacons.count)")
+            
+            var tempStr: String = ""
+            
+            var i = 0
+            for _ in beacons {
+                //foundID.append("\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)")
+                tempStr="\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)"
+                print(lostPets.keys.contains(tempStr))
+                if lostPets.keys.contains(tempStr) {
+                    if !foundID.makeIterator().contains(tempStr) {
+                        foundID.append(tempStr)
+                    }
+                }
+                i+=1
+            }
+            
+            let alert = UIAlertController(title: "Beacon Detected", message: "Found \(foundID.count) lost pet near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
                 switch action.style{
-                    case .default:
-                        print("default")
-                        let viewControllerPetsFound = self.storyboard?.instantiateViewController(withIdentifier: "PetsFound")
-                        self.present(viewControllerPetsFound!, animated: true, completion: nil)
+                case .default:
+                    print("default")
+                    let viewControllerPetsFound = self.storyboard?.instantiateViewController(withIdentifier: "PetsFound")
+                    self.present(viewControllerPetsFound!, animated: true, completion: nil)
                     
-                    case .cancel:
-                        print("cancel")
+                case .cancel:
+                    print("cancel")
                     
-                    case .destructive:
-                        print("destructive")
-            }}))
-        
+                case .destructive:
+                    print("destructive")
+                }}))
+            
             self.present(alert, animated: true, completion: nil)
         } else {
             updateDistance(.unknown)
