@@ -109,14 +109,14 @@ class CloudManager{
     static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
         let userID = CKRecordID(recordName: emailAddress)
         let userRecord = CKRecord(recordType: "Users", recordID: userID)
-        userRecord.setValue(name, forKey: "name")
+        /*userRecord.setValue(name, forKey: "name")
         userRecord.setValue(surname, forKey: "surname")
         userRecord.setValue(phoneNumber, forKey: "phoneNumber")
-        userRecord.setValue(userID, forKey: "userID")
-      /*userRecord["name"] = name as CKRecordValue
+        userRecord.setValue(userID, forKey: "userID")*/
+        userRecord["name"] = name as CKRecordValue
         userRecord["surname"] = surname as CKRecordValue
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
-        userRecord["userID"] = userID as? CKRecordValue*/
+        userRecord["userID"] = userID as? CKRecordValue
         publicDB.save(userRecord){
             (record,error) in
             if error != nil{
@@ -270,7 +270,7 @@ class CloudManager{
     }
     
     static func retrieveFromUser(emailAddress: String){
-//        return publicDB.fetch(withRecordID: CKRecordID(recordName: emailAddress), completionHandler: (succeeded: Bool, error: NSError!) -> Void))
+        let query = CKQuery(recordType: "User", predicate: <#T##NSPredicate#>)
     }
     
     static func retrieveFromPet(beaconID: String){

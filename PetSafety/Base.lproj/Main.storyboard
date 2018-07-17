@@ -102,7 +102,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9LZ-cy-nqK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QXt-jI-Mds"/>
+                    <navigationItem key="navigationItem" id="QXt-jI-Mds">
+                        <barButtonItem key="rightBarButtonItem" title="Register" id="a83-2P-feN">
+                            <connections>
+                                <action selector="Register:" destination="abn-jP-sOA" id="Znf-M5-QQO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="rQH-ni-8Q6" kind="show" identifier="petListSegue" id="4Sc-Vq-luD"/>
                     </connections>
