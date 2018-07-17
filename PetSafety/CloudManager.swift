@@ -228,25 +228,49 @@ class CloudManager{
         }
     }
     
+
     static func storeLocationToCoordinate(beaconID: String, location: CLLocation){
         let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
         crdRecord.setValue(location, forKey:"position")
         publicDB.save(crdRecord){
             (record,error) in
             if error != nil{
-                print("DB ERROR")
+                print("DBERROR")
                 return
             }
         }
     }
     
-    static func download(emailAddress: String){
-//        let withRecordID =
-//        publicDB.fetch(CKRecordID(recordName: emailAddress): CKRecordID, completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
+    static func downloadUsers(emailAddress: String){
+        let temp = CKRecord(recordType: emailAddress, recordID: CKRecordID(recordName: "Users"))
+        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
+            print("DB ERROR")
+        }
+    }
+    
+    static func downloadPet(beaconID: String){
+        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Pet"))
+        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
+            print("DB ERROR")
+        }
+    }
+    
+    static func downloadMissingList(beaconID: String){
+        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Missing"))
+        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
+            print("DB ERROR")
+        }
+    }
+    
+    static func downloadCoordinate(beaconID: String){
+        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Missing"))
+        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
+            print("DB ERROR")
+        }
     }
     
     static func retrieveFromUser(emailAddress: String){
-        
+//        return publicDB.fetch(withRecordID: CKRecordID(recordName: emailAddress), completionHandler: (succeeded: Bool, error: NSError!) -> Void))
     }
     
     static func retrieveFromPet(beaconID: String){
