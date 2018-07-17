@@ -108,12 +108,12 @@ class CloudManager{
 
     //    Upload: Public Database -> Owners list
     static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
-        let userID = CKRecordID(recordName: emailAddress)
-        let userRecord = CKRecord(recordType: "Users", recordID: userID)
+//        let userID = CKRecordID(recordName: emailAddress)
+        let userRecord = CKRecord(recordType: "Users")
         userRecord["name"] = name as CKRecordValue
         userRecord["surname"] = surname as CKRecordValue
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
-        userRecord["userID"] = userID as? CKRecordValue
+        userRecord["userID"] = userID as CKRecordValue
         publicDB.save(userRecord){
             (userRecord,error) in
             if error != nil{
