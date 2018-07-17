@@ -20,8 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // mette a zero le notifiche quando apri la notifica
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        let operation = CKModifyBadgeOperation(badgeValue: 0)
+        operation.modifyBadgeCompletionBlock = {(error) in
+            if let error = error{
+                print("\(error)")
+                return
+            }
+            application.applicationIconBadgeNumber = 0
+        }
+        CKContainer.default().add(operation)
+        
         //ask the user for permission to show notifications
         UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate;
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
             if authorized {
                 //risolto warning
@@ -38,20 +51,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+       
+//        let predicate = NSPredicate(format: <#T##String#>, <#T##args: CVarArg...##CVarArg#>)
         
         //notification on new record of coordinate
-        let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "TRUEPREDICATE"), options: .firesOnRecordCreation)
+        let subscription = CKQuerySubscription(recordType: "Coordinate",
+                                               predicate: NSPredicate(format: "beaconID = 42"), options: .firesOnRecordUpdate)
+        
+        print("subscription: \(subscription.predicate)")
+        
+        
+        let predicate = NSPredicate(format: "beaconID = 42")
+        let query = CKQuery(recordType: "Coordinate", predicate: predicate)
+        let prova = CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { records, error in }
+
+        print("prova: \(prova)")
         
         let info = CKNotificationInfo()
         info.alertBody = "nuova posizione cane.."
         info.shouldBadge = true
         info.soundName = "default"
-        print ("\(subscription)")
-        print("ciao2")
-        
         subscription.notificationInfo = info
-        print ("ciao 3 \(subscription.querySubscriptionOptions)")
+        
         CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
             if error == nil {
                 // Subscription saved successfully
@@ -61,11 +82,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Notifica: Error")
             }
         })
+        
+        print("FINE!!!!")
     }
     
 //UserNotifications framework to show your notification as if your app wasn't running at all
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.alert, .sound,.badge])
         
     }
     
