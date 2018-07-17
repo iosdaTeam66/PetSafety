@@ -19,6 +19,8 @@ import CoreLocation
     retrieveForm(<recordType>, <ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
  
  Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
+ 
+ Suggerimento: Usare sempre upload per l'invio, di modo che si scriva una sola volta tutti i dati
  */
 
 class CloudManager{
@@ -61,6 +63,54 @@ class CloudManager{
             }
         }
     }
+    
+    static func storeNameToPet(beaconID: String, name: String){
+        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
+        rcd.setValue(name, forKey: "name")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeTypeToPet(beaconID: String, type: String){
+        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
+        rcd.setValue(type, forKey: "type")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeraceToPet(beaconID: String, race: String){
+        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
+        rcd.setValue(race, forKey: "race")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeBirthDateToPet(beaconID: String, birthDate: String){
+        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
+        rcd.setValue(birthDate, forKey: "birthDate")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
 
     //    Upload: Public Database -> Owners list
     static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
@@ -75,6 +125,30 @@ class CloudManager{
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
         userRecord["userID"] = userID as? CKRecordValue*/
         publicDB.save(userRecord){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeUserIDToUser(emailAddress: String, userID: String){
+        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
+        rcd.setValue(userID, forKey: "userID")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeNameToUser(emailAddress: String, name: String){
+        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
+        rcd.setValue(name, forKey: "name")
+        publicDB.save(rcd){
             (record,error) in
             if error != nil{
                 //                handling not configured
