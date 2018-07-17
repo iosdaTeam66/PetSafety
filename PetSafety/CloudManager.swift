@@ -38,7 +38,7 @@ class CloudManager{
         petRecord["race"] = race as CKRecordValue
         petRecord["birthDate"] = birthDate as CKRecordValue
         publicDB.save(petRecord){
-            (record,error) in
+            (petRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -50,7 +50,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
         rcd["microchipID"] = microchipID as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -62,7 +62,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
         rcd["name"] = name as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -74,7 +74,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
         rcd["type"] = type as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -86,7 +86,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
         rcd["race"] = race as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -98,7 +98,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
         rcd["birthDate"] = birthDate as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -115,7 +115,7 @@ class CloudManager{
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
         userRecord["userID"] = userID as? CKRecordValue
         publicDB.save(userRecord){
-            (record,error) in
+            (userRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -127,7 +127,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
         rcd["userID"] = userID as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -139,7 +139,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
         rcd["name"] = name as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -151,7 +151,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
         rcd["surname"] = surname as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -163,7 +163,7 @@ class CloudManager{
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
         rcd["phoneNumber"] = phoneNumber as CKRecordValue
         publicDB.save(rcd){
-            (record,error) in
+            (rcd,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -178,7 +178,7 @@ class CloudManager{
         let missingRecord = CKRecord(recordType: "Missing", recordID: missingID)
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(missingRecord){
-            (record,error) in
+            (missingRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -190,7 +190,7 @@ class CloudManager{
         let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(missingRecord){
-            (record,error) in
+            (missingRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -205,7 +205,7 @@ class CloudManager{
         coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
         coordinateRecord["position"] = location as CKRecordValue
         publicDB.save(coordinateRecord){
-            (record,error) in
+            (coordinateRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -217,7 +217,7 @@ class CloudManager{
         let coordRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
         coordRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(coordRecord){
-            (record,error) in
+            (coordRecord,error) in
             if error != nil{
                 print("DB ERROR")
                 return
@@ -230,7 +230,7 @@ class CloudManager{
         let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
         crdRecord["position"] = location as CKRecordValue
         publicDB.save(crdRecord){
-            (record,error) in
+            (crdRecord,error) in
             if error != nil{
                 print("DBERROR")
                 return
