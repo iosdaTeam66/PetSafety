@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate;
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
             if authorized {
-                application.registerForRemoteNotifications()
+                //risolto warning
+                DispatchQueue.main.async(execute: {
+                    application.registerForRemoteNotifications()
+                })
             }
         })
         
@@ -50,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Subscription saved successfully
             } else {
                 // An error occurred
+                print("Notifica: Error")
             }
         })
     }
