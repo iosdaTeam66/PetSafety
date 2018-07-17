@@ -24,18 +24,19 @@ import CoreLocation
  */
 
 class CloudManager{
-    
+
     static let publicDB = CKContainer.default().publicCloudDatabase
+
     
     //    Upload: Public Database -> Pets list
     static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate){
         let petID = CKRecordID(recordName: beaconID)
         let petRecord = CKRecord(recordType: "Pet", recordID: petID)
-        petRecord.setValue(microchipID, forKey: "microchipID")
-        petRecord.setValue(name, forKey: "name")
-        petRecord.setValue(type, forKey: "type")
-        petRecord.setValue(race, forKey: "race")
-        petRecord.setValue(birthDate, forKey: "birthDate")
+        petRecord["microchipID"] = microchipID as CKRecordValue
+        petRecord["name"] = name as CKRecordValue
+        petRecord["type"] = type as CKRecordValue
+        petRecord["race"] = race as CKRecordValue
+        petRecord["birthDate"] = birthDate as CKRecordValue
         publicDB.save(petRecord){
             (record,error) in
             if error != nil{
@@ -47,7 +48,7 @@ class CloudManager{
     
     static func storeMicrochipToPet(beaconID: String, microchipID: String){
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd.setValue(microchipID, forKey: "microchipID")
+        rcd["microchipID"] = microchipID as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -59,7 +60,7 @@ class CloudManager{
     
     static func storeNameToPet(beaconID: String, name: String){
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd.setValue(name, forKey: "name")
+        rcd["name"] = name as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -71,7 +72,7 @@ class CloudManager{
     
     static func storeTypeToPet(beaconID: String, type: String){
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd.setValue(type, forKey: "type")
+        rcd["type"] = type as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -83,7 +84,7 @@ class CloudManager{
     
     static func storeraceToPet(beaconID: String, race: String){
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd.setValue(race, forKey: "race")
+        rcd["race"] = race as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -95,7 +96,7 @@ class CloudManager{
     
     static func storeBirthDateToPet(beaconID: String, birthDate: String){
         let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd.setValue(birthDate, forKey: "birthDate")
+        rcd["birthDate"] = birthDate as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -109,10 +110,6 @@ class CloudManager{
     static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
         let userID = CKRecordID(recordName: emailAddress)
         let userRecord = CKRecord(recordType: "Users", recordID: userID)
-        /*userRecord.setValue(name, forKey: "name")
-        userRecord.setValue(surname, forKey: "surname")
-        userRecord.setValue(phoneNumber, forKey: "phoneNumber")
-        userRecord.setValue(userID, forKey: "userID")*/
         userRecord["name"] = name as CKRecordValue
         userRecord["surname"] = surname as CKRecordValue
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
@@ -128,7 +125,7 @@ class CloudManager{
     
     static func storeUserIDToUser(emailAddress: String, userID: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd.setValue(userID, forKey: "userID")
+        rcd["userID"] = userID as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -140,7 +137,7 @@ class CloudManager{
     
     static func storeNameToUser(emailAddress: String, name: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd.setValue(name, forKey: "name")
+        rcd["name"] = name as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -152,7 +149,7 @@ class CloudManager{
 
     static func storeSurnameToUser(emailAddress: String, surname: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd.setValue(surname, forKey: "surname")
+        rcd["surname"] = surname as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -164,7 +161,7 @@ class CloudManager{
     
     static func storePhoneNumberToUser(emailAddress: String, phoneNumber: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd.setValue(phoneNumber, forKey: "phoneNumber")
+        rcd["phoneNumber"] = phoneNumber as CKRecordValue
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
@@ -179,7 +176,7 @@ class CloudManager{
     static func upload(beaconID: String, emailAddress: String){
         let missingID = CKRecordID(recordName: beaconID)
         let missingRecord = CKRecord(recordType: "Missing", recordID: missingID)
-        missingRecord.setValue(emailAddress, forKey:"emailAddress")
+        missingRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(missingRecord){
             (record,error) in
             if error != nil{
@@ -191,7 +188,7 @@ class CloudManager{
     
     static func storeEmailToMissing(beaconID: String, emailAddress: String){
         let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
-        missingRecord.setValue(emailAddress, forKey:"emailAddress")
+        missingRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(missingRecord){
             (record,error) in
             if error != nil{
@@ -205,8 +202,8 @@ class CloudManager{
     static func upload(beaconID: String, emailAddress: String, location: CLLocation){
         let coordinateID = CKRecordID(recordName: beaconID)
         let coordinateRecord = CKRecord(recordType: "Coordinate", recordID: coordinateID)
-        coordinateRecord.setValue(emailAddress, forKey: "emailAddress")
-        coordinateRecord.setValue(location, forKey: "position")
+        coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
+        coordinateRecord["position"] = location as CKRecordValue
         publicDB.save(coordinateRecord){
             (record,error) in
             if error != nil{
@@ -218,7 +215,7 @@ class CloudManager{
     
     static func storeEmailToCoordinate(beaconID: String, emailAddress: String){
         let coordRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
-        coordRecord.setValue(emailAddress, forKey:"emailAddress")
+        coordRecord["emailAddress"] = emailAddress as CKRecordValue
         publicDB.save(coordRecord){
             (record,error) in
             if error != nil{
@@ -231,7 +228,7 @@ class CloudManager{
 
     static func storeLocationToCoordinate(beaconID: String, location: CLLocation){
         let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
-        crdRecord.setValue(location, forKey:"position")
+        crdRecord["position"] = location as CKRecordValue
         publicDB.save(crdRecord){
             (record,error) in
             if error != nil{
@@ -270,7 +267,7 @@ class CloudManager{
     }
     
     static func retrieveFromUser(emailAddress: String){
-        let query = CKQuery(recordType: "User", predicate: <#T##NSPredicate#>)
+        
     }
     
     static func retrieveFromPet(beaconID: String){
