@@ -8,18 +8,57 @@
 
 import UIKit
 import CoreData
+import CloudKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+   
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //ask the user for permission to show notifications
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate;
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
+            if authorized {
+                application.registerForRemoteNotifications()
+            }
+        })
+        
+        
+        
         return true
     }
-
+    
+    //subscription
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //notification on new record of coordinate
+        let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "TRUEPREDICATE"), options: .firesOnRecordCreation)
+        
+        let info = CKNotificationInfo()
+        info.alertBody = "nuova posizione cane.."
+        info.shouldBadge = true
+        info.soundName = "default"
+        
+        subscription.notificationInfo = info
+        
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
+            if error == nil {
+                // Subscription saved successfully
+            } else {
+                // An error occurred
+            }
+        })
+    }
+    
+//UserNotifications framework to show your notification as if your app wasn't running at all
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
