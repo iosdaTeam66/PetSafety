@@ -14,9 +14,9 @@ import CoreLocation
  Sintassi utilizzata:
  
     upload(<generic>)                           Store di un oggetto completo
-    storeTo(<ID>, <param>)                        Store di un determinato valore associato ad un oggetto, riconosciuto mediante ID
+    storeTo<recordType>(<ID>, <param>)                        Store di un determinato valore associato ad un oggetto, riconosciuto mediante ID
     download(<recordType>, <ID>)            Obtain di un oggetto completo
-    retrieveForm(<recordType>, <ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
+    retrieveForm<recordName>(<ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
  
  Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
  Nota bene: L'handler viene gestito a parte
@@ -245,4 +245,19 @@ class CloudManager{
 //        publicDB.fetch(CKRecordID(recordName: emailAddress): CKRecordID, completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
     }
     
+    static func retrieveFromUser(emailAddress: String){
+        
+    }
+    
+    static func retrieveFromPet(beaconID: String){
+        
+    }
+    
+    static func retrieveFromMissingList(beaconID: String){
+        
+    }
+    
+    static func retrieveFromCoordinate(beaconID: String){
+        
+    }
 }
