@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-   
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // mette a zero le notifiche quando apri la notifica
@@ -44,28 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         
-        
-        
         return true
     }
     
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-       
-//        let predicate = NSPredicate(format: <#T##String#>, <#T##args: CVarArg...##CVarArg#>)
         
         //notification on new record of coordinate
         let subscription = CKQuerySubscription(recordType: "Coordinate",
-                                               predicate: NSPredicate(format: "beaconID = 42"), options: .firesOnRecordUpdate)
-        
-        print("subscription: \(subscription.predicate)")
-        
-        
-        let predicate = NSPredicate(format: "beaconID = 42")
-        let query = CKQuery(recordType: "Coordinate", predicate: predicate)
-        let prova = CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { records, error in }
+                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID","42"]), options: .firesOnRecordCreation)
 
-        print("prova: \(prova)")
+        print("subscription: \(subscription.predicate)")
         
         let info = CKNotificationInfo()
         info.alertBody = "nuova posizione cane.."
