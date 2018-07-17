@@ -19,15 +19,13 @@ import CoreLocation
     retrieveForm(<recordType>, <ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
  
  Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
- Nota bene: L'handler viene gestito a parte 
+ Nota bene: L'handler viene gestito a parte
  Suggerimento: Usare sempre upload per l'invio, di modo che si scriva una sola volta tutti i dati
  */
 
 class CloudManager{
     
     static let publicDB = CKContainer.default().publicCloudDatabase
-    
-//    static let privateDB = CKContainer.default().privateCloudDatabase
     
     //    Upload: Public Database -> Pets list
     static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate){
@@ -38,15 +36,10 @@ class CloudManager{
         petRecord.setValue(type, forKey: "type")
         petRecord.setValue(race, forKey: "race")
         petRecord.setValue(birthDate, forKey: "birthDate")
- /*     petRecord["birthDate"] = birthDate as CKRecordValue
-        petRecord["microchipID"] = microchipID as CKRecordValue
-        petRecord["name"] = name as CKRecordValue
-        petRecord["race"] = race as CKRecordValue
-        petRecord["type"] = type as CKRecordValue*/
         publicDB.save(petRecord){
             (record,error) in
             if error != nil{
-//                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -58,7 +51,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -70,7 +63,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -82,7 +75,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -94,7 +87,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -106,7 +99,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -127,7 +120,7 @@ class CloudManager{
         publicDB.save(userRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -139,7 +132,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -151,7 +144,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -163,7 +156,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -175,7 +168,7 @@ class CloudManager{
         publicDB.save(rcd){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -190,7 +183,7 @@ class CloudManager{
         publicDB.save(missingRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -202,7 +195,7 @@ class CloudManager{
         publicDB.save(missingRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -217,7 +210,7 @@ class CloudManager{
         publicDB.save(coordinateRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -229,7 +222,7 @@ class CloudManager{
         publicDB.save(coordRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
@@ -241,13 +234,15 @@ class CloudManager{
         publicDB.save(crdRecord){
             (record,error) in
             if error != nil{
-                //                handling not configured
+                print("DB ERROR")
                 return
             }
         }
     }
     
     static func download(emailAddress: String){
-        
+//        let withRecordID =
+//        publicDB.fetch(CKRecordID(recordName: emailAddress): CKRecordID, completionHandler: <#T##(CKRecord?, Error?) -> Void#>)
     }
+    
 }
