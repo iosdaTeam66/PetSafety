@@ -157,13 +157,48 @@ class CloudManager{
         }
     }
 
+    static func storeSurnameToUser(emailAddress: String, surname: String){
+        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
+        rcd.setValue(surname, forKey: "surname")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storePhoneNumberToUser(emailAddress: String, phoneNumber: String){
+        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
+        rcd.setValue(phoneNumber, forKey: "phoneNumber")
+        publicDB.save(rcd){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
     //    Upload: Public Database -> Missing list
-    static func upload(emailAddress: String, beaconID: String){
+    //    La chiave primaria qui è il beaconID
+    static func upload(beaconID: String, emailAddress: String){
         let missingID = CKRecordID(recordName: beaconID)
         let missingRecord = CKRecord(recordType: "Missing", recordID: missingID)
         missingRecord.setValue(emailAddress, forKey:"emailAddress")
-//        missingRecord["emailAddress"] = emailAddress as CKRecordValue
-//        missingRecord["missing_data"] = oggetto date-time -> current timestamp
+        publicDB.save(missingRecord){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeEmailToMissing(beaconID: String, emailAddress: String){
+        let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
+        missingRecord.setValue(emailAddress, forKey:"emailAddress")
         publicDB.save(missingRecord){
             (record,error) in
             if error != nil{
