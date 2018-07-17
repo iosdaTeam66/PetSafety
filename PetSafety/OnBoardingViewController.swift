@@ -38,7 +38,7 @@ class OnBoardingViewController: UIViewController {
         swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
         view.addSubview(swiftyOnboard)
         swiftyOnboard.dataSource = self
-        swiftyOnboard.delegate = self
+        swiftyOnboard.delegate = self        
     }
     
     func gradient() {
