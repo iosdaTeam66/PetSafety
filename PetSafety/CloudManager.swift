@@ -19,7 +19,7 @@ import CoreLocation
     retrieveForm(<recordType>, <ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
  
  Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
- 
+ Nota bene: L'handler viene gestito a parte 
  Suggerimento: Usare sempre upload per l'invio, di modo che si scriva una sola volta tutti i dati
  */
 
