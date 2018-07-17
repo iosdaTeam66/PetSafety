@@ -114,7 +114,7 @@ class CloudManager{
         userRecord["name"] = name as CKRecordValue
         userRecord["surname"] = surname as CKRecordValue
         userRecord["phoneNumber"] = phoneNumber as CKRecordValue
-        userRecord["userID"] = userID as CKRecordValue
+        userRecord["UserID"] = userID as CKRecordValue
         print(userRecord)
         publicDB.save(userRecord){
             (userRecord,error) in
