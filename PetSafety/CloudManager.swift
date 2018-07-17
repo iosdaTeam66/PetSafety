@@ -213,11 +213,32 @@ class CloudManager{
         let coordinateID = CKRecordID(recordName: beaconID)
         let coordinateRecord = CKRecord(recordType: "Coordinate", recordID: coordinateID)
         coordinateRecord.setValue(emailAddress, forKey: "emailAddress")
-//        coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
         coordinateRecord.setValue(location, forKey: "position")
-//        coordinateRecord["position"] = location as CKRecordValue
-        //        missingRecord["missing_data"] = oggetto date-time -> current timestamp
         publicDB.save(coordinateRecord){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeEmailToCoordinate(beaconID: String, emailAddress: String){
+        let coordRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
+        coordRecord.setValue(emailAddress, forKey:"emailAddress")
+        publicDB.save(coordRecord){
+            (record,error) in
+            if error != nil{
+                //                handling not configured
+                return
+            }
+        }
+    }
+    
+    static func storeLocationToCoordinate(beaconID: String, location: CLLocation){
+        let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
+        crdRecord.setValue(location, forKey:"position")
+        publicDB.save(crdRecord){
             (record,error) in
             if error != nil{
                 //                handling not configured
