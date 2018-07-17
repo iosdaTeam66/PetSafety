@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         //notification on new record of coordinate
         let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "TRUEPREDICATE"), options: .firesOnRecordCreation)
         
@@ -45,12 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         info.alertBody = "nuova posizione cane.."
         info.shouldBadge = true
         info.soundName = "default"
+        print ("\(subscription)")
+        print("ciao2")
         
         subscription.notificationInfo = info
-        
+        print ("ciao 3 \(subscription.querySubscriptionOptions)")
         CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
             if error == nil {
                 // Subscription saved successfully
+                    print ("ciao")
             } else {
                 // An error occurred
                 print("Notifica: Error")
@@ -61,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //UserNotifications framework to show your notification as if your app wasn't running at all
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
+        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
