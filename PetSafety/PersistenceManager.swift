@@ -23,7 +23,6 @@ class PersistenceManager {
         let pets = fetchData()
         let index = pets.count-1
         pPet.order = Int16(index)
-        
         return pPet
     }
     
@@ -67,8 +66,8 @@ class PersistenceManager {
             try context.save()
         } catch let error as NSError {
             print("Errore in salvataggio \(error.code)")
-
         }
+        
     }
     
     static func deletePet(pet: PPet) {
