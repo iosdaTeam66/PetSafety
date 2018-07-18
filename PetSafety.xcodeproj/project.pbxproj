@@ -267,7 +267,6 @@
 				02B1D1D420F8BD16005BA296 /* PUser+CoreDataClass.swift */,
 				70FED89420F4A56D00C9258D /* AppDelegate.swift */,
 				70FED89620F4A56D00C9258D /* ViewController.swift */,
-				70FED89820F4A56D00C9258D /* Main.storyboard */,
 				70FED89E20F4A56E00C9258D /* Assets.xcassets */,
 				70FED8A320F4A56E00C9258D /* Info.plist */,
 				70FED89B20F4A56D00C9258D /* PetSafety.xcdatamodeld */,
@@ -294,6 +293,7 @@
 				BB53E84A20FC97CB00DA1B30 /* MapController.swift */,
 				BB53E84C20FC987600DA1B30 /* StoreMap.swift */,
 				D146EFB420FCDBB700D6FE89 /* CloudManager.swift */,
+				70FED89820F4A56D00C9258D /* Main.storyboard */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -795,8 +795,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
-				PROVISIONING_PROFILE_SPECIFIER = petsafety;
+				PROVISIONING_PROFILE = "b2b66a94-97fa-4f08-82f0-dc1df0cf7b52";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety_d1;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -817,8 +817,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "it.unisa.team6-6.PetSafety";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "61abc26a-466b-4bb6-a950-f0f356e0f439";
-				PROVISIONING_PROFILE_SPECIFIER = petsafety;
+				PROVISIONING_PROFILE = "b2b66a94-97fa-4f08-82f0-dc1df0cf7b52";
+				PROVISIONING_PROFILE_SPECIFIER = petsafety_d1;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

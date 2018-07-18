@@ -10,12 +10,10 @@ import UIKit
 
 class MyPetListCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var switchMissing: UISwitch!
     @IBOutlet weak var labelRazza: UILabel!
     @IBOutlet weak var labelNome: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var cntView: UIView!
-    @IBOutlet weak var button: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,12 +29,4 @@ class MyPetListCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    @IBAction func switchMissing(_ sender: UISwitch) {
-       print("Lo switch con tag \(sender.tag) è \(sender.isOn)")
-    }
-    
-    
-    @IBAction func buttonClicked(_ sender: UIButton) {
-        print("Il bottone con tag \(sender.tag) è stato cliccato")
-    }
 }

@@ -12,6 +12,8 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var switchMissing: UISwitch!
+    @IBOutlet weak var buttonMap: UIButton!
     
     var petPList: [PPet]?
     
@@ -23,7 +25,7 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         petPList = PersistenceManager.fetchData()
         
         let layout = UPCarouselFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 90.0, height: collectionView.frame.size.height - 90)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: collectionView.frame.size.height - 50)
 
         layout.scrollDirection = .horizontal
         layout.sideItemAlpha = 1.0
@@ -82,9 +84,6 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.image.image = photo
         }
         
-        cell.switchMissing.tag = indexPath.row
-        cell.button.tag = indexPath.row
-        
         return cell
     }
     
@@ -105,6 +104,7 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         didSet {
 //            print("page at centre = \(currentPage)")
             pageControl.currentPage = currentPage
+//   aspetto campo in ppet         switchMissing.isOn = petPList![currentPage].
         }
     }
     
@@ -117,5 +117,14 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
             pageSize.height += layout.minimumLineSpacing
         }
         return pageSize
+    }
+    
+    
+    @IBAction func clickSwitchMissing(_ sender: UISwitch) {
+        if sender.isOn {
+// azione quando si attiva
+        } else {
+//   azione quando si spegne
+        }
     }
 }

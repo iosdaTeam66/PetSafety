@@ -48,7 +48,6 @@ class PetsController: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
-        self.navigationController?.setToolbarHidden(true, animated: animated)
         PersistenceManager.saveContext()
     }
     // MARK: - Table view data source
