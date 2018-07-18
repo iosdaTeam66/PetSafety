@@ -35,35 +35,17 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-lN-9vX">
-                                        <rect key="frame" x="30" y="239.5" width="200" height="20.5"/>
+                                        <rect key="frame" x="30" y="274.5" width="200" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-kP-tFv">
-                                        <rect key="frame" x="30" y="299" width="200" height="20.5"/>
+                                        <rect key="frame" x="30" y="369.5" width="200" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="bottom" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="AvR-Fp-JMa">
-                                        <rect key="frame" x="47.5" y="359" width="165" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fb-Wt-rcG">
-                                                <rect key="frame" x="0.0" y="1" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="buttonClicked:" destination="UTG-qH-y2c" eventType="touchUpInside" id="E2i-1c-Led"/>
-                                                </connections>
-                                            </button>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-P3-PjY">
-                                                <rect key="frame" x="116" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="switchMissing:" destination="UTG-qH-y2c" eventType="valueChanged" id="jeE-pF-RB4"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aTD-kP-tFv" firstAttribute="width" secondItem="FWl-AP-6xe" secondAttribute="width" id="VAa-7t-yiK"/>
@@ -71,7 +53,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Dhy-om-LP7" secondAttribute="trailing" constant="10" id="RI2-0L-3G6"/>
                             <constraint firstAttribute="bottom" secondItem="Dhy-om-LP7" secondAttribute="bottom" constant="20" id="lir-yz-bMd"/>
@@ -90,12 +72,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="zHg-xg-LDQ"/>
             <connections>
-                <outlet property="button" destination="4Fb-Wt-rcG" id="NEF-8u-XiK"/>
                 <outlet property="cntView" destination="uSk-Qw-MgV" id="tjz-th-WH7"/>
                 <outlet property="image" destination="FWl-AP-6xe" id="L0O-Mr-cuf"/>
                 <outlet property="labelNome" destination="Pm9-lN-9vX" id="yhe-IW-gFh"/>
                 <outlet property="labelRazza" destination="aTD-kP-tFv" id="zqB-Hk-KWD"/>
-                <outlet property="switchMissing" destination="Odw-P3-PjY" id="b4K-U0-c1F"/>
             </connections>
             <point key="canvasLocation" x="161" y="-180"/>
         </collectionViewCell>

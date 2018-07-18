@@ -17,6 +17,7 @@ class Pet: NSObject {
     var microchipID: String
     var beaconUUID: String
     let petImageKey: String
+//    da aggiungere campo bool isMissing
     
     init(name: String, race: String, type: String, photo: String, birthDate: Date, microchipID: String, beaconUUID: String) {
         self.name = name

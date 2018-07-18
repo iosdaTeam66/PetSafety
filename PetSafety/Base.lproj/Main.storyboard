@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRo-yM-NhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521.7391304347827" y="31.793478260869566"/>
+            <point key="canvasLocation" x="1175" y="31"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476.811594202899" y="31.793478260869566"/>
+            <point key="canvasLocation" x="1889" y="31"/>
         </scene>
         <!--Utente-->
         <scene sceneID="hmE-tY-5W9">
@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gv5-sn-Yrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.92753623188412" y="31.793478260869566"/>
+            <point key="canvasLocation" x="609" y="31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fyu-uA-b53">
@@ -142,8 +142,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-uC-8yH">
-                                <rect key="frame" x="0.0" y="70" width="414" height="517"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.4823529411764706" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="70" width="414" height="467"/>
+                                <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wI6-vZ-AAY">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -162,18 +162,39 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-IB-K41">
-                                <rect key="frame" x="188" y="587" width="39" height="37"/>
+                                <rect key="frame" x="188" y="537" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AdT-IB-K41" secondAttribute="height" multiplier="39:37" id="9M5-kw-ylH"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-Op-Txg">
+                                <rect key="frame" x="90.333333333333314" y="584" width="234" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-Hr-q9h">
+                                        <rect key="frame" x="0.3333333333333286" y="1" width="85" height="30"/>
+                                        <state key="normal" title="Find on Map"/>
+                                        <connections>
+                                            <segue destination="sw7-eo-SHb" kind="show" id="BJ2-0h-VVI"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-bp-G2j">
+                                        <rect key="frame" x="185.33333333333331" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="clickSwitchMissing:" destination="2d6-BT-mLk" eventType="valueChanged" id="6bl-AW-a8o"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80000000000000004" green="0.4823529411764706" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="IQc-wr-60g" firstAttribute="bottom" secondItem="XkG-uC-8yH" secondAttribute="bottom" constant="100" id="G5U-Br-UdL"/>
+                            <constraint firstItem="IQc-wr-60g" firstAttribute="bottom" secondItem="XkG-uC-8yH" secondAttribute="bottom" constant="150" id="G5U-Br-UdL"/>
                             <constraint firstItem="AdT-IB-K41" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="VVU-lu-Lpc"/>
+                            <constraint firstItem="VYn-Op-Txg" firstAttribute="top" secondItem="AdT-IB-K41" secondAttribute="bottom" constant="10" id="ZlC-Dd-FZ0"/>
+                            <constraint firstItem="VYn-Op-Txg" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="bUY-9n-Laf"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="leading" secondItem="IQc-wr-60g" secondAttribute="leading" id="f6j-UI-PHg"/>
                             <constraint firstItem="AdT-IB-K41" firstAttribute="top" secondItem="XkG-uC-8yH" secondAttribute="bottom" id="fs8-et-M3H"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="top" secondItem="IQc-wr-60g" secondAttribute="top" constant="50" id="gQW-UC-mh9"/>
@@ -183,13 +204,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="TRK-Cg-cNc"/>
                     <connections>
+                        <outlet property="buttonMap" destination="UBS-Hr-q9h" id="D0n-o0-Ask"/>
                         <outlet property="collectionView" destination="XkG-uC-8yH" id="n00-1K-vTi"/>
                         <outlet property="pageControl" destination="AdT-IB-K41" id="KTo-rR-xEm"/>
+                        <outlet property="switchMissing" destination="Oll-bp-G2j" id="04b-MD-y5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggD-Py-elO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-413.04347826086962" y="797.28260869565224"/>
+            <point key="canvasLocation" x="-432" y="893"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="D2j-iQ-PoL">
@@ -255,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npq-xr-1iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.92753623188412" y="797.28260869565224"/>
+            <point key="canvasLocation" x="609" y="893"/>
         </scene>
         <!--Beacon Search-->
         <scene sceneID="GIH-jf-QBL">
@@ -283,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-Px-ZMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-413" y="1703"/>
+            <point key="canvasLocation" x="-432" y="1807"/>
         </scene>
         <!--PetsFound-->
         <scene sceneID="caJ-Q6-fC8">
@@ -298,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yE0-ef-8gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="1703"/>
+            <point key="canvasLocation" x="254" y="1807"/>
         </scene>
         <!--On Boarding View Controller-->
         <scene sceneID="FRQ-L1-Cwq">
@@ -324,6 +347,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Dul-e0-69K" kind="relationship" relationship="viewControllers" id="nR1-MJ-XIt"/>
@@ -333,7 +361,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOe-BZ-o6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1891" y="1150"/>
+            <point key="canvasLocation" x="-1745" y="893"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
