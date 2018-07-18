@@ -422,16 +422,16 @@
             </objects>
             <point key="canvasLocation" x="-433.33333333333337" y="1806.521739130435"/>
         </scene>
-        <!--Pets Controller-->
+        <!--Found Pet View Controller-->
         <scene sceneID="t41-iV-Sux">
             <objects>
-                <tableViewController id="xhP-As-cem" customClass="PetsController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xhP-As-cem" customClass="FoundPetViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZ0-o0-CtJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petEditCell" rowHeight="70" id="ztd-9M-Def" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="70" id="ztd-9M-Def" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ztd-9M-Def" id="GRv-z2-hnT" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
@@ -462,6 +462,7 @@
                                     <outlet property="lblCellName" destination="VCU-5M-wJW" id="W2o-ME-hOT"/>
                                     <outlet property="lblCellRace" destination="ARM-x9-Y3C" id="Srg-BL-YaU"/>
                                     <outlet property="petThumb" destination="BrS-o7-UzJ" id="x7f-jp-piZ"/>
+                                    <segue destination="ngF-pD-KKT" kind="show" identifier="segueInfoFoundPet" id="qvk-8y-tWs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -485,6 +486,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3T-u1-iWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1807"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="k7b-el-tfH">
+            <objects>
+                <viewController id="ngF-pD-KKT" customClass="ViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zdy-Ai-AnB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="MjP-hw-xeE"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="MSk-EK-Sgp"/>
+                        <barButtonItem title="Register" id="saL-Pq-QwJ">
+                            <connections>
+                                <action selector="Register:" destination="ngF-pD-KKT" id="3nY-Xm-v5t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vPL-TS-0GB"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeT-rD-obq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="1807"/>
         </scene>
     </scenes>
     <resources>

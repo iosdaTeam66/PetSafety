@@ -300,9 +300,18 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
             case "segueFoundPet":
+            
+                var p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
+                var p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
+                
+                var petlist: [Pet] = []
+                petlist.append(p)
+                petlist.append(p2)
+                petlist.append(p)
                 
                 let dstView = segue.destination as! FoundPetViewController
-            
+                dstView.arrayPet = petlist
+                
                 for _ in 0..<foundID.count {
 //                    chiamate al server una per id
                 }

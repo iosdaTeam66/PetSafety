@@ -287,7 +287,6 @@
 				BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */,
 				BBD719BD20F7984700EC6935 /* MyPetListViewController.swift */,
 				BBD719BF20F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift */,
-				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				BB50EF2520F8F75A00B15A45 /* PetLost.swift */,
 				BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */,
 				BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */,
@@ -295,6 +294,7 @@
 				BB53E84A20FC97CB00DA1B30 /* MapController.swift */,
 				BB53E84C20FC987600DA1B30 /* StoreMap.swift */,
 				D146EFB420FCDBB700D6FE89 /* CloudManager.swift */,
+				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				70FED89820F4A56D00C9258D /* Main.storyboard */,
 				704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */,
 			);

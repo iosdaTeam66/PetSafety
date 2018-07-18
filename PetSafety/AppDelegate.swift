@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("ERRORE AZZERAMENTO NOTIFICHE: \(error)")
                 return
             }
-            application.applicationIconBadgeNumber = 0
+            
         }
         CKContainer.default().add(operation)
         
@@ -37,7 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if authorized {
                 //risolto warning
                 
-                application.registerForRemoteNotifications()
+                DispatchQueue.main.async(execute: {
+                    application.applicationIconBadgeNumber = 0
+                    application.registerForRemoteNotifications()
+                })
+                
+                
                 
             }
         })
@@ -53,7 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //prende cani da core data
         var cani: [PPet] = PersistenceManager.fetchData()
         
-        print(cani)
+        for i in 0..<cani.count {
+            print("CANE: \(cani[i].name)")
+        }
         
         for i in 0..<cani.count  {
             
