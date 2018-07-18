@@ -21,7 +21,7 @@ class ViewController: FormViewController {
     @IBAction func Register(_ sender: UIBarButtonItem) {
         let pUser = PersistenceManager.fetchDataUser()
         print (pUser.count)
-        CloudManager.upload(beaconID: pPet.beaconid!, microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
+        CloudManager.insert(beaconID: pPet.beaconid!, microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
     }
     
     override func viewDidLoad() {
