@@ -11,46 +11,50 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UTG-qH-y2c" customClass="MyPetListCollectionViewCell" customModule="PetSafety" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="455"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="455"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSk-Qw-MgV">
-                        <rect key="frame" x="10" y="10" width="280" height="430"/>
+                        <rect key="frame" x="30" y="10" width="283" height="435"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="redraw" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dhy-om-LP7">
-                                <rect key="frame" x="10" y="20" width="260" height="390"/>
+                                <rect key="frame" x="10" y="20" width="263" height="395"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-AP-6xe">
-                                        <rect key="frame" x="30" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="6.5" y="0.0" width="250" height="250"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="HGU-LQ-luB"/>
-                                            <constraint firstAttribute="height" constant="200" id="fcr-5a-H1M"/>
+                                            <constraint firstAttribute="width" constant="250" id="HGU-LQ-luB"/>
+                                            <constraint firstAttribute="height" constant="250" id="fcr-5a-H1M"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-lN-9vX">
-                                        <rect key="frame" x="30" y="274.5" width="200" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-lN-9vX">
+                                        <rect key="frame" x="108.5" y="301" width="46.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-kP-tFv">
-                                        <rect key="frame" x="30" y="369.5" width="200" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTD-kP-tFv">
+                                        <rect key="frame" x="111" y="373.5" width="41.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="aTD-kP-tFv" firstAttribute="width" secondItem="FWl-AP-6xe" secondAttribute="width" id="VAa-7t-yiK"/>
-                                    <constraint firstItem="Pm9-lN-9vX" firstAttribute="width" secondItem="FWl-AP-6xe" secondAttribute="width" id="qK5-5E-tuz"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,20 +68,21 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="uSk-Qw-MgV" firstAttribute="top" secondItem="UTG-qH-y2c" secondAttribute="topMargin" constant="10" id="Sxc-dL-VMp"/>
+                <constraint firstItem="uSk-Qw-MgV" firstAttribute="top" secondItem="UTG-qH-y2c" secondAttribute="top" constant="10" id="CvT-Je-Bpm"/>
                 <constraint firstItem="uSk-Qw-MgV" firstAttribute="centerX" secondItem="UTG-qH-y2c" secondAttribute="centerX" id="TTR-2t-eHb"/>
                 <constraint firstItem="uSk-Qw-MgV" firstAttribute="centerY" secondItem="UTG-qH-y2c" secondAttribute="centerY" id="TVR-0f-J80"/>
                 <constraint firstItem="uSk-Qw-MgV" firstAttribute="width" secondItem="zHg-xg-LDQ" secondAttribute="height" multiplier="28:45" id="U0v-K6-nII"/>
                 <constraint firstAttribute="bottomMargin" secondItem="uSk-Qw-MgV" secondAttribute="bottom" constant="10" id="xOZ-Vo-pcW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zHg-xg-LDQ"/>
+            <size key="customSize" width="343" height="455"/>
             <connections>
                 <outlet property="cntView" destination="uSk-Qw-MgV" id="tjz-th-WH7"/>
                 <outlet property="image" destination="FWl-AP-6xe" id="L0O-Mr-cuf"/>
                 <outlet property="labelNome" destination="Pm9-lN-9vX" id="yhe-IW-gFh"/>
                 <outlet property="labelRazza" destination="aTD-kP-tFv" id="zqB-Hk-KWD"/>
             </connections>
-            <point key="canvasLocation" x="161" y="-180"/>
+            <point key="canvasLocation" x="182.5" y="-177.5"/>
         </collectionViewCell>
     </objects>
 </document>
