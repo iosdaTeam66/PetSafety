@@ -18,6 +18,12 @@ class ViewController: FormViewController {
     // initially set the format based on your datepicker date / server String
     var image: UIImageView!
     
+    @IBAction func Register(_ sender: UIBarButtonItem) {
+        let pUser = PersistenceManager.fetchDataUser()
+        print (pUser.count)
+        CloudManager.upload(beaconID: pPet.beaconid!, microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -312,6 +318,11 @@ class ViewController: FormViewController {
         pPet.beaconid = valueBeaconID ?? ""
         
         PersistenceManager.saveContext()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: animated)
     }
     
 

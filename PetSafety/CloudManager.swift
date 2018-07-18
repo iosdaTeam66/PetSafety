@@ -49,7 +49,7 @@ class CloudManager{
     }
     
     //    Upload: Public Database -> Pets list
-    static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate){
+    static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
         let petRecord = CKRecord(recordType: "Pet")
         petRecord["beaconID"] = beaconID as CKRecordValue
         petRecord["microchipID"] = microchipID as CKRecordValue
@@ -57,6 +57,7 @@ class CloudManager{
         petRecord["type"] = type as CKRecordValue
         petRecord["race"] = race as CKRecordValue
         petRecord["birthDate"] = birthDate as CKRecordValue
+        petRecord["ownerID"] = ownerID as CKRecordValue
         publicDB.save(petRecord){
             (petRecord,error) in
             if error != nil{
