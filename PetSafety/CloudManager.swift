@@ -13,10 +13,10 @@ import CoreLocation
 /*
  Sintassi utilizzata:
  
-    upload(<generic>)                           Store di un oggetto completo
-    storeTo<recordType>(<ID>, <param>)                        Store di un determinato valore associato ad un oggetto, riconosciuto mediante ID
-    download(<recordType>, <ID>)            Obtain di un oggetto completo
-    retrieveForm<recordName>(<ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
+ upload(<generic>)                           Store di un oggetto completo
+ storeTo<recordType>(<ID>, <param>)                        Store di un determinato valore associato ad un oggetto, riconosciuto mediante ID
+ download(<recordType>, <ID>)            Obtain di un oggetto completo
+ retrieveForm<recordName>(<ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
  
  Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
  Nota bene: L'handler viene gestito a parte
@@ -24,12 +24,12 @@ import CoreLocation
  */
 
 class CloudManager{
-
+    
     static let publicDB = CKContainer.default().publicCloudDatabase
-
+    
     
     //    Upload: Public Database -> Owners list
-    static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
+    static func insert(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
         let userRecord = CKRecord(recordType: "Owners")
         print(userRecord.recordID)
         print(userRecord.allKeys())
@@ -49,7 +49,7 @@ class CloudManager{
     }
     
     //    Upload: Public Database -> Pets list
-    static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
+    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
         let petRecord = CKRecord(recordType: "Pet")
         petRecord["beaconID"] = beaconID as CKRecordValue
         petRecord["microchipID"] = microchipID as CKRecordValue
@@ -69,7 +69,7 @@ class CloudManager{
     
     //    Upload: Public Database -> Missing list
     //    La chiave primaria qui è il beaconID
-    static func upload(beaconID: String, emailAddress: String){
+    static func insert(beaconID: String, emailAddress: String){
         let missingRecord = CKRecord(recordType: "Missing")
         missingRecord["beaconID"] = beaconID as CKRecordValue
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
@@ -81,9 +81,9 @@ class CloudManager{
             }
         }
     }
-
+    
     //    Upload: Public Database -> Coordinate list
-    static func upload(beaconID: String, emailAddress: String, location: CLLocation){
+    static func insert(beaconID: String, emailAddress: String, location: CLLocation){
         let coordinateRecord = CKRecord(recordType: "Coordinate")
         coordinateRecord["beaconID"] = beaconID as CKRecordValue
         coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
@@ -97,8 +97,37 @@ class CloudManager{
         }
     }
     
-// Le funzioni store sono da rivedere, devono individuare un elemento e inserire i dati attinenti
-    
+    static func select(userIDValue: String){
+        let pred = NSPredicate(format: "UserID == \"Pippo\"")
+        print(pred)
+        let userQuery = CKQuery(recordType: "Owners", predicate: pred)
+        print(userQuery)
+        print("\n\n\nEseguo la query\n\n")
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for entry in results! {
+                            let userID = entry["userID"] as? String
+                            print("UPC from CloudKit \(String(describing: userID))")
+                            
+                            let name = entry["name"] as? String
+                            print("Name from CloudKit \(String(describing: name))")
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("UPC Not Found")
+                    }
+                }
+            }
+        }))
+    }
     
     static func storeMicrochipToPet(beaconID: String, microchipID: String){
         let rcd = CKRecord(recordType: "Pet")
@@ -159,8 +188,8 @@ class CloudManager{
             }
         }
     }
-
-
+    
+    
     
     static func storeUserIDToUser(emailAddress: String, userID: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
@@ -185,7 +214,7 @@ class CloudManager{
             }
         }
     }
-
+    
     static func storeSurnameToUser(emailAddress: String, surname: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
         rcd["surname"] = surname as CKRecordValue
@@ -210,7 +239,7 @@ class CloudManager{
         }
     }
     
-
+    
     
     static func storeEmailToMissing(beaconID: String, emailAddress: String){
         let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
@@ -237,7 +266,7 @@ class CloudManager{
         }
     }
     
-
+    
     static func storeLocationToCoordinate(beaconID: String, location: CLLocation){
         let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
         crdRecord["position"] = location as CKRecordValue

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("ERRORE AZZERAMENTO NOTIFICHE: \(error)")
                 return
             }
-            application.applicationIconBadgeNumber = 0
+            
         }
         CKContainer.default().add(operation)
         
@@ -37,8 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if authorized {
                 //risolto warning
                 
-                application.registerForRemoteNotifications()
-                
+                DispatchQueue.main.async(execute: {
+                    application.applicationIconBadgeNumber = 0
+                    application.registerForRemoteNotifications()
+                })
             }
         })
         
@@ -53,7 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //prende cani da core data
         var cani: [PPet] = PersistenceManager.fetchData()
         
-        print(cani)
+        for i in 0..<cani.count {
+            print("CANE: \(cani[i].name)")
+        }
         
         for i in 0..<cani.count  {
             
@@ -97,10 +101,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        application.applicationIconBadgeNumber = 0
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        application.applicationIconBadgeNumber = 0
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

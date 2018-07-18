@@ -10,6 +10,7 @@ import UIKit
 
 class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var labelNoPet: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var switchMissing: UISwitch!
@@ -23,6 +24,16 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.register(UINib.init(nibName: "MyPetListCollectionViewCell",bundle: nil), forCellWithReuseIdentifier: "MyPetListID")
         
         petPList = PersistenceManager.fetchData()
+        
+        if(petPList?.count == 0){
+            labelNoPet.isHidden = false
+            switchMissing.isHidden = true
+            buttonMap.isHidden = true
+        } else {
+            labelNoPet.isHidden = true
+            switchMissing.isHidden = false
+            buttonMap.isHidden = false
+        }
         
         let layout = UPCarouselFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: collectionView.frame.size.height - 50)
@@ -45,6 +56,16 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillAppear(animated)
         petPList = PersistenceManager.fetchData()
         collectionView.reloadData()
+        
+        if(petPList?.count == 0){
+            labelNoPet.isHidden = false
+            switchMissing.isHidden = true
+            buttonMap.isHidden = true
+        } else {
+            labelNoPet.isHidden = true
+            switchMissing.isHidden = false
+            buttonMap.isHidden = false
+        }
         
     }
     

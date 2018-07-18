@@ -158,7 +158,6 @@ class PetsController: UITableViewController {
             
             dstView.pPet = currentPet
             
-            
         default: print(#function)
             
         }

@@ -42,6 +42,7 @@
 		02EEC5FE20F6692F001AE51A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEC5FD20F6692F001AE51A /* User.swift */; };
 		10420CA25D9406CE973B1A4E /* Pods_PetSafetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D78D66368594BE25373247 /* Pods_PetSafetyTests.framework */; };
 		6816973049B172E0098E81EB /* Pods_PetSafety.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D581E9A483A07CEFDC22D9 /* Pods_PetSafety.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		704EA6EA20FF8927000B1DBB /* FoundPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */; };
 		7052152B20FCB2E80022DE36 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7052152A20FCB2E80022DE36 /* MyTabBarController.swift */; };
 		70F8869F20F4A61100D09EE4 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8869E20F4A61100D09EE4 /* Pet.swift */; };
 		70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FED89420F4A56D00C9258D /* AppDelegate.swift */; };
@@ -124,6 +125,7 @@
 		02EEC5FD20F6692F001AE51A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		304220CE20082BFA6712549C /* Pods-PetSafetyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA0B87D1A9D8D7639AD23EF /* Pods_PetSafetyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafetyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundPetViewController.swift; sourceTree = "<group>"; };
 		7052152A20FCB2E80022DE36 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		70F8869E20F4A61100D09EE4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		70FED89120F4A56D00C9258D /* PetSafety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSafety.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,7 +287,6 @@
 				BBD719BA20F7981F00EC6935 /* MyPetListCollectionViewCell.xib */,
 				BBD719BD20F7984700EC6935 /* MyPetListViewController.swift */,
 				BBD719BF20F7988400EC6935 /* UPCaruselFlowLayoutSpacingMode.swift */,
-				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				BB50EF2520F8F75A00B15A45 /* PetLost.swift */,
 				BB53E84020FC8B5F00DA1B30 /* CustomOverlay.swift */,
 				BB53E84220FC8B8F00DA1B30 /* CustomPage.swift */,
@@ -293,7 +294,9 @@
 				BB53E84A20FC97CB00DA1B30 /* MapController.swift */,
 				BB53E84C20FC987600DA1B30 /* StoreMap.swift */,
 				D146EFB420FCDBB700D6FE89 /* CloudManager.swift */,
+				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				70FED89820F4A56D00C9258D /* Main.storyboard */,
+				704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				BB53E84B20FC97CB00DA1B30 /* MapController.swift in Sources */,
 				BB53E84D20FC987600DA1B30 /* StoreMap.swift in Sources */,
 				0221FA7320F4BE4400F935D7 /* PetEditCell.swift in Sources */,
+				704EA6EA20FF8927000B1DBB /* FoundPetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
