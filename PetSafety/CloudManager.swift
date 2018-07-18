@@ -98,17 +98,36 @@ class CloudManager{
     }
     
     static func select(userIDValue: String){
-        let userSearch = CKQuery(recordType: "Owners", predicate: NSPredicate(format: "userID == \(userIDValue)"))
-        let query = CKQueryOperation(query: userSearch)
-        publicDB.add(query)
-        //        publicDB.perform(CKQuery, query, inZoneWith: <#T##CKRecordZoneID?#>, completionHandler: <#T##([CKRecord]?, Error?) -> Void#>)
+        let pred = NSPredicate(format: "UserID == \"Pippo\"")
+        print(pred)
+        let userQuery = CKQuery(recordType: "Owners", predicate: pred)
+        print(userQuery)
+        print("\n\n\nEseguo la query\n\n")
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for entry in results! {
+                            let userID = entry["userID"] as? String
+                            print("UPC from CloudKit \(String(describing: userID))")
+                            
+                            let name = entry["name"] as? String
+                            print("Name from CloudKit \(String(describing: name))")
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("UPC Not Found")
+                    }
+                }
+            }
+        }))
     }
-    /*
-     let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "%K == %@", argument: beaconID, options: .firesOnRecordCreation)
-     
-     */
-    // Le funzioni store sono da rivedere, devono individuare un elemento e inserire i dati attinenti
-    
     
     static func storeMicrochipToPet(beaconID: String, microchipID: String){
         let rcd = CKRecord(recordType: "Pet")
