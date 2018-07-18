@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let operation = CKModifyBadgeOperation(badgeValue: 0)
         operation.modifyBadgeCompletionBlock = {(error) in
             if let error = error{
-                print("\(error)")
+//                print("\(error)")
                 return
             }
             application.applicationIconBadgeNumber = 0
@@ -47,15 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-        
+ 
         var array: [String] = []
-        array.append("10")
-        array.append("42")
+        array.append("11")
+        array.append("22")
+        
+        for i in 0..<array.count  {
+            
         
         //notification on new record of coordinate
         let subscription = CKQuerySubscription(recordType: "Coordinate",
-                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",array]), options: .firesOnRecordCreation)
+                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",array[i]]), options: .firesOnRecordCreation)
 
         print("subscription: \(subscription.predicate)")
         
@@ -66,15 +68,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         subscription.notificationInfo = info
         
         CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { subscription, error in
-            if error == nil {
-                // Subscription saved successfully
-                    print ("ciao")
-            } else {
-                // An error occurred
-                print("Notifica: Error")
+            if error != nil {
+               print("Notifica: Error")
             }
         })
-        
+        }
+
         print("FINE!!!!")
     }
     
