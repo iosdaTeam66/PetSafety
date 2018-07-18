@@ -28,10 +28,30 @@ class CloudManager{
     static let publicDB = CKContainer.default().publicCloudDatabase
 
     
+    //    Upload: Public Database -> Owners list
+    static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
+        let userRecord = CKRecord(recordType: "Owners")
+        print(userRecord.recordID)
+        print(userRecord.allKeys())
+        userRecord["emailAddress"] = emailAddress as CKRecordValue
+        userRecord["name"] = name as CKRecordValue
+        userRecord["surname"] = surname as CKRecordValue
+        userRecord["phoneNumber"] = phoneNumber as CKRecordValue
+        userRecord["UserID"] = userID as CKRecordValue
+        print(userRecord)
+        publicDB.save(userRecord){
+            (userRecord,error) in
+            if error != nil{
+                print("DB ERROR")
+                return
+            }
+        }
+    }
+    
     //    Upload: Public Database -> Pets list
     static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate){
-        let petID = CKRecordID(recordName: beaconID)
-        let petRecord = CKRecord(recordType: "Pet", recordID: petID)
+        let petRecord = CKRecord(recordType: "Pet")
+        petRecord["beaconID"] = beaconID as CKRecordValue
         petRecord["microchipID"] = microchipID as CKRecordValue
         petRecord["name"] = name as CKRecordValue
         petRecord["type"] = type as CKRecordValue
@@ -46,8 +66,41 @@ class CloudManager{
         }
     }
     
+    //    Upload: Public Database -> Missing list
+    //    La chiave primaria qui è il beaconID
+    static func upload(beaconID: String, emailAddress: String){
+        let missingRecord = CKRecord(recordType: "Missing")
+        missingRecord["beaconID"] = beaconID as CKRecordValue
+        missingRecord["emailAddress"] = emailAddress as CKRecordValue
+        publicDB.save(missingRecord){
+            (missingRecord,error) in
+            if error != nil{
+                print("DB ERROR")
+                return
+            }
+        }
+    }
+
+    //    Upload: Public Database -> Coordinate list
+    static func upload(beaconID: String, emailAddress: String, location: CLLocation){
+        let coordinateRecord = CKRecord(recordType: "Coordinate")
+        coordinateRecord["beaconID"] = beaconID as CKRecordValue
+        coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
+        coordinateRecord["position"] = location as CKRecordValue
+        publicDB.save(coordinateRecord){
+            (coordinateRecord,error) in
+            if error != nil{
+                print("DB ERROR")
+                return
+            }
+        }
+    }
+    
+// Le funzioni store sono da rivedere, devono individuare un elemento e inserire i dati attinenti
+    
+    
     static func storeMicrochipToPet(beaconID: String, microchipID: String){
-        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
+        let rcd = CKRecord(recordType: "Pet")
         rcd["microchipID"] = microchipID as CKRecordValue
         publicDB.save(rcd){
             (rcd,error) in
@@ -106,24 +159,7 @@ class CloudManager{
         }
     }
 
-    //    Upload: Public Database -> Owners list
-    static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
-//        let emailID = CKRecordID(recordName: emailAddress)
-        let userRecord = CKRecord(recordType: "Users"/*, recordID: emailID*/)
-        userRecord["emailAddress"] = emailAddress as CKRecordValue
-        userRecord["name"] = name as CKRecordValue
-        userRecord["surname"] = surname as CKRecordValue
-        userRecord["phoneNumber"] = phoneNumber as CKRecordValue
-        userRecord["UserID"] = userID as CKRecordValue
-        print(userRecord)
-        publicDB.save(userRecord){
-            (userRecord,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
+
     
     static func storeUserIDToUser(emailAddress: String, userID: String){
         let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
@@ -173,20 +209,7 @@ class CloudManager{
         }
     }
     
-    //    Upload: Public Database -> Missing list
-    //    La chiave primaria qui è il beaconID
-    static func upload(beaconID: String, emailAddress: String){
-        let missingID = CKRecordID(recordName: beaconID)
-        let missingRecord = CKRecord(recordType: "Missing", recordID: missingID)
-        missingRecord["emailAddress"] = emailAddress as CKRecordValue
-        publicDB.save(missingRecord){
-            (missingRecord,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
+
     
     static func storeEmailToMissing(beaconID: String, emailAddress: String){
         let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
@@ -200,20 +223,6 @@ class CloudManager{
         }
     }
     
-    //    Upload: Public Database -> Coordinate list
-    static func upload(beaconID: String, emailAddress: String, location: CLLocation){
-        let coordinateID = CKRecordID(recordName: beaconID)
-        let coordinateRecord = CKRecord(recordType: "Coordinate", recordID: coordinateID)
-        coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
-        coordinateRecord["position"] = location as CKRecordValue
-        publicDB.save(coordinateRecord){
-            (coordinateRecord,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
     
     static func storeEmailToCoordinate(beaconID: String, emailAddress: String){
         let coordRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
