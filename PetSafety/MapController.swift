@@ -178,8 +178,14 @@ extension MapController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         
+        let  latToShow = self.coord[coord.count-1].lat
+        let  longToShow = self.coord[coord.count-1].lag
+        
+        let co = CLLocation(latitude: latToShow, longitude: longToShow)
+        let CLLCoordType = CLLocationCoordinate2D(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
+        
         let location = locations.last
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let center = CLLocationCoordinate2D(latitude: CLLCoordType.latitude, longitude: CLLCoordType.longitude)
         //settando la region impostaiamo la grandezza della mappa
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
