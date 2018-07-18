@@ -48,9 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
+        
+        var array: [String] = []
+        array.append("10")
+        array.append("42")
+        
         //notification on new record of coordinate
         let subscription = CKQuerySubscription(recordType: "Coordinate",
-                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID","42"]), options: .firesOnRecordCreation)
+                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",array]), options: .firesOnRecordCreation)
 
         print("subscription: \(subscription.predicate)")
         
