@@ -312,6 +312,13 @@ class ViewController: FormViewController {
         pPet.beaconid = valueBeaconID ?? ""
         
         PersistenceManager.saveContext()
+        
+        //rifa la subscription
+        // get a reference to the app delegate
+        let appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        
+        // call didFinishLaunchWithOptions ... why?
+        appDelegate?.application(UIApplication.shared, didFinishLaunchingWithOptions: nil)
     }
     
 

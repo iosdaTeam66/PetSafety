@@ -15,7 +15,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // mette a zero le notifiche quando apri la notifica
@@ -36,11 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
             if authorized {
                 //risolto warning
-                DispatchQueue.main.async(execute: {
+                
                     application.registerForRemoteNotifications()
-                })
+                    
             }
         })
+        
         
         return true
     }
@@ -48,21 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //subscription
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
  
-        var array: [String] = []
-        array.append("11")
-        array.append("22")
         
-        for i in 0..<array.count  {
+        //prende cani da core data
+        var cani: [PPet] = PersistenceManager.fetchData()
+        
+        print(cani)
+        
+        for i in 0..<cani.count  {
             
         
         //notification on new record of coordinate
-        let subscription = CKQuerySubscription(recordType: "Coordinate",
-                                               predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",array[i]]), options: .firesOnRecordCreation)
+        let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",cani[i].beaconid!]), options: .firesOnRecordCreation)
 
         print("subscription: \(subscription.predicate)")
         
         let info = CKNotificationInfo()
-        info.alertBody = "nuova posizione cane.."
+            info.alertBody = ("è stato localizzato \(cani[i].name!)")
         info.shouldBadge = true
         info.soundName = "default"
         subscription.notificationInfo = info
@@ -73,9 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         }
+        
 
         print("FINE!!!!")
     }
+    
+    
+    
     
 //UserNotifications framework to show your notification as if your app wasn't running at all
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
