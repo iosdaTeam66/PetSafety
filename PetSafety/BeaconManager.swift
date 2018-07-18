@@ -297,4 +297,19 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "segueFoundPet":
+                
+                let dstView = segue.destination as! FoundPetViewController
+            
+                for _ in 0..<foundID.count {
+//                    chiamate al server una per id
+                }
+            
+            
+            default: print(#function)
+        }
+    }
+    
 }
