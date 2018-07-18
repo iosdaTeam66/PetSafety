@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="31"/>
+            <point key="canvasLocation" x="2336" y="32"/>
         </scene>
         <!--Utente-->
         <scene sceneID="hmE-tY-5W9">
@@ -308,24 +308,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXy-QX-5cb">
-                                <rect key="frame" x="20" y="47" width="97" height="30"/>
+                                <rect key="frame" x="20" y="82" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="radar" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-Wo-6yp">
+                                <rect key="frame" x="107" y="82" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
+                                <rect key="frame" x="186" y="632" width="43" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <segue destination="qva-ls-wgC" kind="show" id="zof-cZ-ftx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ulr-AY-k2h"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="loV-8O-u0l"/>
+                    <navigationItem key="navigationItem" id="sgr-lp-Szf"/>
                     <connections>
                         <outlet property="proximityText" destination="qXy-QX-5cb" id="hlm-aA-jZ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-Px-ZMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="1807"/>
+            <point key="canvasLocation" x="473.91304347826093" y="1806.521739130435"/>
         </scene>
         <!--PetsFound-->
         <scene sceneID="caJ-Q6-fC8">
@@ -334,6 +348,16 @@
                     <view key="view" contentMode="scaleToFill" id="tkD-1w-HdC" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pt-1e-ImX">
+                                <rect key="frame" x="150" y="83" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Torna alla HOME"/>
+                                <connections>
+                                    <segue destination="ueO-rW-FSi" kind="show" id="asU-81-Nbg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0wY-0j-b6t"/>
                     </view>
@@ -355,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mJ-8i-jER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2890" y="1150"/>
+            <point key="canvasLocation" x="-2654" y="893"/>
         </scene>
         <!--My Tab Bar Controller-->
         <scene sceneID="yV7-lo-fgJ">
@@ -402,7 +426,11 @@
             <point key="canvasLocation" x="-433.33333333333337" y="892.66304347826099"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="radar" width="200" height="200"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="asU-81-Nbg"/>
         <segue reference="Xf1-4Q-68b"/>
     </inferredMetricsTieBreakers>
 </document>

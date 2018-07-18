@@ -25,7 +25,7 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         petPList = PersistenceManager.fetchData()
         
         let layout = UPCarouselFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 90.0, height: collectionView.frame.size.height - 90)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: collectionView.frame.size.height - 50)
 
         layout.scrollDirection = .horizontal
         layout.sideItemAlpha = 1.0
