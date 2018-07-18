@@ -69,7 +69,7 @@ class MapController: UIViewController {
         
         self.locationManager.desiredAccuracy  = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
-        self.BigMap.showsUserLocation = true
+        self.BigMap.showsUserLocation = false
         
         self.aggiungiAnnotation()
         
@@ -177,21 +177,21 @@ extension MapController: CLLocationManagerDelegate{
     //da la nostra posizione
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        
+        if((coord.count-1)>0){
         let  latToShow = self.coord[coord.count-1].lat
         let  longToShow = self.coord[coord.count-1].lag
         
         let co = CLLocation(latitude: latToShow, longitude: longToShow)
         let CLLCoordType = CLLocationCoordinate2D(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
         
-        let location = locations.last
+        //let location = locations.last
         let center = CLLocationCoordinate2D(latitude: CLLCoordType.latitude, longitude: CLLCoordType.longitude)
         //settando la region impostaiamo la grandezza della mappa
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
         self.BigMap.setRegion(region, animated: true)
         self.locationManager.stopUpdatingLocation()
-        
+        }
     }
     
     //gestisce caso di errore
