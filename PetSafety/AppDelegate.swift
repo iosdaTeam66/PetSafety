@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //prende cani da core data
         var cani: [PPet] = PersistenceManager.fetchData()
         
-        print(cani)
+//        print("CANI: " \(cani)")
         
         for i in 0..<cani.count  {
             

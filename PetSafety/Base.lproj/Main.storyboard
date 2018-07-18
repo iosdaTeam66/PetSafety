@@ -422,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="-433.33333333333337" y="1806.521739130435"/>
         </scene>
-        <!--Pets Controller-->
+        <!--Found Pet View Controller-->
         <scene sceneID="t41-iV-Sux">
             <objects>
-                <tableViewController id="xhP-As-cem" customClass="PetsController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xhP-As-cem" customClass="FoundPetViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZ0-o0-CtJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
