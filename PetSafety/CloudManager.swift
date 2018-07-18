@@ -29,7 +29,7 @@ class CloudManager{
 
     
     //    Upload: Public Database -> Owners list
-    static func upload(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
+    static func insert(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
         let userRecord = CKRecord(recordType: "Owners")
         print(userRecord.recordID)
         print(userRecord.allKeys())
@@ -49,7 +49,7 @@ class CloudManager{
     }
     
     //    Upload: Public Database -> Pets list
-    static func upload(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
+    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
         let petRecord = CKRecord(recordType: "Pet")
         petRecord["beaconID"] = beaconID as CKRecordValue
         petRecord["microchipID"] = microchipID as CKRecordValue
@@ -69,7 +69,7 @@ class CloudManager{
     
     //    Upload: Public Database -> Missing list
     //    La chiave primaria qui è il beaconID
-    static func upload(beaconID: String, emailAddress: String){
+    static func insert(beaconID: String, emailAddress: String){
         let missingRecord = CKRecord(recordType: "Missing")
         missingRecord["beaconID"] = beaconID as CKRecordValue
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
@@ -83,7 +83,7 @@ class CloudManager{
     }
 
     //    Upload: Public Database -> Coordinate list
-    static func upload(beaconID: String, emailAddress: String, location: CLLocation){
+    static func insert(beaconID: String, emailAddress: String, location: CLLocation){
         let coordinateRecord = CKRecord(recordType: "Coordinate")
         coordinateRecord["beaconID"] = beaconID as CKRecordValue
         coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
