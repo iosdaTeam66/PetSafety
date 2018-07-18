@@ -9,14 +9,15 @@
 import UIKit
 import CoreLocation
 import CoreBluetooth
-import Eureka
-import ViewRow
-import ImageRow
 
-class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
+class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
+    
+    @IBOutlet weak var imgRadar: UIImageView!
+    @IBOutlet weak var buttonShow: UIButton!
+    @IBOutlet weak var labelFound: UILabel!
+    @IBOutlet weak var labelNotification: UILabel!
     
     var locationManager: CLLocationManager!
-    
     var lostPets = Dictionary<String, String>()
     var foundPets = [String]()
     var foundID = [String]()
@@ -26,11 +27,11 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
     
     var bluetoothPeripheralManager: CBPeripheralManager!
     
-    @IBOutlet weak var proximityText: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonShow.isEnabled = false
+     
         let pUserList = PersistenceManager.fetchDataUser()
         if (pUserList.count == 0) {
             pUser = PersistenceManager.newEmptyUser()
@@ -39,6 +40,7 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             pUser = pUserList[0]
         }
         
+        /*
         // sfondo bianco
         let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         view.backgroundColor = whiteColor
@@ -72,6 +74,9 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
                     cell.textLabel?.textColor = .black
                     cell.textLabel?.textAlignment = .center
                 })
+ 
+        */
+        
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -92,8 +97,14 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        labelFound.text = "Searching missing pets in your area..."
+        labelNotification.isHidden = true
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         // implementare chiusura GPS una volta chiusa la view (riapro in viewWillAppear?????)
+        buttonShow.isEnabled = false
     }
     
     func requestLocationInUse() {
@@ -233,7 +244,16 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
                 oldLocation = currentLocation
             }
             
+            
+            buttonShow.isEnabled = true
+            labelFound.text = "Found lost pets near you"
+            
+            labelNotification.isHidden = false
+            
+           
+            /*
             let alert = UIAlertController(title: "iBeacons Detected", message: "Found lost pets near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
+         
             alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -249,14 +269,17 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
                 }}))
             
             self.present(alert, animated: true, completion: nil)
+ */
         } else {
             updateDistance(.unknown)
         }
     }
     
     func updateDistance(_ distance: CLProximity) {
-        self.proximityText.text = "\(distance.rawValue)";
+
+        
         UIView.animate(withDuration: 0.8) {
+            /*
             switch distance {
             case .unknown:
                 self.view.backgroundColor = UIColor.gray
@@ -270,6 +293,7 @@ class BeaconManager: FormViewController, CLLocationManagerDelegate, CBPeripheral
             case .immediate:
                 self.view.backgroundColor = UIColor.red
             }
+ */
         }
     }
     

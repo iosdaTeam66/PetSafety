@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vc0-ws-nCa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ueO-rW-FSi">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -309,34 +309,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXy-QX-5cb">
-                                <rect key="frame" x="20" y="82" width="79" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="radar" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-Wo-6yp">
-                                <rect key="frame" x="107" y="82" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
-                                <rect key="frame" x="186" y="632" width="43" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Show"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
+                                <rect key="frame" x="184" y="637" width="46" height="30"/>
+                                <state key="normal" title="SHOW"/>
                                 <connections>
-                                    <segue destination="qva-ls-wgC" kind="show" id="zof-cZ-ftx"/>
+                                    <segue destination="qva-ls-wgC" kind="show" identifier="segueFindPet" id="zof-cZ-ftx"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-BQ-Tnb">
+                                <rect key="frame" x="25" y="197.66666666666666" width="364" height="340.66666666666674"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radar" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-Wo-6yp">
+                                        <rect key="frame" x="82.000000000000014" y="0.0" width="200.33333333333337" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="HVf-9m-0m5"/>
+                                            <constraint firstAttribute="height" constant="200" id="PNM-Ai-wr1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
+                                        <rect key="frame" x="39.666666666666686" y="250.00000000000003" width="285" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
+                                        <rect key="frame" x="0.0" y="320.33333333333337" width="364" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ulr-AY-k2h" firstAttribute="bottom" secondItem="SmR-bt-fIh" secondAttribute="bottom" constant="20" id="6b4-DC-8CZ"/>
+                            <constraint firstItem="A8E-BQ-Tnb" firstAttribute="centerY" secondItem="HYp-ps-1H6" secondAttribute="centerY" id="7CU-gk-D98"/>
+                            <constraint firstItem="A8E-BQ-Tnb" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="PSt-XD-hGp"/>
+                            <constraint firstItem="SmR-bt-fIh" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="c0u-X5-IQe"/>
+                            <constraint firstItem="A8E-BQ-Tnb" firstAttribute="width" secondItem="Ulr-AY-k2h" secondAttribute="width" constant="-50" id="efN-eU-Pxa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ulr-AY-k2h"/>
                     </view>
                     <navigationItem key="navigationItem" id="sgr-lp-Szf"/>
                     <connections>
-                        <outlet property="proximityText" destination="qXy-QX-5cb" id="hlm-aA-jZ4"/>
+                        <outlet property="buttonShow" destination="SmR-bt-fIh" id="Gdb-AO-maf"/>
+                        <outlet property="imgRadar" destination="eKK-Wo-6yp" id="6W8-Cm-EWI"/>
+                        <outlet property="labelFound" destination="GWN-Pb-hz3" id="8iY-wc-cLI"/>
+                        <outlet property="labelNotification" destination="tGg-Vf-QWl" id="7ds-zZ-ZgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-Px-ZMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,16 +370,6 @@
                     <view key="view" contentMode="scaleToFill" id="tkD-1w-HdC" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Pt-1e-ImX">
-                                <rect key="frame" x="150" y="83" width="114" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Torna alla HOME"/>
-                                <connections>
-                                    <segue destination="ueO-rW-FSi" kind="show" id="asU-81-Nbg"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0wY-0j-b6t"/>
                     </view>
@@ -432,7 +442,6 @@
         <image name="radar" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="asU-81-Nbg"/>
         <segue reference="Xf1-4Q-68b"/>
     </inferredMetricsTieBreakers>
 </document>
