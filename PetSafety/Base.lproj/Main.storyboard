@@ -87,6 +87,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Q4k-hx-KLX"/>
+                        <barButtonItem title="Register" id="fsh-Pp-YYI">
+                            <connections>
+                                <action selector="Register:" destination="BYZ-38-t0r" id="grI-oV-Jye"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YLo-F5-lWo"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +112,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9LZ-cy-nqK"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jIH-2V-8aC"/>
+                        <barButtonItem title="Register" id="I6l-xc-cfA">
+                            <connections>
+                                <action selector="Register:" destination="abn-jP-sOA" id="r7w-0z-1XF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="o2x-FE-XnV"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="QXt-jI-Mds"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="rQH-ni-8Q6" kind="show" identifier="petListSegue" id="4Sc-Vq-luD"/>
                     </connections>
@@ -114,7 +134,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fyu-uA-b53">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dul-e0-69K" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Dul-e0-69K" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="iQP-jo-cZI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5o-ha-iNg">
@@ -123,6 +143,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="My1-Br-Fnh">
+                        <rect key="frame" x="0.0" y="643" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

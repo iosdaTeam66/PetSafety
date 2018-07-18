@@ -17,6 +17,10 @@ class UserController: FormViewController {
     let formatter = DateFormatter()
     var image: UIImageView!
     
+    @IBAction func Register(_ sender: UIBarButtonItem) {
+        CloudManager.upload(userID: "Pippo", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("Tutto OK!")
