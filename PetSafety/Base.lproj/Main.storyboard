@@ -164,7 +164,7 @@
             </objects>
             <point key="canvasLocation" x="-431.8840579710145" y="31.793478260869566"/>
         </scene>
-        <!--Pet's List-->
+        <!--My Pet List View Controller-->
         <scene sceneID="gcS-2m-T9d">
             <objects>
                 <viewController id="2d6-BT-mLk" customClass="MyPetListViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-uC-8yH">
-                                <rect key="frame" x="0.0" y="70" width="414" height="467"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="423"/>
                                 <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wI6-vZ-AAY">
                                     <size key="itemSize" width="50" height="50"/>
@@ -221,9 +221,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Find on Map"/>
-                                        <connections>
-                                            <segue destination="sw7-eo-SHb" kind="show" id="BJ2-0h-VVI"/>
-                                        </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-bp-G2j">
                                         <rect key="frame" x="205" y="4" width="51" height="31"/>
@@ -254,7 +251,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQc-wr-60g"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pet's List" id="TRK-Cg-cNc"/>
+                    <navigationItem key="navigationItem" id="rGE-Se-0dJ"/>
                     <connections>
                         <outlet property="buttonMap" destination="UBS-Hr-q9h" id="D0n-o0-Ask"/>
                         <outlet property="collectionView" destination="XkG-uC-8yH" id="n00-1K-vTi"/>
@@ -262,11 +259,12 @@
                         <outlet property="labelNoPet" destination="olk-1g-dUJ" id="8BH-Kz-wYm"/>
                         <outlet property="pageControl" destination="AdT-IB-K41" id="KTo-rR-xEm"/>
                         <outlet property="switchMissing" destination="Oll-bp-G2j" id="04b-MD-y5P"/>
+                        <segue destination="sw7-eo-SHb" kind="show" identifier="showMap" id="XUj-YO-79T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggD-Py-elO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433.33333333333337" y="892.66304347826099"/>
+            <point key="canvasLocation" x="473.91304347826093" y="892.66304347826099"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="D2j-iQ-PoL">
@@ -277,13 +275,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mbG-AZ-eSl">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <connections>
                                     <outlet property="delegate" destination="sw7-eo-SHb" id="j9z-ah-SmQ"/>
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnL-lv-m9m">
-                                <rect key="frame" x="20" y="35" width="374" height="95"/>
+                                <rect key="frame" x="20" y="79" width="374" height="2"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-4x-Er1">
                                         <rect key="frame" x="16" y="8" width="98" height="21"/>
@@ -332,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npq-xr-1iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="893"/>
+            <point key="canvasLocation" x="1515.9420289855075" y="892.66304347826099"/>
         </scene>
         <!--Beacon Search-->
         <scene sceneID="GIH-jf-QBL">
@@ -428,7 +426,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dul-e0-69K" kind="relationship" relationship="viewControllers" id="nR1-MJ-XIt"/>
-                        <segue destination="2d6-BT-mLk" kind="relationship" relationship="viewControllers" id="dE1-UD-NRm"/>
+                        <segue destination="dMf-Xa-C2q" kind="relationship" relationship="viewControllers" id="dE1-UD-NRm"/>
                         <segue destination="Dfh-Om-ypl" kind="relationship" relationship="viewControllers" id="lqs-1L-Xb3"/>
                     </connections>
                 </tabBarController>
@@ -544,6 +542,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeT-rD-obq" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2516" y="1807"/>
+        </scene>
+        <!--Pet's List-->
+        <scene sceneID="ksN-a9-sCi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMf-Xa-C2q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pet's List" id="TRK-Cg-cNc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9gs-YT-V5F">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2d6-BT-mLk" kind="relationship" relationship="rootViewController" id="z6m-bi-IhI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggm-0a-Hle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433.33333333333337" y="892.66304347826099"/>
         </scene>
     </scenes>
     <resources>

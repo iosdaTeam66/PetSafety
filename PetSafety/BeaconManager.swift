@@ -31,7 +31,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         super.viewDidLoad()
         
         buttonShow.isEnabled = false
-     
+        
         let pUserList = PersistenceManager.fetchDataUser()
         if (pUserList.count == 0) {
             pUser = PersistenceManager.newEmptyUser()
@@ -41,41 +41,41 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         }
         
         /*
-        // sfondo bianco
-        let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
-        view.backgroundColor = whiteColor
-        // celle senza bordi
-        self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.none
-        // immagine radar
-        form +++ Section()
-            <<< ViewRow<UIImageView>("radar")
-                
-                .cellSetup { (cell, row) in
-                    // Construct the view for the cell
-                    cell.view = UIImageView()
-                    cell.contentView.addSubview(cell.view!)
-                    cell.backgroundColor = nil // sfondo trasparente
-                    
-                    // Get something to display
-                    let image = UIImageView(image: UIImage(named: "radar"))
-                    cell.view = image
-                    cell.view?.frame = CGRect(x: 0, y: 40, width: 20, height: 200)
-                    cell.view?.contentMode = .scaleAspectFit
-                    cell.view!.clipsToBounds = true
-            }
-            
-            <<< LabelRow() {
-                $0.title = "Searching missing pets in your area..."
-                $0.cellStyle = .default
-                }
-                .cellUpdate({ (cell, row) in
-                    cell.backgroundColor = nil
-                    cell.contentView.backgroundColor = nil
-                    cell.textLabel?.textColor = .black
-                    cell.textLabel?.textAlignment = .center
-                })
- 
-        */
+         // sfondo bianco
+         let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+         view.backgroundColor = whiteColor
+         // celle senza bordi
+         self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.none
+         // immagine radar
+         form +++ Section()
+         <<< ViewRow<UIImageView>("radar")
+         
+         .cellSetup { (cell, row) in
+         // Construct the view for the cell
+         cell.view = UIImageView()
+         cell.contentView.addSubview(cell.view!)
+         cell.backgroundColor = nil // sfondo trasparente
+         
+         // Get something to display
+         let image = UIImageView(image: UIImage(named: "radar"))
+         cell.view = image
+         cell.view?.frame = CGRect(x: 0, y: 40, width: 20, height: 200)
+         cell.view?.contentMode = .scaleAspectFit
+         cell.view!.clipsToBounds = true
+         }
+         
+         <<< LabelRow() {
+         $0.title = "Searching missing pets in your area..."
+         $0.cellStyle = .default
+         }
+         .cellUpdate({ (cell, row) in
+         cell.backgroundColor = nil
+         cell.contentView.backgroundColor = nil
+         cell.textLabel?.textColor = .black
+         cell.textLabel?.textAlignment = .center
+         })
+         
+         */
         
         
         locationManager = CLLocationManager()
@@ -227,10 +227,11 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             var i = 0
             for _ in beacons {
                 tempStr="\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)"
-                print(lostPets.keys.contains(tempStr))
+                //print(lostPets.keys.contains(tempStr))
                 if lostPets.keys.contains(tempStr) {
                     if !foundID.makeIterator().contains(tempStr) {
                         foundID.append(tempStr)
+                        print("inserisco stringa per: \(tempStr)")
                     }
                 }
                 i+=1
@@ -239,8 +240,16 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             let locationObj = manager.location
             let coord = locationObj?.coordinate
             currentLocation = CLLocation(latitude: (coord?.latitude)!,longitude: (coord?.longitude)!)
+            //oldLocation = CloudManager.select
             if(currentLocation.distance(from: oldLocation) > 50) { // se la nuova posizione è maggiore di 50 metri dall'ultimo rilievo
                 // inserire QUI le coordinate nella tabella ONLINE
+                var i = 0
+                print("leggo count: \(foundID.count)")
+                for _ in foundID {
+                    CloudManager.insert(beaconID: foundID[i], emailAddress: pUser.email!, location: currentLocation, findingDate: Date())
+                    print("inserisco coord per: \(foundID[i])")
+                    i+=1
+                }
                 oldLocation = currentLocation
             }
             
@@ -250,74 +259,74 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             
             labelNotification.isHidden = false
             
-           
-            /*
-            let alert = UIAlertController(title: "iBeacons Detected", message: "Found lost pets near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
-         
-            alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    print("default")
-                    let viewControllerPetsFound = self.storyboard?.instantiateViewController(withIdentifier: "PetsFound")
-                    self.present(viewControllerPetsFound!, animated: true, completion: nil)
-                    
-                case .cancel:
-                    print("cancel")
-                    
-                case .destructive:
-                    print("destructive")
-                }}))
             
-            self.present(alert, animated: true, completion: nil)
- */
+            /*
+             let alert = UIAlertController(title: "iBeacons Detected", message: "Found lost pets near you\n\nA notification with the location has just been sent to the owners", preferredStyle: UIAlertControllerStyle.alert)
+             
+             alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { action in
+             switch action.style{
+             case .default:
+             print("default")
+             let viewControllerPetsFound = self.storyboard?.instantiateViewController(withIdentifier: "PetsFound")
+             self.present(viewControllerPetsFound!, animated: true, completion: nil)
+             
+             case .cancel:
+             print("cancel")
+             
+             case .destructive:
+             print("destructive")
+             }}))
+             
+             self.present(alert, animated: true, completion: nil)
+             */
         } else {
             updateDistance(.unknown)
         }
     }
     
     func updateDistance(_ distance: CLProximity) {
-
+        
         
         UIView.animate(withDuration: 0.8) {
             /*
-            switch distance {
-            case .unknown:
-                self.view.backgroundColor = UIColor.gray
-                
-            case .far:
-                self.view.backgroundColor = UIColor.blue
-                
-            case .near:
-                self.view.backgroundColor = UIColor.orange
-                
-            case .immediate:
-                self.view.backgroundColor = UIColor.red
-            }
- */
+             switch distance {
+             case .unknown:
+             self.view.backgroundColor = UIColor.gray
+             
+             case .far:
+             self.view.backgroundColor = UIColor.blue
+             
+             case .near:
+             self.view.backgroundColor = UIColor.orange
+             
+             case .immediate:
+             self.view.backgroundColor = UIColor.red
+             }
+             */
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-            case "segueFoundPet":
+        case "segueFoundPet":
             
-                var p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
-                var p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
-                
-                var petlist: [Pet] = []
-                petlist.append(p)
-                petlist.append(p2)
-                petlist.append(p)
-                
-                let dstView = segue.destination as! FoundPetViewController
-                dstView.arrayPet = petlist
-                
-                for _ in 0..<foundID.count {
-//                    chiamate al server una per id
-                }
+            var p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
+            var p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
+            
+            var petlist: [Pet] = []
+            petlist.append(p)
+            petlist.append(p2)
+            petlist.append(p)
+            
+            let dstView = segue.destination as! FoundPetViewController
+            dstView.arrayPet = petlist
+            
+            for _ in 0..<foundID.count {
+                //                    chiamate al server una per id
+            }
             
             
-            default: print(#function)
+        default: print(#function)
         }
     }
     

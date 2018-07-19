@@ -23,11 +23,11 @@ class MapController: UIViewController {
     var points: [CLLocationCoordinate2D] = []
     let locationManager = CLLocationManager()
     //outlet
-  
+    
     @IBOutlet weak var BigMap: MKMapView!
     
     //aggiungo label
-
+    
     @IBOutlet weak var dataUlt: UILabel!
     @IBOutlet weak var addressUlt: UILabel!
     @IBOutlet weak var viewUlt: UIView!
@@ -69,7 +69,7 @@ class MapController: UIViewController {
         
         self.locationManager.desiredAccuracy  = kCLLocationAccuracyBest
         self.locationManager.startUpdatingLocation()
-        self.BigMap.showsUserLocation = true
+        self.BigMap.showsUserLocation = false
         
         self.aggiungiAnnotation()
         
@@ -100,18 +100,18 @@ class MapController: UIViewController {
     func aggiungiAnnotation(){
         
         
-        let ultimo = valueCane.cittaArr.count - 1
+        let ultimo = valueCane.coord.count - 1
         var iniziale = 0
         dataUlt.text = " "
         addressUlt.text = "non ci sono posizioni"
         
-        if(valueCane.cittaArr.count > 10){
-            iniziale = valueCane.cittaArr.count - 10
+        if(valueCane.coord.count > 10){
+            iniziale = valueCane.coord.count - 10
         }else{
             iniziale = 0
         }
         
-        if(valueCane.cittaArr.isEmpty == false ){
+        if(valueCane.coord.isEmpty == false ){
             for i in iniziale...ultimo{
                 let cittaAnnotation = MKAnnotationView()
                 
@@ -120,14 +120,63 @@ class MapController: UIViewController {
                 
                 let co = CLLocation(latitude: latToShow, longitude: longToShow)
                 let CLLCoordType = CLLocationCoordinate2D(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
+                let clocation = CLLocation(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
                 
                 
                 let nameToShow = self.nomeArr[i]
                 let dataToShow = self.dataArr[i]
-                let titleToShow = self.cittaArr[i]
-                let subtitleToShow = self.viaArr[i]
+                //devono essere generati
+                var titleToShow = " "
+                var subtitleToShow = " "
                 
-                cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
+                //genera l'indirizzo
+                CLGeocoder().reverseGeocodeLocation(clocation, completionHandler: {(placemarks, error) in
+                    
+                    if (error != nil)
+                    {
+                        print("reverse geodcode fail: \(error!.localizedDescription)")
+                    }
+                    let pm = placemarks! as [CLPlacemark]
+                    
+                    if pm.count > 0 {
+                        let pm = placemarks![0]
+                        
+                        //var addressString : String = ""
+                        
+                        if pm.thoroughfare != nil {
+                            //addressString = addressString + pm.thoroughfare! + ", "
+                            subtitleToShow = pm.thoroughfare!
+                            self.viaArr.append(pm.thoroughfare!)
+                        }
+                        if pm.locality != nil {
+                            //addressString = addressString + pm.locality! + ", "
+                            titleToShow = pm.locality!
+                            self.cittaArr.append(pm.locality!)
+                        }
+                        
+                        //print(addressString)
+                        
+                        cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
+                        
+                        //aggiunge label
+                        if(i == ultimo){
+                            //scrive nei label
+                            self.dataUlt.text = dataToShow
+                            self.addressUlt.text = "\(titleToShow), \(subtitleToShow)"
+                            
+                        }
+                        
+                        //aggiunge alla mappa
+                        if let ann = cittaAnnotation.annotation{
+                            
+                            self.BigMap.addAnnotation(ann)
+                            
+                            //print("Annotation aggiunta")
+                        }
+                    }
+                })
+                
+                //cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
                 
                 //aggiunge point
                 points.append(CLLCoordType)
@@ -148,12 +197,12 @@ class MapController: UIViewController {
                 }
                 
                 //aggiunge alla mappa
-                if let ann = cittaAnnotation.annotation{
-                    
-                    self.BigMap.addAnnotation(ann)
-                    
-                    print("Annotation aggiunta")
-                }
+                /*if let ann = cittaAnnotation.annotation{
+                 
+                 self.BigMap.addAnnotation(ann)
+                 
+                 print("Annotation aggiunta")
+                 }*/
                 
             }
         }
@@ -177,15 +226,21 @@ extension MapController: CLLocationManagerDelegate{
     //da la nostra posizione
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        
-        let location = locations.last
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
-        //settando la region impostaiamo la grandezza della mappa
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-        
-        self.BigMap.setRegion(region, animated: true)
-        self.locationManager.stopUpdatingLocation()
-        
+        if((coord.count-1)>0){
+            let  latToShow = self.coord[coord.count-1].lat
+            let  longToShow = self.coord[coord.count-1].lag
+            
+            let co = CLLocation(latitude: latToShow, longitude: longToShow)
+            let CLLCoordType = CLLocationCoordinate2D(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
+            
+            //let location = locations.last
+            let center = CLLocationCoordinate2D(latitude: CLLCoordType.latitude, longitude: CLLCoordType.longitude)
+            //settando la region impostaiamo la grandezza della mappa
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+            
+            self.BigMap.setRegion(region, animated: true)
+            self.locationManager.stopUpdatingLocation()
+        }
     }
     
     //gestisce caso di errore
