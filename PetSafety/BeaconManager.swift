@@ -20,6 +20,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
     var locationManager: CLLocationManager!
     var lostPets = Dictionary<String, String>()
     var foundPets = [String]()
+    var foundObj: [(id: String, pos: CLLocation)] = []
     var foundID = [String]()
     var currentLocation: CLLocation!
     var oldLocation: CLLocation = CLLocation(latitude: 0.0,longitude: 0.0)
@@ -231,26 +232,25 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
                 if lostPets.keys.contains(tempStr) {
                     if !foundID.makeIterator().contains(tempStr) {
                         foundID.append(tempStr)
+                        foundObj.append((id: tempStr, pos: oldLocation))
                         print("inserisco stringa per: \(tempStr)")
                     }
                 }
                 i+=1
             }
             
-            let locationObj = manager.location
-            let coord = locationObj?.coordinate
-            currentLocation = CLLocation(latitude: (coord?.latitude)!,longitude: (coord?.longitude)!)
-            //oldLocation = CloudManager.select
-            if(currentLocation.distance(from: oldLocation) > 50) { // se la nuova posizione è maggiore di 50 metri dall'ultimo rilievo
-                // inserire QUI le coordinate nella tabella ONLINE
-                var i = 0
-                print("leggo count: \(foundID.count)")
-                for _ in foundID {
-                    _ = CloudManager.insert(beaconID: foundID[i], emailAddress: pUser.email!, location: currentLocation, findingDate: Date())
-                    print("inserisco coord per: \(foundID[i])")
-                    i+=1
+            var k = 0
+            for _ in foundObj {
+                let locationObj = manager.location
+                let coord = locationObj?.coordinate
+                currentLocation = CLLocation(latitude: (coord?.latitude)!,longitude: (coord?.longitude)!)
+                if(currentLocation.distance(from: foundObj[k].pos) > 50) { // se la nuova posizione è maggiore di 50 metri dall'ultimo rilievo
+                    // inserire QUI le coordinate nella tabella ONLINE
+                    _ = CloudManager.insert(beaconID: foundID[k], emailAddress: pUser.email!, location: currentLocation, findingDate: Date())
+                    print("inserisco DB per: \(foundID[k])")
+                    foundObj[k].pos = currentLocation
                 }
-                oldLocation = currentLocation
+                k+=1
             }
             
             
