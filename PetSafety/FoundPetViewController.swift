@@ -15,6 +15,8 @@ class FoundPetViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("PET FOUND VIEW CONTROLLER")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,46 +49,15 @@ class FoundPetViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "petFoundCell", for: indexPath) as! PetEditCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "petFoundCell", for: indexPath) as! PetFoundCell
         
         let pet = arrayPet[indexPath.row]
-        cell.lblCellName.text = pet.name
-        cell.lblCellRace.text = pet.race
-        cell.petThumb.image = UIImage(named: pet.photo)
+        cell.labelNomeRazza.text = "NOME: \(pet.name), RAZZA: \(pet.race)"
+        
+        cell.labelContatto.text = "VUOTO"
+        cell.labelNomePadrone.text = "VUOTO"
+        cell.imagePet.image = UIImage(named: pet.photo)
+
         return cell
-        
-        
-        /*
-        if (pet.photouuid == nil){
-            image = UIImage(named: "CatMan")
-        }
-        else {
-            let imageName = pet.photouuid // your image name here
-            let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
-            print (imagePath)
-            let imageUrl: URL = URL(fileURLWithPath: imagePath)
-            guard FileManager.default.fileExists(atPath: imagePath),
-                let imageData: Data = try? Data(contentsOf: imageUrl),
-                let photo = UIImage(data: imageData, scale: UIScreen.main.scale) else {
-                    print ("Immagine non trovata!")
-                    return cell
-            }
-            image = photo
-        }
- 
-        cell.petThumb.image = image
- */
- 
- 
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "segueInfoFoundPet":
-            print("TODO SEGUE PER INFO PET TROVATO")
-        default:
-            print(#function)
-        }
     }
 }

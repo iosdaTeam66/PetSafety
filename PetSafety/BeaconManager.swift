@@ -12,7 +12,6 @@ import CoreBluetooth
 
 class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     
-    @IBOutlet weak var imgRadar: UIImageView!
     @IBOutlet weak var buttonShow: UIButton!
     @IBOutlet weak var labelFound: UILabel!
     @IBOutlet weak var labelNotification: UILabel!
@@ -309,6 +308,8 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "segueFoundPet":
+            
+//            TODO INFO PER IL SEGUE
             
             var p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
             var p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")

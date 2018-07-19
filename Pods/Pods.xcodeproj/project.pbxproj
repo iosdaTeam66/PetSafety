@@ -3,161 +3,180 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012D2917EAF8A5066C7D301EF17159B6 /* ButtonRowWithPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB3009992E3EDC49B936E447A06EC28 /* ButtonRowWithPresent.swift */; };
-		03F67C413386BDBE1556F0A672EE9DFA /* SelectorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FA1B536C20067845054908E657363 /* SelectorAlertController.swift */; };
-		03F7C84AC2C8A9ED1DB5142A397702CF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9DBF9A8A013AE55EED8A915A6C897A /* Validation.swift */; };
-		04389EABB774CD1132AA9815EB37B2D2 /* Pods-PetSafety-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4073398FC55A8F1ED85C3B9EE8CE487B /* Pods-PetSafety-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0572E357DE1A281CDA359D2C9A0FCD58 /* LabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED51FBFF300CD9592164A8083DE2878 /* LabelRow.swift */; };
-		0BBEC18C19AD617FB56516D3CDEC6082 /* DateInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838782FC68CB86ACC40D00347B18EDCC /* DateInlineRow.swift */; };
-		0D50E31A4C7A910EBBC0DADB0FA6971A /* TriplePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55A4D6C26C21E8A65BE8467D6BC614 /* TriplePickerInputRow.swift */; };
-		0E489B667253F643A20163185C0684E3 /* RuleClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DF67446B890250C690ACBCB58FEEA5 /* RuleClosure.swift */; };
+		012D2917EAF8A5066C7D301EF17159B6 /* ButtonRowWithPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A463E02F268B39544B07CAF3B215B7 /* ButtonRowWithPresent.swift */; };
+		03F67C413386BDBE1556F0A672EE9DFA /* SelectorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C66C711E7884195FD6B5EF624EB6F9 /* SelectorAlertController.swift */; };
+		03F7C84AC2C8A9ED1DB5142A397702CF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084FF52F75796BB6A074DD3829639D5 /* Validation.swift */; };
+		0572E357DE1A281CDA359D2C9A0FCD58 /* LabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE6651DB423C3DBE0B5D47A72F2285 /* LabelRow.swift */; };
+		0BBEC18C19AD617FB56516D3CDEC6082 /* DateInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305462B45EB68366E9703B59045C77B4 /* DateInlineRow.swift */; };
+		0D50E31A4C7A910EBBC0DADB0FA6971A /* TriplePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB4882529E4A17617FE849DF77BA8C3 /* TriplePickerInputRow.swift */; };
+		0E489B667253F643A20163185C0684E3 /* RuleClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216ADD9B4CA86CE00E5920D19417351B /* RuleClosure.swift */; };
 		18C959BA2340B68D5A83583B6C579CD0 /* Pods-PetSafetyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E935C9C843C53E1A153EAC081FDC9EFA /* Pods-PetSafetyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19AFC8077796C94D7DD31B0E7F50DB03 /* Eureka-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A201CBE68100B1A66E1F625BAC8F242B /* Eureka-dummy.m */; };
-		1C93D86DA0AEB40028BABC3A3DE73B7F /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E7A4F758D5BC8E2C5421672F159DB /* Row.swift */; };
+		19AFC8077796C94D7DD31B0E7F50DB03 /* Eureka-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5AA87DECAEB599A4357998353E011E9 /* Eureka-dummy.m */; };
+		1C93D86DA0AEB40028BABC3A3DE73B7F /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6C14A01366602E6F644715541ACAAC /* Row.swift */; };
 		1DF9F9AB17CEED595D376006FD535562 /* Pods-PetSafetyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3407B9D24C19FDD206D35C81B3C8B8A4 /* Pods-PetSafetyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21F6A582D28255F8E529F7EA7B2429EA /* Pods-PetSafetyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C211487C3FF043BE1BC8D3790F7C54 /* Pods-PetSafetyUITests-dummy.m */; };
 		238187A5A4F7520DA6235A160D292B62 /* Pods-PetSafetyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFAE6EF40ABFE98382372FAD8DDC99 /* Pods-PetSafetyTests-dummy.m */; };
-		24412725F72AB781C65FED663E5B25DE /* Eureka-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F448ED358205FCF29FD0A5F9F2401122 /* Eureka-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24412725F72AB781C65FED663E5B25DE /* Eureka-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B95E2DDFE744B82BA95C1834366B8CE7 /* Eureka-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24DFED38322FE7463EB471EEDEE6BF7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		25D8D0458BCA197BAC764DFC2CBFD289 /* RowControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3B6B324D85B6FB22F70299196C0022 /* RowControllerType.swift */; };
-		2634B2AB72D5D8ED489591213E014936 /* RuleRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B902D016F62C0D9F93BF69BC4457AFBA /* RuleRange.swift */; };
-		26565FD8C9960FF8904D2CAAB2C6BB4B /* HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345A06548764619315463D16E61CCC9B /* HeaderFooterView.swift */; };
-		279A83DC9F2C01F480BC112A20B6873C /* SwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A77F963EDEC218B7D26EAEC7787CB /* SwipeActions.swift */; };
-		287BE75854BFBB3B49A3CE3268F4E022 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404B8E064FD150F8A2D8D66888C1B9E /* ButtonRow.swift */; };
-		2E97216C1C7F9F2CD9BC52EA234127CC /* AlertRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE36EA5A2E8884AAAF77DEF345D92F /* AlertRow.swift */; };
-		306F42B6EBED2B04AEFF80D49C1A03F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		30E7256B41BA0DABAA10CC68D8D7BF53 /* OptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA6BFAF290D001E382185237E057EA /* OptionsRow.swift */; };
-		3821AF330FE77D79F58A716829D92996 /* Eureka.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEFB6E9FC591A8938FDD34B9A1F51CD4 /* Eureka.bundle */; };
-		3ABEF7245E13AADBA566CEA3E061ED8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E118D910976A65E47DD2EF4A7FDE1F /* UIKit.framework */; };
-		3CFBF86D8DC8F0519DCEB7B83276C502 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1209B138C1F86D9852C15DEFB6BA3B7 /* SwiftyOnboard.swift */; };
-		3DAA106B3684A06FEA830E090A697132 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707B94A51BF773424DF5176625CA98E9 /* SliderRow.swift */; };
-		3E645A4D6950FF94D944EF8DB15E294E /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804130DBD92D18F81C87C3DDD3D45E04 /* SelectorViewController.swift */; };
-		41074A53FA9609B8F5DD8BBEBEB148D4 /* Pods-PetSafety-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A35A676ED10CF94A434FAF8FB6E09CD2 /* Pods-PetSafety-dummy.m */; };
-		44627784F3ECCC248BAF8B01003A2FEA /* FieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DAA1E029C40091741F0CBFDE7B3DAD /* FieldRow.swift */; };
-		45A30147FA0F0703067D5175F610A00F /* SelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280F7D54D41DF2C758D78FD66833B0D /* SelectorRow.swift */; };
-		48ED1E1E86AA99B1B89422323D039D47 /* PickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CA9053F1F7923639314DC546B1FCD /* PickerRow.swift */; };
-		4A45D3E9D6BB19125B5DEF2094F19314 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9A5F3D2BE74EF2F8E28014D18F6FD /* SwiftyOnboardPage.swift */; };
-		4CF684A09D3BDDA366B0856F77227215 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896151AFE15444A833AE9C3D5713CD7 /* Protocols.swift */; };
-		4D3F908669ABA61E3D4054A297F60755 /* RuleRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE64EB4ECF5E937B813DB07F97829CD /* RuleRequired.swift */; };
-		4EA55BBBB181C6E3A739759236173A18 /* RowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D5451E7708A592CEAC7B622CF5409 /* RowProtocols.swift */; };
-		4F8B3D0568E65D9C804FB9621F68E192 /* GenericMultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB63FE936A04D11F1C8782B954895CC9 /* GenericMultipleSelectorRow.swift */; };
-		5533F297F16DE0A8BB487D2A1CA94395 /* DecimalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648A606826CBEC8D8CA5EFFA465EE99C /* DecimalFormatter.swift */; };
-		55A1C77BEAE81CE78C1A7A792FC2EE20 /* SwiftyOnboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BE9B9EC05D667F1BC051C08370BBFF /* SwiftyOnboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A3516009F452DE4C52D34D9E1F55F6E /* DateInlineFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506FF689123FCB91E6302F5A8A2D2F9 /* DateInlineFieldRow.swift */; };
-		5C1834BDC03355D57DB77D07B07A117D /* PickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1742A2C5EB8292FE4F82091F2E869E09 /* PickerInputRow.swift */; };
-		5CEC5970C4A3C1FEA706B041EE93925E /* NavigationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE5BD2434CA5348AB4F4928D2F56541 /* NavigationAccessoryView.swift */; };
-		6A2A305BA514630CA1A9F842F8855664 /* ImageRow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C70B85EB131A5189E3AEDA2C4A758 /* ImageRow-dummy.m */; };
-		74148E1FE3BB750800D605008ADAD720 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D75EFE1AFFFABEB57637E4E8226FDF5 /* Operators.swift */; };
-		7C44A2AD32395ECFCAD94ABBD590130E /* DateFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E03650028D34C7B46B9AD96CC5EAD87 /* DateFieldRow.swift */; };
-		7ED7B21E88EDE7A0293EC6EDEC6A9DD5 /* SegmentedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312AD72CE7F8781DD156E4343BABE2C /* SegmentedRow.swift */; };
-		7EF3713799FE9AC463D4BE55EC128231 /* RuleEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD77E4DA511594D1F25F29CA6C1FB8A /* RuleEmail.swift */; };
+		25D8D0458BCA197BAC764DFC2CBFD289 /* RowControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828CE0ADB38184481B01F553691F7FEB /* RowControllerType.swift */; };
+		2634B2AB72D5D8ED489591213E014936 /* RuleRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5505F2107E9D047EBB58A35626009425 /* RuleRange.swift */; };
+		26565FD8C9960FF8904D2CAAB2C6BB4B /* HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C0375EE7CD116B4FD50B7C62279F68 /* HeaderFooterView.swift */; };
+		279A83DC9F2C01F480BC112A20B6873C /* SwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6780B819F79F743D810CDF8FA3505CA8 /* SwipeActions.swift */; };
+		287BE75854BFBB3B49A3CE3268F4E022 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC1BFCEEB9B03CE4013228E02A148B /* ButtonRow.swift */; };
+		2A30EDF34E8EBA7AD18B0CD58BC750FF /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AD6F259BA3B74467F507A49F57A4E4 /* Drawer.swift */; };
+		2E97216C1C7F9F2CD9BC52EA234127CC /* AlertRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B29B0E28A5C9D6C16E58D772BF8C54F /* AlertRow.swift */; };
+		2E9DE897A3910A40A276B0E1568F63B6 /* SwiftyOnboard.h in Headers */ = {isa = PBXBuildFile; fileRef = D02451D489C0546D104866ABA2956BC9 /* SwiftyOnboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30E7256B41BA0DABAA10CC68D8D7BF53 /* OptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF627D5B458E56F483799EA2C3F7DC8 /* OptionsRow.swift */; };
+		3821AF330FE77D79F58A716829D92996 /* Eureka.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91A69E7EAA65FF60322A72EA09BE98C3 /* Eureka.bundle */; };
+		3DAA106B3684A06FEA830E090A697132 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB9A9BA74075655D86D2AAC2ACBE49 /* SliderRow.swift */; };
+		3E645A4D6950FF94D944EF8DB15E294E /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9FAE318B40F7DC4FBAC8975BB5881 /* SelectorViewController.swift */; };
+		3FE243D6E0B2C04B826DA294004F5826 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C6FB0E507010976CCDE4B442CCF /* Geometry.swift */; };
+		426E7541AEA2AB39396E2D9B0B8B41F1 /* Pods-PetSafety-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4073398FC55A8F1ED85C3B9EE8CE487B /* Pods-PetSafety-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44627784F3ECCC248BAF8B01003A2FEA /* FieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A4EFFCCA0950FEE10D44F0DD791B3 /* FieldRow.swift */; };
+		45A30147FA0F0703067D5175F610A00F /* SelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2CCF78F080E160E511662CC785D00B /* SelectorRow.swift */; };
+		48ED1E1E86AA99B1B89422323D039D47 /* PickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC58CAD4C398631337BC6AD1AE0C54DA /* PickerRow.swift */; };
+		4CF684A09D3BDDA366B0856F77227215 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5D2BFCA9DD915759551405C7D2E34A /* Protocols.swift */; };
+		4D3F908669ABA61E3D4054A297F60755 /* RuleRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51655596C0C73A2AAA732C15C04AF67 /* RuleRequired.swift */; };
+		4EA55BBBB181C6E3A739759236173A18 /* RowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FE322F71D5B08053311E6C9932D632 /* RowProtocols.swift */; };
+		4F8B3D0568E65D9C804FB9621F68E192 /* GenericMultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B1351CECF1AAF8F0B3E0189EA11F6 /* GenericMultipleSelectorRow.swift */; };
+		519490DBA567F6897861A2036195963E /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F390F206BFDC2E66574F7379D843F0A5 /* SwiftyOnboardOverlay.swift */; };
+		5533F297F16DE0A8BB487D2A1CA94395 /* DecimalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061E3FB324A2675EB487DC879600E372 /* DecimalFormatter.swift */; };
+		5A3516009F452DE4C52D34D9E1F55F6E /* DateInlineFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A0E90BDD8C1F6B7A4CB8E21952A351 /* DateInlineFieldRow.swift */; };
+		5C1834BDC03355D57DB77D07B07A117D /* PickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9809F1F5C071AA1B10DEAA23C50903 /* PickerInputRow.swift */; };
+		5CEC5970C4A3C1FEA706B041EE93925E /* NavigationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2E1E411059D08FFAB629050F2900FA /* NavigationAccessoryView.swift */; };
+		66BD7BEC07A7439B2D1058BBE122A268 /* ViewRow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B08E736940F997450DD8C046503EB51A /* ViewRow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67195199BA75B7DDEDA0E80F1BE60C8B /* SwiftyOnboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DAA2FC3BB95E24DAB6D4CF8256F5D0 /* SwiftyOnboard-dummy.m */; };
+		6A0EEB4682FF9EA1CFCB949780E2850E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFCD60BE19968B1BDB92A223BB5692B /* UIColor.swift */; };
+		6A2A305BA514630CA1A9F842F8855664 /* ImageRow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B450CF9DD722BF65045D73B598E72011 /* ImageRow-dummy.m */; };
+		6EC19FB810341B8CFE2299CB1641F3EE /* HGRippleRadarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA0F97BD02C256274897D33495CA55 /* HGRippleRadarView-dummy.m */; };
+		74148E1FE3BB750800D605008ADAD720 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56BC32E20806820B7BD7A0086C4B09D /* Operators.swift */; };
+		7C44A2AD32395ECFCAD94ABBD590130E /* DateFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8324E28997F4D6F02931180B4AEF0C7D /* DateFieldRow.swift */; };
+		7ED7B21E88EDE7A0293EC6EDEC6A9DD5 /* SegmentedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56E87827601FADC73A9F4B3DF0FDAE2 /* SegmentedRow.swift */; };
+		7EF3713799FE9AC463D4BE55EC128231 /* RuleEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E05309A199B82773B1736F6E691422 /* RuleEmail.swift */; };
+		80164264B84D20FE4EBB10139A92D4B9 /* ViewRow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6176F1A81F0C92C6E488E397AAA2F5D6 /* ViewRow-dummy.m */; };
 		83D2DC775110CB1771DB0CDA164F0D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		84C1EEEFE6BAEB404BDF1DFE80B0103A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BF9A95E724AF503B69588EBE866D0E /* Cell.swift */; };
-		877A0A159511077573CF194DF28D8037 /* SwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB651E1EE03598F74DC3D268E080F276 /* SwitchRow.swift */; };
-		87B6F6EFDC0598100FCD185D779845C3 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43454EC8CA346FDA838EB2645EBAB979 /* CheckRow.swift */; };
-		8B72F4541CF2D859DCAA2C1600992F7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		8C5A01880B66C01C84223F4EF4C474BE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C550100484C3ED6E77B474C886DEE2 /* Helpers.swift */; };
-		8C9745983CF09DBCE1962EBA38AABC92 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A939A2E3BF42E32B8F86868258F1CF /* CellType.swift */; };
-		8E930C3BFE5E90BB07909F4AA2F8DDFE /* PopoverSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C65D7F407E2CEB391CE2E467B1F02 /* PopoverSelectorRow.swift */; };
-		910258432BD29075937C5D82F3D7F6B2 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDB645C85184F973338CE85A719423 /* ImageRow.swift */; };
-		914DEA5309A0973CC4B0E4FE333CFD3A /* DateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED9E508175788D25AA5456DCA37481F /* DateRow.swift */; };
-		92557580872DDD0A6891419D1DB8BE2B /* ListCheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C55511BE10FB2196F2F20D63B302F4D /* ListCheckRow.swift */; };
-		95E6D7662838012824E02BB9386F511B /* ViewRow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2039F0111B0F4F1E3656556E336DD2 /* ViewRow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9805FE7CB20FBB60B65F934CE27D92B1 /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2301F73DCEB5FB6ACB6FD2D8A4FB5 /* SwiftyOnboardOverlay.swift */; };
-		982E9EF335092CDDC4FC32BDD5DB15EF /* TextAreaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A63BA82220501145756401CF38BA62 /* TextAreaRow.swift */; };
-		9844C9BB8B73E745AAC35278010B7762 /* MultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5528D3DE95C16C431BF65C907CB9F /* MultipleSelectorRow.swift */; };
-		9F26EAAD38045F100581AE859D510859 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B1E22F0FCCFA11316F29F5CBFB9D37 /* Core.swift */; };
-		9F9C4CF9CF78B1D3999F73F71D5EFA23 /* DatePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D340B6DEBECC491A32A840CE352BE96 /* DatePickerRow.swift */; };
-		A42730CE505B4B152DC3BD016CECB938 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE3700968DE5BC820DF760767022611 /* Form.swift */; };
-		A5F649EC2889986321CEEEA16939DC6F /* ViewRow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D550B3DD55994C4DD8F4A70D67B64503 /* ViewRow-dummy.m */; };
-		A7B38585E110183B601BE3FDCE7CF24F /* TriplePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450FF08FC019C90F6118C4F12FFC1EA /* TriplePickerRow.swift */; };
-		A91E02EB3D436D81C1F7F4BDAD695DE4 /* FieldsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B36E77B788E82F54B19B6ED745855 /* FieldsRow.swift */; };
-		AB6EA2C6655DDC8DE3F7FA6B213D0680 /* ImageRow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3645BB38FEAF8333685EF3413A9F5105 /* ImageRow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE34EC79435E2F68A678985572D16FEE /* SelectableRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265ABD0FD21250839CDDA2BC1C8027D /* SelectableRowType.swift */; };
+		84C1EEEFE6BAEB404BDF1DFE80B0103A /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCB97B1C5569C3A91780CD70DCE123 /* Cell.swift */; };
+		877A0A159511077573CF194DF28D8037 /* SwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D9691354B34AF0E7CB4A7BC0122FDA /* SwitchRow.swift */; };
+		87B6F6EFDC0598100FCD185D779845C3 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA87A1602AA6266ED012F1632B19F6 /* CheckRow.swift */; };
+		88D6C005679B4C3D03E5CC0558A4DFA5 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70828BF7A570DEA28AA2B06E728C193 /* SwiftyOnboardPage.swift */; };
+		8AE9A5EC48B689A860D11BA781B52784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
+		8C5A01880B66C01C84223F4EF4C474BE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99125AA2388994461CCC081D70A08672 /* Helpers.swift */; };
+		8C9745983CF09DBCE1962EBA38AABC92 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF23EE17F607CBE04C92D5486F5BA28 /* CellType.swift */; };
+		8E1D1F4DE127572E45BA2FAD20840809 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58453C6A63E8491B749BA2F1E0F8CD0 /* ItemView.swift */; };
+		8E36EF2ED03A58F663508255B04B640A /* Pods-PetSafety-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A35A676ED10CF94A434FAF8FB6E09CD2 /* Pods-PetSafety-dummy.m */; };
+		8E930C3BFE5E90BB07909F4AA2F8DDFE /* PopoverSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6DAF98EA0643C1DE642BB4803B3298 /* PopoverSelectorRow.swift */; };
+		910258432BD29075937C5D82F3D7F6B2 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CC6F838365C0E7BA54099691CA9DA /* ImageRow.swift */; };
+		914DEA5309A0973CC4B0E4FE333CFD3A /* DateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC8640527B92DF5EEC3D3AD0146081 /* DateRow.swift */; };
+		92557580872DDD0A6891419D1DB8BE2B /* ListCheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB43C447BF57DAEFD05DEFA5CF75F4E /* ListCheckRow.swift */; };
+		95A33E09403B8C4DDB3A0529ABE00310 /* ViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21142CF6D231BAC3B1C3776CB69A143C /* ViewRow.swift */; };
+		982E9EF335092CDDC4FC32BDD5DB15EF /* TextAreaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B82518DDEA84DBF4F32858FF6F46B /* TextAreaRow.swift */; };
+		9844C9BB8B73E745AAC35278010B7762 /* MultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D98554B576E3E295587B773CADF47E /* MultipleSelectorRow.swift */; };
+		9D1AAE6F93227B054DAE5E575ECC3C05 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0C19F11F32C912C1014479341867D7 /* Eureka.framework */; };
+		9F26EAAD38045F100581AE859D510859 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C41BC6028519F616629D9A18BE47F /* Core.swift */; };
+		9F9C4CF9CF78B1D3999F73F71D5EFA23 /* DatePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685AEC043FBAE791F99AC1A72736A4F0 /* DatePickerRow.swift */; };
+		9FE63E8712561C9D494E2127DD732875 /* SwiftyOnboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5062EFDF3BF4BAFC2F8CE6021C129A2B /* SwiftyOnboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A42730CE505B4B152DC3BD016CECB938 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F5460798B24B8B73911305F916CF1 /* Form.swift */; };
+		A7B38585E110183B601BE3FDCE7CF24F /* TriplePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB113456C262E127ECB08A58D41D916 /* TriplePickerRow.swift */; };
+		A91E02EB3D436D81C1F7F4BDAD695DE4 /* FieldsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D17055B19B1169392C782A35842AA82 /* FieldsRow.swift */; };
+		AB6EA2C6655DDC8DE3F7FA6B213D0680 /* ImageRow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26E91F531887E7BFE958F1950E8645AD /* ImageRow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE34EC79435E2F68A678985572D16FEE /* SelectableRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658687D05A5E287E1F1207168687855F /* SelectableRowType.swift */; };
+		AEED58353A5FB03E52E8116F09568D13 /* RadarViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2578D08CF67280151BA7FA8407F78 /* RadarViewProtocol.swift */; };
 		B0E45B645493E668A9B28FA67475678A /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0C19F11F32C912C1014479341867D7 /* Eureka.framework */; };
-		B39E3EC7DD02DBBEB8191E4907B182F2 /* BaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26DAA857A52A2DE0C962AC5913D2A6 /* BaseRow.swift */; };
-		B3D4C29C195EC854278DE1C3604C85B8 /* PickerInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2A2AAA695F5C50ADC5556698FEE98 /* PickerInlineRow.swift */; };
-		B4E2C479A4F5AE6B623358BA627CBF7E /* ActionSheetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFC71DD59D32A57D7B871B643864AC /* ActionSheetRow.swift */; };
-		B56DA7CCA71E56DDA822E43471168DD5 /* DoublePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3632C9DA34A09B20C44618519375284 /* DoublePickerRow.swift */; };
-		B74A338ED05D70855ED500375705FA25 /* MultipleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479A6F506F930C94D7709F6D21A077 /* MultipleSelectorViewController.swift */; };
-		B758518039F59EE5954420C880AD99A5 /* InlineRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724242ABEE82AC18D0CEF284AC1371DB /* InlineRowType.swift */; };
-		BC4AD0347C5C33B53016C97AFEE1AF63 /* PushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBAF6A47D07C574AC27E9D465DDF825 /* PushRow.swift */; };
-		BCF869F848BDFB858BF8839651612BA4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48105582A8B2E30A03FD0E397BE7CCE7 /* Section.swift */; };
-		C356114E1CE199B221EE4352181637EB /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0C19F11F32C912C1014479341867D7 /* Eureka.framework */; };
-		C37E7517D0CFA6066D0422299EE278FA /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB0DBD0538E486A5B0227A132FC8EF3 /* ImagePickerController.swift */; };
-		C5704955E21DB1A85ED88CBAFCEEE6AF /* SwiftyOnboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F217B13324CA717193B41604F9B4D5A3 /* SwiftyOnboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8682BB725C720E6B2A85D5B8778DCF3 /* DoublePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128ADC034D14929B09F340AE6B64B55 /* DoublePickerInputRow.swift */; };
+		B39E3EC7DD02DBBEB8191E4907B182F2 /* BaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686861F0CDA3DD2AB6018BB6136095C /* BaseRow.swift */; };
+		B3D4C29C195EC854278DE1C3604C85B8 /* PickerInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284F786386CE0B5E07E2C1866E4692D /* PickerInlineRow.swift */; };
+		B4DA36CAD4A41453E3FCC6533508AA04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
+		B4E2C479A4F5AE6B623358BA627CBF7E /* ActionSheetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41BD415AF3F655CA52D197813585954 /* ActionSheetRow.swift */; };
+		B56DA7CCA71E56DDA822E43471168DD5 /* DoublePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A64E809B34E4A2F4216FCD9B5E004A1 /* DoublePickerRow.swift */; };
+		B74A338ED05D70855ED500375705FA25 /* MultipleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE79018C12070D640C8B5EAF319C4D63 /* MultipleSelectorViewController.swift */; };
+		B758518039F59EE5954420C880AD99A5 /* InlineRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD8CD21A9D9AC626FD4D7E2C5B8706 /* InlineRowType.swift */; };
+		BC4AD0347C5C33B53016C97AFEE1AF63 /* PushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413B89DE4A42E8A8AB835C16ED7751A /* PushRow.swift */; };
+		BCF869F848BDFB858BF8839651612BA4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAE1CE4930DAD0979F705AF872C2A3 /* Section.swift */; };
+		C37E7517D0CFA6066D0422299EE278FA /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE8293173EB6C85F8C86F22CDA5F1EF /* ImagePickerController.swift */; };
+		C8682BB725C720E6B2A85D5B8778DCF3 /* DoublePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3AA61B28C7262E8036449A40CB37C /* DoublePickerInputRow.swift */; };
+		C8C70D9FD6325140F233DC6D19C8525E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E118D910976A65E47DD2EF4A7FDE1F /* UIKit.framework */; };
 		C99AA3CF70EAB8BFA9F320D2D35B17A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E118D910976A65E47DD2EF4A7FDE1F /* UIKit.framework */; };
 		CBDD0698DA6591E976089B982C272839 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		CD317DC11A6491AFFFA40D9E8B7B42E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		D400533601A5D7376A13F567908850C3 /* RuleRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133138B43887724DB858139E349B2EA /* RuleRegExp.swift */; };
-		D460021CDAA9D2A50D1A2C2E3ADF40E4 /* SwiftyOnboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E1114D44218DD092A1E47124EE5159 /* SwiftyOnboard-dummy.m */; };
-		D6E282CFDA0176397A3E0B6F28A7FEA3 /* RuleURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F678045E169050314F7C708742D08C /* RuleURL.swift */; };
-		D70A52B50C0E61235B8125104135F7F8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51841A48A83D89FAD2B3ACEB36768B /* ImageCell.swift */; };
+		CD985228381999F0E98C43AA3E59EC42 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92AFE4C6BAED46B0262109C6670CF84 /* Animation.swift */; };
+		D24F0D0D1FF26DB70FEACA33F756F352 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB29FB5BE12BBE8BAE2280396F79C10 /* RadarView.swift */; };
+		D400533601A5D7376A13F567908850C3 /* RuleRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89313B8E8DC39ACD4597D3071F1B5792 /* RuleRegExp.swift */; };
+		D6E282CFDA0176397A3E0B6F28A7FEA3 /* RuleURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0324086E2E90AFA3A15B9A77885A50E /* RuleURL.swift */; };
+		D70A52B50C0E61235B8125104135F7F8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C53BAA58F08937A58E44E39BFE7D77 /* ImageCell.swift */; };
+		DACE7C1AD361639EB39E411BBB89773D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
 		DC1C56A1B862AA1DF30B019EB41DA0CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
-		DF1FF7E623ECEC3F3AAD33544C48EBE2 /* AlertOptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0AC26FBADD828F931B476E98A189E5 /* AlertOptionsRow.swift */; };
-		E9EB37F7808C9484BA6A07AA81CA0387 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB4A4E79F89AAA74861D5AA2DE6388 /* RowType.swift */; };
-		EFA9D9000808D5BB24FE8CF33E085A0E /* StepperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848646BC13D956DB9D5BBD84D2FFF4A /* StepperRow.swift */; };
-		F0B9289FF41C540C4800B15E74538E5B /* SelectableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893219159C05593359F320EFE715E1A /* SelectableSection.swift */; };
-		F3EC6A7ED8D205C0D2FE2D4462D9A5D4 /* PresenterRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F33783DEBA7B11EC03F555B134E9AF7 /* PresenterRowType.swift */; };
-		F5E609BB2597358B1A338F121CDA94C3 /* ViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A77B9A4276BCC0249380B2BE74AF37 /* ViewRow.swift */; };
-		FA9F82B0CF2BD9866010CD559772A554 /* RuleEqualsToRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAE8CAC9FFB63AC5FB2CF50EFADECA /* RuleEqualsToRow.swift */; };
-		FC5F8EA3DC8F60DB05E902A96EB4A14B /* RuleLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3E2F982327FEF8E8395CE1CC5E30F /* RuleLength.swift */; };
+		DEDF54D2DAB676C77492608671CBD30E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503D15FBFF94C2B58AE7B35F6A440BC2 /* Item.swift */; };
+		DF1FF7E623ECEC3F3AAD33544C48EBE2 /* AlertOptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CAD589691A84B1BBC5BE73B07476BF /* AlertOptionsRow.swift */; };
+		E0C8487EAAFA145F873604C95ADF8D01 /* RippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5105470768E3E2D8093DE7ECBB23745B /* RippleView.swift */; };
+		E9EB37F7808C9484BA6A07AA81CA0387 /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A108146A45F8A32654ABC419C29BC2A2 /* RowType.swift */; };
+		EFA9D9000808D5BB24FE8CF33E085A0E /* StepperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB097565020D229EA0A69DBB612325CD /* StepperRow.swift */; };
+		F0B9289FF41C540C4800B15E74538E5B /* SelectableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A7688402EDE5FCC58E3C163DC427E /* SelectableSection.swift */; };
+		F3EC6A7ED8D205C0D2FE2D4462D9A5D4 /* PresenterRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C5EB0BC58F19B5997C50B6F0FB317 /* PresenterRowType.swift */; };
+		F47A2337CCDF1AC0196482FAAB6950D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */; };
+		FA9F82B0CF2BD9866010CD559772A554 /* RuleEqualsToRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7FBF60573043AE271B6721E1ECE50 /* RuleEqualsToRow.swift */; };
+		FC5F8EA3DC8F60DB05E902A96EB4A14B /* RuleLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7EBB921B3A7D1A96E2149388054E4 /* RuleLength.swift */; };
+		FCF8D230021A360BC3EB81A1CC9EDBF7 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8FE2940C254DBDDA5B726FF47F33F /* SwiftyOnboard.swift */; };
+		FD0B2BF43BD3FEA06FC8B972D9F03DDC /* HGRippleRadarView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E86EE9805256EB578816C6AFD8CF1F14 /* HGRippleRadarView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A62FFCE20E3DF98A59EB8AB282A19BF /* PBXContainerItemProxy */ = {
+		14188E595182FC6B9675733E6CB2699C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC7A6FA04D4E7FA08418A89E1A1C4E8C;
+			remoteInfo = SwiftyOnboard;
+		};
+		1BAAAFA45867A121F5FBD61D5EA37710 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F32982340C6013DA81094C00BB2C7B5;
+			remoteInfo = Eureka;
+		};
+		51146D2E03F543F5B17AE3E2217FDF3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F32982340C6013DA81094C00BB2C7B5;
+			remoteInfo = Eureka;
+		};
+		90B3CA44A4B9176A393ED165B3A474A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7A1A0EBF3571931F4F65625D860135C;
+			remoteInfo = ViewRow;
+		};
+		949A5DF2F07F9FA3F14E3A0D4B3F6B8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0632CF7E3E1916C481207929FE1E6CB0;
+			remoteInfo = "Pods-PetSafety";
+		};
+		B10FA4A67D61347553F033C284C46F41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD174137A0573FF2157AB109E55D69E3;
+			remoteInfo = HGRippleRadarView;
+		};
+		B3D6C8A58068CF8CD058D5014E00D008 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 37900E72EC972AF6ED5D988BD1F194A0;
 			remoteInfo = ImageRow;
 		};
-		49841E4C0E5588340E33DEF49870E115 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F32982340C6013DA81094C00BB2C7B5;
-			remoteInfo = Eureka;
-		};
-		949A5DF2F07F9FA3F14E3A0D4B3F6B8D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB8D6F11B133728D5A97748C309DCCB;
-			remoteInfo = "Pods-PetSafety";
-		};
-		D40E117C4C274A6D16B09ABB253E505A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F32982340C6013DA81094C00BB2C7B5;
-			remoteInfo = Eureka;
-		};
-		DBD81C43B578E6C91DB43BC65E310535 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9889FEC1399FBA299B3A163DAA232BA7;
-			remoteInfo = SwiftyOnboard;
-		};
 		E1B63280000398571069BBAD133D1442 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BFB8D6F11B133728D5A97748C309DCCB;
+			remoteGlobalIDString = 0632CF7E3E1916C481207929FE1E6CB0;
 			remoteInfo = "Pods-PetSafety";
-		};
-		E3A5588A45AE9773759925267F0B8258 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8407FBB1E78EB2D15C49DF7464DB6F09;
-			remoteInfo = ViewRow;
 		};
 		EF28445DF9B20FA5F51E1D76A0B4EEB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -169,149 +188,173 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00DAA1E029C40091741F0CBFDE7B3DAD /* FieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldRow.swift; path = Source/Rows/Common/FieldRow.swift; sourceTree = "<group>"; };
+		02FCB97B1C5569C3A91780CD70DCE123 /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Source/Core/Cell.swift; sourceTree = "<group>"; };
 		032F6CC86982C29066BBF2275248A8F0 /* Pods-PetSafetyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafetyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		038964386C5A502D78C2C111C628F296 /* Pods-PetSafetyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetSafetyUITests.modulemap"; sourceTree = "<group>"; };
 		03F9BA8C86C4A379CE917778F0DBB4F4 /* Pods-PetSafetyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafetyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		04EE36EA5A2E8884AAAF77DEF345D92F /* AlertRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertRow.swift; path = Source/Rows/AlertRow.swift; sourceTree = "<group>"; };
-		0506FF689123FCB91E6302F5A8A2D2F9 /* DateInlineFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineFieldRow.swift; path = Source/Rows/Common/DateInlineFieldRow.swift; sourceTree = "<group>"; };
+		05DB9A9BA74075655D86D2AAC2ACBE49 /* SliderRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRow.swift; path = Source/Rows/SliderRow.swift; sourceTree = "<group>"; };
+		061E3FB324A2675EB487DC879600E372 /* DecimalFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalFormatter.swift; path = Source/Rows/Common/DecimalFormatter.swift; sourceTree = "<group>"; };
 		064E33848760196A1641823B863214B5 /* Pods-PetSafety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafety.release.xcconfig"; sourceTree = "<group>"; };
 		07112C301F9971E0EBF32131EED01A30 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		075BF962EEFBE6943F6185E54C953A8B /* Eureka.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Eureka.xcconfig; sourceTree = "<group>"; };
-		07BE9B9EC05D667F1BC051C08370BBFF /* SwiftyOnboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyOnboard.h; path = SwiftyOnboard/SwiftyOnboard.h; sourceTree = "<group>"; };
-		0848646BC13D956DB9D5BBD84D2FFF4A /* StepperRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperRow.swift; path = Source/Rows/StepperRow.swift; sourceTree = "<group>"; };
-		0A3B6B324D85B6FB22F70299196C0022 /* RowControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowControllerType.swift; path = Source/Core/RowControllerType.swift; sourceTree = "<group>"; };
-		0DA3E2F982327FEF8E8395CE1CC5E30F /* RuleLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleLength.swift; path = Source/Validations/RuleLength.swift; sourceTree = "<group>"; };
-		0DB0DBD0538E486A5B0227A132FC8EF3 /* ImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Sources/ImagePickerController.swift; sourceTree = "<group>"; };
-		0DFB5E0376994DB161ED09ACEB1E1A01 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1265ABD0FD21250839CDDA2BC1C8027D /* SelectableRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableRowType.swift; path = Source/Core/SelectableRowType.swift; sourceTree = "<group>"; };
-		15446BC82AFEC5815EB8EA13696DF750 /* ImageRow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageRow.modulemap; sourceTree = "<group>"; };
+		08BC79B59BA060D6CFF9048618462665 /* SwiftyOnboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-prefix.pch"; sourceTree = "<group>"; };
+		0FA7FBF60573043AE271B6721E1ECE50 /* RuleEqualsToRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEqualsToRow.swift; path = Source/Validations/RuleEqualsToRow.swift; sourceTree = "<group>"; };
+		10EA4D90B31CE7B8369DBFFBAE732B8C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12A0E90BDD8C1F6B7A4CB8E21952A351 /* DateInlineFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineFieldRow.swift; path = Source/Rows/Common/DateInlineFieldRow.swift; sourceTree = "<group>"; };
+		15116C6FB0E507010976CCDE4B442CCF /* Geometry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = HGRippleRadarView/Classes/Utilities/Geometry.swift; sourceTree = "<group>"; };
+		1686861F0CDA3DD2AB6018BB6136095C /* BaseRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRow.swift; path = Source/Core/BaseRow.swift; sourceTree = "<group>"; };
 		170FD5351131DD3DE563291624BFE5DD /* Pods-PetSafetyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetSafetyTests.modulemap"; sourceTree = "<group>"; };
-		1742A2C5EB8292FE4F82091F2E869E09 /* PickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInputRow.swift; path = Source/Rows/PickerInputRow.swift; sourceTree = "<group>"; };
-		1896151AFE15444A833AE9C3D5713CD7 /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Source/Rows/Common/Protocols.swift; sourceTree = "<group>"; };
-		1DE3700968DE5BC820DF760767022611 /* Form.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Source/Core/Form.swift; sourceTree = "<group>"; };
-		1EE7927A9D8B1FDCFA16EDF7D4F65157 /* ImageRow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageRow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FBAE8CAC9FFB63AC5FB2CF50EFADECA /* RuleEqualsToRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEqualsToRow.swift; path = Source/Validations/RuleEqualsToRow.swift; sourceTree = "<group>"; };
-		2133138B43887724DB858139E349B2EA /* RuleRegExp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRegExp.swift; path = Source/Validations/RuleRegExp.swift; sourceTree = "<group>"; };
+		1773225C3734364D6B1F5C5C3F7B6B84 /* ViewRow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewRow.xcconfig; sourceTree = "<group>"; };
+		19074ED72A9D7581CE55E0D64A89A989 /* HGRippleRadarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGRippleRadarView.xcconfig; sourceTree = "<group>"; };
+		19FA87A1602AA6266ED012F1632B19F6 /* CheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckRow.swift; path = Source/Rows/CheckRow.swift; sourceTree = "<group>"; };
+		1B9809F1F5C071AA1B10DEAA23C50903 /* PickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInputRow.swift; path = Source/Rows/PickerInputRow.swift; sourceTree = "<group>"; };
+		1C91734699350EF008A2A72E57BCA806 /* HGRippleRadarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGRippleRadarView-prefix.pch"; sourceTree = "<group>"; };
+		1D17055B19B1169392C782A35842AA82 /* FieldsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldsRow.swift; path = Source/Rows/FieldsRow.swift; sourceTree = "<group>"; };
+		21142CF6D231BAC3B1C3776CB69A143C /* ViewRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewRow.swift; path = ViewRow/ViewRow.swift; sourceTree = "<group>"; };
+		216ADD9B4CA86CE00E5920D19417351B /* RuleClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleClosure.swift; path = Source/Validations/RuleClosure.swift; sourceTree = "<group>"; };
+		2339087F45EC6C850EC21E55D029940B /* SwiftyOnboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyOnboard.xcconfig; sourceTree = "<group>"; };
 		23E118D910976A65E47DD2EF4A7FDE1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		25367A18A9098127E89A4A878FB0D407 /* Pods-PetSafetyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetSafetyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		27A63BA82220501145756401CF38BA62 /* TextAreaRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAreaRow.swift; path = Source/Rows/TextAreaRow.swift; sourceTree = "<group>"; };
-		2BBAF6A47D07C574AC27E9D465DDF825 /* PushRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushRow.swift; path = Source/Rows/PushRow.swift; sourceTree = "<group>"; };
-		2C6C65D7F407E2CEB391CE2E467B1F02 /* PopoverSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopoverSelectorRow.swift; path = Source/Rows/PopoverSelectorRow.swift; sourceTree = "<group>"; };
-		2ECA6BFAF290D001E382185237E057EA /* OptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsRow.swift; path = Source/Rows/Common/OptionsRow.swift; sourceTree = "<group>"; };
-		2F0FA1B536C20067845054908E657363 /* SelectorAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorAlertController.swift; path = Source/Rows/Controllers/SelectorAlertController.swift; sourceTree = "<group>"; };
-		2F6B36E77B788E82F54B19B6ED745855 /* FieldsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldsRow.swift; path = Source/Rows/FieldsRow.swift; sourceTree = "<group>"; };
-		2FD2301F73DCEB5FB6ACB6FD2D8A4FB5 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardOverlay.swift; path = SwiftyOnboard/SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
+		25C53BAA58F08937A58E44E39BFE7D77 /* ImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Sources/ImageCell.swift; sourceTree = "<group>"; };
+		26E91F531887E7BFE958F1950E8645AD /* ImageRow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageRow-umbrella.h"; sourceTree = "<group>"; };
+		27DD8CD21A9D9AC626FD4D7E2C5B8706 /* InlineRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineRowType.swift; path = Source/Core/InlineRowType.swift; sourceTree = "<group>"; };
+		281A3760132FD6C056FCBFF1997FE09F /* Pods_PetSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetSafety.framework; path = "Pods-PetSafety.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28EABC4F1BEE519FD55E0083331F5964 /* SwiftyOnboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyOnboard.framework; path = SwiftyOnboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CF7EBB921B3A7D1A96E2149388054E4 /* RuleLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleLength.swift; path = Source/Validations/RuleLength.swift; sourceTree = "<group>"; };
+		2EE2578D08CF67280151BA7FA8407F78 /* RadarViewProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarViewProtocol.swift; path = HGRippleRadarView/Classes/RadarViewProtocol.swift; sourceTree = "<group>"; };
+		305462B45EB68366E9703B59045C77B4 /* DateInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineRow.swift; path = Source/Rows/DateInlineRow.swift; sourceTree = "<group>"; };
+		3084FF52F75796BB6A074DD3829639D5 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Core/Validation.swift; sourceTree = "<group>"; };
+		32C0375EE7CD116B4FD50B7C62279F68 /* HeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderFooterView.swift; path = Source/Core/HeaderFooterView.swift; sourceTree = "<group>"; };
+		33FE322F71D5B08053311E6C9932D632 /* RowProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowProtocols.swift; path = Source/Core/RowProtocols.swift; sourceTree = "<group>"; };
 		3407B9D24C19FDD206D35C81B3C8B8A4 /* Pods-PetSafetyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetSafetyUITests-umbrella.h"; sourceTree = "<group>"; };
-		345A06548764619315463D16E61CCC9B /* HeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderFooterView.swift; path = Source/Core/HeaderFooterView.swift; sourceTree = "<group>"; };
 		34FBDD998A59C1AE47D7C3A4B3148A3F /* Pods-PetSafetyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetSafetyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		359100EB364AE4A662509FE3A97ECEAE /* Pods_PetSafetyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafetyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3645BB38FEAF8333685EF3413A9F5105 /* ImageRow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageRow-umbrella.h"; sourceTree = "<group>"; };
-		3A2039F0111B0F4F1E3656556E336DD2 /* ViewRow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewRow-umbrella.h"; sourceTree = "<group>"; };
-		3AE64EB4ECF5E937B813DB07F97829CD /* RuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRequired.swift; path = Source/Validations/RuleRequired.swift; sourceTree = "<group>"; };
-		3DD77E4DA511594D1F25F29CA6C1FB8A /* RuleEmail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEmail.swift; path = Source/Validations/RuleEmail.swift; sourceTree = "<group>"; };
-		3E03650028D34C7B46B9AD96CC5EAD87 /* DateFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFieldRow.swift; path = Source/Rows/Common/DateFieldRow.swift; sourceTree = "<group>"; };
+		3A64E809B34E4A2F4216FCD9B5E004A1 /* DoublePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerRow.swift; path = Source/Rows/DoublePickerRow.swift; sourceTree = "<group>"; };
+		3BE8293173EB6C85F8C86F22CDA5F1EF /* ImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Sources/ImagePickerController.swift; sourceTree = "<group>"; };
 		4073398FC55A8F1ED85C3B9EE8CE487B /* Pods-PetSafety-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetSafety-umbrella.h"; sourceTree = "<group>"; };
-		43454EC8CA346FDA838EB2645EBAB979 /* CheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckRow.swift; path = Source/Rows/CheckRow.swift; sourceTree = "<group>"; };
-		4404B8E064FD150F8A2D8D66888C1B9E /* ButtonRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRow.swift; path = Source/Rows/ButtonRow.swift; sourceTree = "<group>"; };
+		427A7688402EDE5FCC58E3C163DC427E /* SelectableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableSection.swift; path = Source/Core/SelectableSection.swift; sourceTree = "<group>"; };
 		44D41034CEE4CABD7CCDA918452E7ACB /* Pods-PetSafety-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafety-frameworks.sh"; sourceTree = "<group>"; };
-		48105582A8B2E30A03FD0E397BE7CCE7 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Source/Core/Section.swift; sourceTree = "<group>"; };
-		4ACB4A4E79F89AAA74861D5AA2DE6388 /* RowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowType.swift; path = Source/Core/RowType.swift; sourceTree = "<group>"; };
-		4C4D0B1FB991E59CA431A1755B1ABACF /* Eureka.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Eureka.modulemap; sourceTree = "<group>"; };
-		4C51841A48A83D89FAD2B3ACEB36768B /* ImageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Sources/ImageCell.swift; sourceTree = "<group>"; };
 		4CC123F349168934D668F35EDE280BE4 /* Pods-PetSafetyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetSafetyTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4D75EFE1AFFFABEB57637E4E8226FDF5 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Source/Core/Operators.swift; sourceTree = "<group>"; };
+		4DC04DDB5936329B337057AA0BF9C6CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE8FE2940C254DBDDA5B726FF47F33F /* SwiftyOnboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboard.swift; path = SwiftyOnboard/SwiftyOnboard.swift; sourceTree = "<group>"; };
+		503D15FBFF94C2B58AE7B35F6A440BC2 /* Item.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Item.swift; path = HGRippleRadarView/Classes/Item.swift; sourceTree = "<group>"; };
+		5062EFDF3BF4BAFC2F8CE6021C129A2B /* SwiftyOnboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-umbrella.h"; sourceTree = "<group>"; };
+		5105470768E3E2D8093DE7ECBB23745B /* RippleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RippleView.swift; path = HGRippleRadarView/Classes/RippleView.swift; sourceTree = "<group>"; };
+		510B2586CDF746D4231E9DEB17278B7F /* Eureka.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Eureka.modulemap; sourceTree = "<group>"; };
 		5156E4E0C0782412F00DA4563C0BF281 /* Pods-PetSafety-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetSafety-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5280F7D54D41DF2C758D78FD66833B0D /* SelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorRow.swift; path = Source/Rows/Common/SelectorRow.swift; sourceTree = "<group>"; };
+		51D9691354B34AF0E7CB4A7BC0122FDA /* SwitchRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchRow.swift; path = Source/Rows/SwitchRow.swift; sourceTree = "<group>"; };
 		5351CE98E5ABAD91C587BE9E6908CEC0 /* Pods-PetSafety.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PetSafety.modulemap"; sourceTree = "<group>"; };
+		54D98554B576E3E295587B773CADF47E /* MultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorRow.swift; path = Source/Rows/MultipleSelectorRow.swift; sourceTree = "<group>"; };
+		5505F2107E9D047EBB58A35626009425 /* RuleRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRange.swift; path = Source/Validations/RuleRange.swift; sourceTree = "<group>"; };
+		56C66C711E7884195FD6B5EF624EB6F9 /* SelectorAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorAlertController.swift; path = Source/Rows/Controllers/SelectorAlertController.swift; sourceTree = "<group>"; };
 		56DB063ABA3E2EADD42B591732ACCB4E /* Pods-PetSafetyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafetyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		57C211487C3FF043BE1BC8D3790F7C54 /* Pods-PetSafetyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetSafetyUITests-dummy.m"; sourceTree = "<group>"; };
+		589B150D51C6D4A1B2D16ACB3905551A /* ImageRow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ImageRow.framework; path = ImageRow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FF8BC38871735446FF12645AE4306F /* ViewRow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewRow.modulemap; sourceTree = "<group>"; };
+		59B3AA61B28C7262E8036449A40CB37C /* DoublePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerInputRow.swift; path = Source/Rows/DoublePickerInputRow.swift; sourceTree = "<group>"; };
 		5ABF57DAD2E6974CD870C8EE3F577D38 /* Pods-PetSafetyTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafetyTests-frameworks.sh"; sourceTree = "<group>"; };
-		5C2A77F963EDEC218B7D26EAEC7787CB /* SwipeActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActions.swift; path = Source/Core/SwipeActions.swift; sourceTree = "<group>"; };
-		5C55511BE10FB2196F2F20D63B302F4D /* ListCheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListCheckRow.swift; path = Source/Rows/SelectableRows/ListCheckRow.swift; sourceTree = "<group>"; };
-		5ED9E508175788D25AA5456DCA37481F /* DateRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRow.swift; path = Source/Rows/DateRow.swift; sourceTree = "<group>"; };
-		630C70B85EB131A5189E3AEDA2C4A758 /* ImageRow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageRow-dummy.m"; sourceTree = "<group>"; };
-		648A606826CBEC8D8CA5EFFA465EE99C /* DecimalFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalFormatter.swift; path = Source/Rows/Common/DecimalFormatter.swift; sourceTree = "<group>"; };
-		67CE9B23606C3A70BB58AEEE104E6D8C /* ViewRow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewRow.xcconfig; sourceTree = "<group>"; };
-		68E1114D44218DD092A1E47124EE5159 /* SwiftyOnboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyOnboard-dummy.m"; sourceTree = "<group>"; };
-		6935434DF486AB80D63C0FAC5D6EB214 /* SwiftyOnboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyOnboard.modulemap; sourceTree = "<group>"; };
-		69C1E88D6DE8002F8878807752D4B481 /* Pods_PetSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F33783DEBA7B11EC03F555B134E9AF7 /* PresenterRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresenterRowType.swift; path = Source/Core/PresenterRowType.swift; sourceTree = "<group>"; };
-		6F43F015458AD9C2AA53F73E48E5A667 /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		707B94A51BF773424DF5176625CA98E9 /* SliderRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRow.swift; path = Source/Rows/SliderRow.swift; sourceTree = "<group>"; };
-		70B9A5F3D2BE74EF2F8E28014D18F6FD /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardPage.swift; path = SwiftyOnboard/SwiftyOnboardPage.swift; sourceTree = "<group>"; };
-		7128ADC034D14929B09F340AE6B64B55 /* DoublePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerInputRow.swift; path = Source/Rows/DoublePickerInputRow.swift; sourceTree = "<group>"; };
-		724242ABEE82AC18D0CEF284AC1371DB /* InlineRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineRowType.swift; path = Source/Core/InlineRowType.swift; sourceTree = "<group>"; };
-		76DF67446B890250C690ACBCB58FEEA5 /* RuleClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleClosure.swift; path = Source/Validations/RuleClosure.swift; sourceTree = "<group>"; };
-		7845C99E8038ACAAE539D7B1A35830E7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B29B0E28A5C9D6C16E58D772BF8C54F /* AlertRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertRow.swift; path = Source/Rows/AlertRow.swift; sourceTree = "<group>"; };
+		608E1285F8795F4A44D98680C8B8FB71 /* HGRippleRadarView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HGRippleRadarView.framework; path = HGRippleRadarView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60DC8640527B92DF5EEC3D3AD0146081 /* DateRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRow.swift; path = Source/Rows/DateRow.swift; sourceTree = "<group>"; };
+		6176F1A81F0C92C6E488E397AAA2F5D6 /* ViewRow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewRow-dummy.m"; sourceTree = "<group>"; };
+		62CA0F97BD02C256274897D33495CA55 /* HGRippleRadarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGRippleRadarView-dummy.m"; sourceTree = "<group>"; };
+		654D755895EB8290AFF8B02338434C84 /* ViewRow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewRow-prefix.pch"; sourceTree = "<group>"; };
+		658687D05A5E287E1F1207168687855F /* SelectableRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableRowType.swift; path = Source/Core/SelectableRowType.swift; sourceTree = "<group>"; };
+		6780B819F79F743D810CDF8FA3505CA8 /* SwipeActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActions.swift; path = Source/Core/SwipeActions.swift; sourceTree = "<group>"; };
+		685AEC043FBAE791F99AC1A72736A4F0 /* DatePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerRow.swift; path = Source/Rows/DatePickerRow.swift; sourceTree = "<group>"; };
+		6C2CCF78F080E160E511662CC785D00B /* SelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorRow.swift; path = Source/Rows/Common/SelectorRow.swift; sourceTree = "<group>"; };
+		6CF23EE17F607CBE04C92D5486F5BA28 /* CellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellType.swift; path = Source/Core/CellType.swift; sourceTree = "<group>"; };
+		7413B89DE4A42E8A8AB835C16ED7751A /* PushRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushRow.swift; path = Source/Rows/PushRow.swift; sourceTree = "<group>"; };
 		7DA6E35499FE270A86369BA8E522A0D0 /* Pods-PetSafetyUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafetyUITests-resources.sh"; sourceTree = "<group>"; };
-		804130DBD92D18F81C87C3DDD3D45E04 /* SelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorViewController.swift; path = Source/Rows/Controllers/SelectorViewController.swift; sourceTree = "<group>"; };
-		838782FC68CB86ACC40D00347B18EDCC /* DateInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineRow.swift; path = Source/Rows/DateInlineRow.swift; sourceTree = "<group>"; };
+		8284F786386CE0B5E07E2C1866E4692D /* PickerInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInlineRow.swift; path = Source/Rows/PickerInlineRow.swift; sourceTree = "<group>"; };
+		828CE0ADB38184481B01F553691F7FEB /* RowControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowControllerType.swift; path = Source/Core/RowControllerType.swift; sourceTree = "<group>"; };
+		8324E28997F4D6F02931180B4AEF0C7D /* DateFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFieldRow.swift; path = Source/Rows/Common/DateFieldRow.swift; sourceTree = "<group>"; };
 		853ABE91F519AF2C57E267E9B6EADB4F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		886C41BC6028519F616629D9A18BE47F /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = Source/Core/Core.swift; sourceTree = "<group>"; };
+		89313B8E8DC39ACD4597D3071F1B5792 /* RuleRegExp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRegExp.swift; path = Source/Validations/RuleRegExp.swift; sourceTree = "<group>"; };
 		8977D6B64286198CBFB3E76A349B052C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D9DBF9A8A013AE55EED8A915A6C897A /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Core/Validation.swift; sourceTree = "<group>"; };
-		90B1E22F0FCCFA11316F29F5CBFB9D37 /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = Source/Core/Core.swift; sourceTree = "<group>"; };
+		89E05309A199B82773B1736F6E691422 /* RuleEmail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEmail.swift; path = Source/Validations/RuleEmail.swift; sourceTree = "<group>"; };
+		8C6C14A01366602E6F644715541ACAAC /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Source/Core/Row.swift; sourceTree = "<group>"; };
+		8DB43C447BF57DAEFD05DEFA5CF75F4E /* ListCheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListCheckRow.swift; path = Source/Rows/SelectableRows/ListCheckRow.swift; sourceTree = "<group>"; };
+		91A69E7EAA65FF60322A72EA09BE98C3 /* Eureka.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Eureka.bundle; path = Source/Resources/Eureka.bundle; sourceTree = "<group>"; };
 		923F3F4B1327FBA2294B912D3B20C2FA /* Pods-PetSafety-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafety-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		947CA9053F1F7923639314DC546B1FCD /* PickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerRow.swift; path = Source/Rows/PickerRow.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94D048B752CB847953903C6E02C7FB86 /* Pods_PetSafetyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetSafetyUITests.framework; path = "Pods-PetSafetyUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99125AA2388994461CCC081D70A08672 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Source/Core/Helpers.swift; sourceTree = "<group>"; };
+		99EC1BFCEEB9B03CE4013228E02A148B /* ButtonRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRow.swift; path = Source/Rows/ButtonRow.swift; sourceTree = "<group>"; };
 		99F6972C87D00F09928CC73B5AC130A7 /* Pods-PetSafetyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetSafetyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9CAFC71DD59D32A57D7B871B643864AC /* ActionSheetRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionSheetRow.swift; path = Source/Rows/ActionSheetRow.swift; sourceTree = "<group>"; };
-		9CEDB645C85184F973338CE85A719423 /* ImageRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Sources/ImageRow.swift; sourceTree = "<group>"; };
-		9D028515B25BD6E30A1CEAA0C0CF8107 /* ImageRow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageRow-prefix.pch"; sourceTree = "<group>"; };
-		9D030459549056D23AC79B1374F69F2B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C43D44B6582B88FDEA7FDD8058BBEC2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D0C19F11F32C912C1014479341867D7 /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D340B6DEBECC491A32A840CE352BE96 /* DatePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerRow.swift; path = Source/Rows/DatePickerRow.swift; sourceTree = "<group>"; };
-		9E0AC26FBADD828F931B476E98A189E5 /* AlertOptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertOptionsRow.swift; path = Source/Rows/Common/AlertOptionsRow.swift; sourceTree = "<group>"; };
-		A09E7A4F758D5BC8E2C5421672F159DB /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Source/Core/Row.swift; sourceTree = "<group>"; };
-		A0ADCFF65BAE82D9744806B246D79E11 /* Eureka-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-prefix.pch"; sourceTree = "<group>"; };
-		A1209B138C1F86D9852C15DEFB6BA3B7 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboard.swift; path = SwiftyOnboard/SwiftyOnboard.swift; sourceTree = "<group>"; };
-		A201CBE68100B1A66E1F625BAC8F242B /* Eureka-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Eureka-dummy.m"; sourceTree = "<group>"; };
+		9FB4882529E4A17617FE849DF77BA8C3 /* TriplePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerInputRow.swift; path = Source/Rows/TriplePickerInputRow.swift; sourceTree = "<group>"; };
+		A108146A45F8A32654ABC419C29BC2A2 /* RowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowType.swift; path = Source/Core/RowType.swift; sourceTree = "<group>"; };
+		A329B2F0ED0471D076F7B00F4BE059DF /* SwiftyOnboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyOnboard.modulemap; sourceTree = "<group>"; };
 		A35A676ED10CF94A434FAF8FB6E09CD2 /* Pods-PetSafety-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetSafety-dummy.m"; sourceTree = "<group>"; };
-		A450FF08FC019C90F6118C4F12FFC1EA /* TriplePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerRow.swift; path = Source/Rows/TriplePickerRow.swift; sourceTree = "<group>"; };
-		A4FD106CE7C01B168129404452172A5B /* ImageRow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageRow.xcconfig; sourceTree = "<group>"; };
-		A7236D98A1812A86D7C599CF48183C0C /* Pods_PetSafetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafetyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB55A4D6C26C21E8A65BE8467D6BC614 /* TriplePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerInputRow.swift; path = Source/Rows/TriplePickerInputRow.swift; sourceTree = "<group>"; };
-		AC26DAA857A52A2DE0C962AC5913D2A6 /* BaseRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRow.swift; path = Source/Core/BaseRow.swift; sourceTree = "<group>"; };
+		A69DC22B14B25E58BC0BE1B80B38E524 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8AD6F259BA3B74467F507A49F57A4E4 /* Drawer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Drawer.swift; path = HGRippleRadarView/Classes/Utilities/Drawer.swift; sourceTree = "<group>"; };
+		AAB020CE2E3300921B19F8EB5B10D3FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB6C0B2BBB504CF2DEA4EB7B0950B31D /* ImageRow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ImageRow.modulemap; sourceTree = "<group>"; };
+		AC58CAD4C398631337BC6AD1AE0C54DA /* PickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerRow.swift; path = Source/Rows/PickerRow.swift; sourceTree = "<group>"; };
 		AD53F44CE047481C8E2313F1A61C335A /* Pods-PetSafetyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafetyTests.release.xcconfig"; sourceTree = "<group>"; };
-		AFE5BD2434CA5348AB4F4928D2F56541 /* NavigationAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationAccessoryView.swift; path = Source/Core/NavigationAccessoryView.swift; sourceTree = "<group>"; };
-		B01B7050AE4C64EC7F0D1452A741BA12 /* ViewRow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewRow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0CE3E7E24156C5CDE23BCB3C0152004 /* SwiftyOnboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyOnboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B190E27BDBD44C7DD0FEAC3CFB7E6D8A /* ViewRow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewRow-prefix.pch"; sourceTree = "<group>"; };
+		AD5B1351CECF1AAF8F0B3E0189EA11F6 /* GenericMultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericMultipleSelectorRow.swift; path = Source/Rows/Common/GenericMultipleSelectorRow.swift; sourceTree = "<group>"; };
+		AE5D2BFCA9DD915759551405C7D2E34A /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Source/Rows/Common/Protocols.swift; sourceTree = "<group>"; };
+		AE6DAF98EA0643C1DE642BB4803B3298 /* PopoverSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopoverSelectorRow.swift; path = Source/Rows/PopoverSelectorRow.swift; sourceTree = "<group>"; };
+		B08E736940F997450DD8C046503EB51A /* ViewRow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewRow-umbrella.h"; sourceTree = "<group>"; };
 		B21506C25FEF01AD3F153A7E65FCFC07 /* Pods-PetSafetyTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafetyTests-resources.sh"; sourceTree = "<group>"; };
-		B5B5528D3DE95C16C431BF65C907CB9F /* MultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorRow.swift; path = Source/Rows/MultipleSelectorRow.swift; sourceTree = "<group>"; };
-		B8C550100484C3ED6E77B474C886DEE2 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Source/Core/Helpers.swift; sourceTree = "<group>"; };
-		B902D016F62C0D9F93BF69BC4457AFBA /* RuleRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRange.swift; path = Source/Validations/RuleRange.swift; sourceTree = "<group>"; };
-		BB63FE936A04D11F1C8782B954895CC9 /* GenericMultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericMultipleSelectorRow.swift; path = Source/Rows/Common/GenericMultipleSelectorRow.swift; sourceTree = "<group>"; };
-		BC125510596878CBD42D64791AD3E663 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6F769FDAB5631773156B003418FDA7A /* SwiftyOnboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-prefix.pch"; sourceTree = "<group>"; };
+		B41BD415AF3F655CA52D197813585954 /* ActionSheetRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionSheetRow.swift; path = Source/Rows/ActionSheetRow.swift; sourceTree = "<group>"; };
+		B450CF9DD722BF65045D73B598E72011 /* ImageRow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageRow-dummy.m"; sourceTree = "<group>"; };
+		B56E87827601FADC73A9F4B3DF0FDAE2 /* SegmentedRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedRow.swift; path = Source/Rows/SegmentedRow.swift; sourceTree = "<group>"; };
+		B5AA87DECAEB599A4357998353E011E9 /* Eureka-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Eureka-dummy.m"; sourceTree = "<group>"; };
+		B7DAA2FC3BB95E24DAB6D4CF8256F5D0 /* SwiftyOnboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyOnboard-dummy.m"; sourceTree = "<group>"; };
+		B95E2DDFE744B82BA95C1834366B8CE7 /* Eureka-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-umbrella.h"; sourceTree = "<group>"; };
+		BDB113456C262E127ECB08A58D41D916 /* TriplePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerRow.swift; path = Source/Rows/TriplePickerRow.swift; sourceTree = "<group>"; };
+		BDB29FB5BE12BBE8BAE2280396F79C10 /* RadarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadarView.swift; path = HGRippleRadarView/Classes/RadarView.swift; sourceTree = "<group>"; };
+		BE9F5460798B24B8B73911305F916CF1 /* Form.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Source/Core/Form.swift; sourceTree = "<group>"; };
+		BEDAE1CE4930DAD0979F705AF872C2A3 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Source/Core/Section.swift; sourceTree = "<group>"; };
+		C1986E891EA68C05A731CF419EB097CE /* Eureka-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-prefix.pch"; sourceTree = "<group>"; };
+		C51655596C0C73A2AAA732C15C04AF67 /* RuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRequired.swift; path = Source/Validations/RuleRequired.swift; sourceTree = "<group>"; };
+		C6D1E211572F9C1A2C6D80255055BCA4 /* ImageRow.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageRow.xcconfig; sourceTree = "<group>"; };
+		C70828BF7A570DEA28AA2B06E728C193 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardPage.swift; path = SwiftyOnboard/SwiftyOnboardPage.swift; sourceTree = "<group>"; };
 		C9F48277C21325D189207E97D91A9F3D /* Pods-PetSafety.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetSafety.debug.xcconfig"; sourceTree = "<group>"; };
-		CAC0F4260B6DF52D1FE8173F13904DBB /* ViewRow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ViewRow.modulemap; sourceTree = "<group>"; };
-		CB651E1EE03598F74DC3D268E080F276 /* SwitchRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchRow.swift; path = Source/Rows/SwitchRow.swift; sourceTree = "<group>"; };
+		CCFCD60BE19968B1BDB92A223BB5692B /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = HGRippleRadarView/Classes/Utilities/UIColor.swift; sourceTree = "<group>"; };
+		D02451D489C0546D104866ABA2956BC9 /* SwiftyOnboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyOnboard.h; path = SwiftyOnboard/SwiftyOnboard.h; sourceTree = "<group>"; };
+		D02C5EB0BC58F19B5997C50B6F0FB317 /* PresenterRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresenterRowType.swift; path = Source/Core/PresenterRowType.swift; sourceTree = "<group>"; };
 		D0B96D8371E11B206F6273F8DE5DD114 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D1A77B9A4276BCC0249380B2BE74AF37 /* ViewRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewRow.swift; path = ViewRow/ViewRow.swift; sourceTree = "<group>"; };
-		D1BF9A95E724AF503B69588EBE866D0E /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Source/Core/Cell.swift; sourceTree = "<group>"; };
-		D3632C9DA34A09B20C44618519375284 /* DoublePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerRow.swift; path = Source/Rows/DoublePickerRow.swift; sourceTree = "<group>"; };
-		D550B3DD55994C4DD8F4A70D67B64503 /* ViewRow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewRow-dummy.m"; sourceTree = "<group>"; };
-		D8479A6F506F930C94D7709F6D21A077 /* MultipleSelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorViewController.swift; path = Source/Rows/Controllers/MultipleSelectorViewController.swift; sourceTree = "<group>"; };
-		D893219159C05593359F320EFE715E1A /* SelectableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableSection.swift; path = Source/Core/SelectableSection.swift; sourceTree = "<group>"; };
-		DA03B5267FB50B4689D75BB790208D64 /* SwiftyOnboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyOnboard.xcconfig; sourceTree = "<group>"; };
-		DCB2A2AAA695F5C50ADC5556698FEE98 /* PickerInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInlineRow.swift; path = Source/Rows/PickerInlineRow.swift; sourceTree = "<group>"; };
-		DCB3009992E3EDC49B936E447A06EC28 /* ButtonRowWithPresent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRowWithPresent.swift; path = Source/Rows/ButtonRowWithPresent.swift; sourceTree = "<group>"; };
+		D20D6DEFF3AE92D1E9AF851E57244395 /* ImageRow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageRow-prefix.pch"; sourceTree = "<group>"; };
+		D58453C6A63E8491B749BA2F1E0F8CD0 /* ItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = HGRippleRadarView/Classes/ItemView.swift; sourceTree = "<group>"; };
+		D60A4EFFCCA0950FEE10D44F0DD791B3 /* FieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldRow.swift; path = Source/Rows/Common/FieldRow.swift; sourceTree = "<group>"; };
+		DC7CC6F838365C0E7BA54099691CA9DA /* ImageRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Sources/ImageRow.swift; sourceTree = "<group>"; };
+		DCF627D5B458E56F483799EA2C3F7DC8 /* OptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsRow.swift; path = Source/Rows/Common/OptionsRow.swift; sourceTree = "<group>"; };
 		DDEFAE6EF40ABFE98382372FAD8DDC99 /* Pods-PetSafetyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetSafetyTests-dummy.m"; sourceTree = "<group>"; };
-		DED51FBFF300CD9592164A8083DE2878 /* LabelRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelRow.swift; path = Source/Rows/LabelRow.swift; sourceTree = "<group>"; };
-		E0A939A2E3BF42E32B8F86868258F1CF /* CellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellType.swift; path = Source/Core/CellType.swift; sourceTree = "<group>"; };
+		DE0B82518DDEA84DBF4F32858FF6F46B /* TextAreaRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAreaRow.swift; path = Source/Rows/TextAreaRow.swift; sourceTree = "<group>"; };
+		DE2E1E411059D08FFAB629050F2900FA /* NavigationAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationAccessoryView.swift; path = Source/Core/NavigationAccessoryView.swift; sourceTree = "<group>"; };
+		DE79018C12070D640C8B5EAF319C4D63 /* MultipleSelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorViewController.swift; path = Source/Rows/Controllers/MultipleSelectorViewController.swift; sourceTree = "<group>"; };
+		E0324086E2E90AFA3A15B9A77885A50E /* RuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleURL.swift; path = Source/Validations/RuleURL.swift; sourceTree = "<group>"; };
+		E1CAD589691A84B1BBC5BE73B07476BF /* AlertOptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertOptionsRow.swift; path = Source/Rows/Common/AlertOptionsRow.swift; sourceTree = "<group>"; };
 		E2761912052EB6E8763A7E649DD90D94 /* Pods-PetSafety-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetSafety-acknowledgements.plist"; sourceTree = "<group>"; };
-		E45D5451E7708A592CEAC7B622CF5409 /* RowProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowProtocols.swift; path = Source/Core/RowProtocols.swift; sourceTree = "<group>"; };
-		E5F678045E169050314F7C708742D08C /* RuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleURL.swift; path = Source/Validations/RuleURL.swift; sourceTree = "<group>"; };
+		E2A9C34EF496E056B9D13752085A42FC /* HGRippleRadarView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HGRippleRadarView.modulemap; sourceTree = "<group>"; };
+		E86EE9805256EB578816C6AFD8CF1F14 /* HGRippleRadarView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGRippleRadarView-umbrella.h"; sourceTree = "<group>"; };
 		E935C9C843C53E1A153EAC081FDC9EFA /* Pods-PetSafetyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetSafetyTests-umbrella.h"; sourceTree = "<group>"; };
-		F217B13324CA717193B41604F9B4D5A3 /* SwiftyOnboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-umbrella.h"; sourceTree = "<group>"; };
-		F312AD72CE7F8781DD156E4343BABE2C /* SegmentedRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedRow.swift; path = Source/Rows/SegmentedRow.swift; sourceTree = "<group>"; };
-		F448ED358205FCF29FD0A5F9F2401122 /* Eureka-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-umbrella.h"; sourceTree = "<group>"; };
+		F172EF46E9507D594B7A6C03E7E88216 /* ViewRow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ViewRow.framework; path = ViewRow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F390F206BFDC2E66574F7379D843F0A5 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardOverlay.swift; path = SwiftyOnboard/SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
+		F56BC32E20806820B7BD7A0086C4B09D /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Source/Core/Operators.swift; sourceTree = "<group>"; };
+		F5BE6651DB423C3DBE0B5D47A72F2285 /* LabelRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelRow.swift; path = Source/Rows/LabelRow.swift; sourceTree = "<group>"; };
 		F5CAF7EADCA74366A0FC3A09E5E0DE6D /* Pods-PetSafetyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetSafetyUITests-frameworks.sh"; sourceTree = "<group>"; };
-		FEFB6E9FC591A8938FDD34B9A1F51CD4 /* Eureka.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Eureka.bundle; path = Source/Resources/Eureka.bundle; sourceTree = "<group>"; };
+		F7A463E02F268B39544B07CAF3B215B7 /* ButtonRowWithPresent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRowWithPresent.swift; path = Source/Rows/ButtonRowWithPresent.swift; sourceTree = "<group>"; };
+		F92AFE4C6BAED46B0262109C6670CF84 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = HGRippleRadarView/Classes/Utilities/Animation.swift; sourceTree = "<group>"; };
+		FA8BDDA783AE90C6372EFF2B4ED9453A /* Eureka.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Eureka.xcconfig; sourceTree = "<group>"; };
+		FB097565020D229EA0A69DBB612325CD /* StepperRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperRow.swift; path = Source/Rows/StepperRow.swift; sourceTree = "<group>"; };
+		FB78543F439D26DEBE91CE6264F054E5 /* Pods_PetSafetyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetSafetyTests.framework; path = "Pods-PetSafetyTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF9FAE318B40F7DC4FBAC8975BB5881 /* SelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorViewController.swift; path = Source/Rows/Controllers/SelectorViewController.swift; sourceTree = "<group>"; };
+		FF06D9A29D082731C3DC6D132F67F8CE /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Eureka.framework; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0564ECBC84D7C504051A568971D12AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4DA36CAD4A41453E3FCC6533508AA04 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2B86073C32DFEB23B0A48A586172871F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,11 +363,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A49B347D64594F3D697D4F99F70C890 /* Frameworks */ = {
+		8A32FE28755CB5A59F8EE1731980D156 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B72F4541CF2D859DCAA2C1600992F7B /* Foundation.framework in Frameworks */,
+				DACE7C1AD361639EB39E411BBB89773D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFB89AD527BD5740D2C580E2D7C6685 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D1AAE6F93227B054DAE5E575ECC3C05 /* Eureka.framework in Frameworks */,
+				8AE9A5EC48B689A860D11BA781B52784 /* Foundation.framework in Frameworks */,
+				C8C70D9FD6325140F233DC6D19C8525E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,21 +399,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6C041F543793B8DDDE8E8E3323B968E /* Frameworks */ = {
+		E2BB42A52B223287180C884C497663B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C356114E1CE199B221EE4352181637EB /* Eureka.framework in Frameworks */,
-				CD317DC11A6491AFFFA40D9E8B7B42E0 /* Foundation.framework in Frameworks */,
-				3ABEF7245E13AADBA566CEA3E061ED8E /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D686A1FBED2CE4EC049E44A4B38078AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				306F42B6EBED2B04AEFF80D49C1A03F9 /* Foundation.framework in Frameworks */,
+				F47A2337CCDF1AC0196482FAAB6950D7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +418,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13633B8D57CAACA2A1CD257F1EED43BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9C34EF496E056B9D13752085A42FC /* HGRippleRadarView.modulemap */,
+				19074ED72A9D7581CE55E0D64A89A989 /* HGRippleRadarView.xcconfig */,
+				62CA0F97BD02C256274897D33495CA55 /* HGRippleRadarView-dummy.m */,
+				1C91734699350EF008A2A72E57BCA806 /* HGRippleRadarView-prefix.pch */,
+				E86EE9805256EB578816C6AFD8CF1F14 /* HGRippleRadarView-umbrella.h */,
+				9C43D44B6582B88FDEA7FDD8058BBEC2 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HGRippleRadarView";
+			sourceTree = "<group>";
+		};
 		26010443B50841BEE3101E267BA6ACBD /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,49 +442,80 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2F36535E4375F20BB6927747F459372A /* ImageRow */ = {
+		2D2E9514056B626FB999205249CDEAF9 /* HGRippleRadarView */ = {
 			isa = PBXGroup;
 			children = (
-				4C51841A48A83D89FAD2B3ACEB36768B /* ImageCell.swift */,
-				0DB0DBD0538E486A5B0227A132FC8EF3 /* ImagePickerController.swift */,
-				9CEDB645C85184F973338CE85A719423 /* ImageRow.swift */,
-				CB816CA2B1D034A508054FF2300E0AC6 /* Support Files */,
+				F92AFE4C6BAED46B0262109C6670CF84 /* Animation.swift */,
+				A8AD6F259BA3B74467F507A49F57A4E4 /* Drawer.swift */,
+				15116C6FB0E507010976CCDE4B442CCF /* Geometry.swift */,
+				503D15FBFF94C2B58AE7B35F6A440BC2 /* Item.swift */,
+				D58453C6A63E8491B749BA2F1E0F8CD0 /* ItemView.swift */,
+				BDB29FB5BE12BBE8BAE2280396F79C10 /* RadarView.swift */,
+				2EE2578D08CF67280151BA7FA8407F78 /* RadarViewProtocol.swift */,
+				5105470768E3E2D8093DE7ECBB23745B /* RippleView.swift */,
+				CCFCD60BE19968B1BDB92A223BB5692B /* UIColor.swift */,
+				13633B8D57CAACA2A1CD257F1EED43BA /* Support Files */,
 			);
-			path = ImageRow;
+			name = HGRippleRadarView;
+			path = HGRippleRadarView;
 			sourceTree = "<group>";
 		};
-		3D096594050D88A0CA3A697B339DD882 /* Resources */ = {
+		4515217DC677BC3FADCB06225C5A3AD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FEFB6E9FC591A8938FDD34B9A1F51CD4 /* Eureka.bundle */,
+				91A69E7EAA65FF60322A72EA09BE98C3 /* Eureka.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		4CF45A20E4E4C65B2C2D1AFD675CAD92 /* Support Files */ = {
+		47258EA128414DC99B50292FDBE9BB18 /* ImageRow */ = {
 			isa = PBXGroup;
 			children = (
-				7845C99E8038ACAAE539D7B1A35830E7 /* Info.plist */,
-				CAC0F4260B6DF52D1FE8173F13904DBB /* ViewRow.modulemap */,
-				67CE9B23606C3A70BB58AEEE104E6D8C /* ViewRow.xcconfig */,
-				D550B3DD55994C4DD8F4A70D67B64503 /* ViewRow-dummy.m */,
-				B190E27BDBD44C7DD0FEAC3CFB7E6D8A /* ViewRow-prefix.pch */,
-				3A2039F0111B0F4F1E3656556E336DD2 /* ViewRow-umbrella.h */,
+				25C53BAA58F08937A58E44E39BFE7D77 /* ImageCell.swift */,
+				3BE8293173EB6C85F8C86F22CDA5F1EF /* ImagePickerController.swift */,
+				DC7CC6F838365C0E7BA54099691CA9DA /* ImageRow.swift */,
+				F713759925092438F1DDDCBA0971C387 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewRow";
+			name = ImageRow;
+			path = ImageRow;
 			sourceTree = "<group>";
 		};
-		544B5F87B514E91A91CD4A6D0B54663E /* SwiftyOnboard */ = {
+		5813FBE9FF39C3AEED8578267CFB4559 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				07BE9B9EC05D667F1BC051C08370BBFF /* SwiftyOnboard.h */,
-				A1209B138C1F86D9852C15DEFB6BA3B7 /* SwiftyOnboard.swift */,
-				2FD2301F73DCEB5FB6ACB6FD2D8A4FB5 /* SwiftyOnboardOverlay.swift */,
-				70B9A5F3D2BE74EF2F8E28014D18F6FD /* SwiftyOnboardPage.swift */,
-				9C57E5422B1D3444C5D6AFDCDAA4C708 /* Support Files */,
+				510B2586CDF746D4231E9DEB17278B7F /* Eureka.modulemap */,
+				FA8BDDA783AE90C6372EFF2B4ED9453A /* Eureka.xcconfig */,
+				B5AA87DECAEB599A4357998353E011E9 /* Eureka-dummy.m */,
+				C1986E891EA68C05A731CF419EB097CE /* Eureka-prefix.pch */,
+				B95E2DDFE744B82BA95C1834366B8CE7 /* Eureka-umbrella.h */,
+				10EA4D90B31CE7B8369DBFFBAE732B8C /* Info.plist */,
 			);
-			path = SwiftyOnboard;
+			name = "Support Files";
+			path = "../Target Support Files/Eureka";
+			sourceTree = "<group>";
+		};
+		60F3B8D075829C3BF4CBFCC0C688E18A /* ViewRow */ = {
+			isa = PBXGroup;
+			children = (
+				21142CF6D231BAC3B1C3776CB69A143C /* ViewRow.swift */,
+				E59D8FEBBF7A1E8D371106D4731A05B0 /* Support Files */,
+			);
+			name = ViewRow;
+			path = ViewRow;
+			sourceTree = "<group>";
+		};
+		7A3FD031BC74E4F7EF26524C05A2C64E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A69DC22B14B25E58BC0BE1B80B38E524 /* Info.plist */,
+				A329B2F0ED0471D076F7B00F4BE059DF /* SwiftyOnboard.modulemap */,
+				2339087F45EC6C850EC21E55D029940B /* SwiftyOnboard.xcconfig */,
+				B7DAA2FC3BB95E24DAB6D4CF8256F5D0 /* SwiftyOnboard-dummy.m */,
+				08BC79B59BA060D6CFF9048618462665 /* SwiftyOnboard-prefix.pch */,
+				5062EFDF3BF4BAFC2F8CE6021C129A2B /* SwiftyOnboard-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyOnboard";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -435,30 +523,10 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				D256155DD324B95CA87557494379336D /* Frameworks */,
-				89C257BB7A9EE6F6AE291B564B6F91F9 /* Pods */,
-				8B69AE441BFFB48965ABB5045605D465 /* Products */,
+				F4E545AE4F5B71731492AEADBF2B365B /* Pods */,
+				8FCDFF08A8CD8A5F3D08A7A4A8714AEC /* Products */,
 				26010443B50841BEE3101E267BA6ACBD /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		83B4E005CB1727BC33168659C190FA60 /* ViewRow */ = {
-			isa = PBXGroup;
-			children = (
-				D1A77B9A4276BCC0249380B2BE74AF37 /* ViewRow.swift */,
-				4CF45A20E4E4C65B2C2D1AFD675CAD92 /* Support Files */,
-			);
-			path = ViewRow;
-			sourceTree = "<group>";
-		};
-		89C257BB7A9EE6F6AE291B564B6F91F9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				944654CA23C0BEDCE8C1D4DDC57354C7 /* Eureka */,
-				2F36535E4375F20BB6927747F459372A /* ImageRow */,
-				544B5F87B514E91A91CD4A6D0B54663E /* SwiftyOnboard */,
-				83B4E005CB1727BC33168659C190FA60 /* ViewRow */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		8AE02F9C6135F1FF53B7A5EBE952DBBD /* Pods-PetSafetyUITests */ = {
@@ -479,107 +547,108 @@
 			path = "Target Support Files/Pods-PetSafetyUITests";
 			sourceTree = "<group>";
 		};
-		8B69AE441BFFB48965ABB5045605D465 /* Products */ = {
+		8FC61B8241C74D5C95128A43758C0FD4 /* Eureka */ = {
 			isa = PBXGroup;
 			children = (
-				6F43F015458AD9C2AA53F73E48E5A667 /* Eureka.framework */,
-				1EE7927A9D8B1FDCFA16EDF7D4F65157 /* ImageRow.framework */,
-				69C1E88D6DE8002F8878807752D4B481 /* Pods_PetSafety.framework */,
-				A7236D98A1812A86D7C599CF48183C0C /* Pods_PetSafetyTests.framework */,
-				359100EB364AE4A662509FE3A97ECEAE /* Pods_PetSafetyUITests.framework */,
-				B0CE3E7E24156C5CDE23BCB3C0152004 /* SwiftyOnboard.framework */,
-				B01B7050AE4C64EC7F0D1452A741BA12 /* ViewRow.framework */,
+				B41BD415AF3F655CA52D197813585954 /* ActionSheetRow.swift */,
+				E1CAD589691A84B1BBC5BE73B07476BF /* AlertOptionsRow.swift */,
+				5B29B0E28A5C9D6C16E58D772BF8C54F /* AlertRow.swift */,
+				1686861F0CDA3DD2AB6018BB6136095C /* BaseRow.swift */,
+				99EC1BFCEEB9B03CE4013228E02A148B /* ButtonRow.swift */,
+				F7A463E02F268B39544B07CAF3B215B7 /* ButtonRowWithPresent.swift */,
+				02FCB97B1C5569C3A91780CD70DCE123 /* Cell.swift */,
+				6CF23EE17F607CBE04C92D5486F5BA28 /* CellType.swift */,
+				19FA87A1602AA6266ED012F1632B19F6 /* CheckRow.swift */,
+				886C41BC6028519F616629D9A18BE47F /* Core.swift */,
+				8324E28997F4D6F02931180B4AEF0C7D /* DateFieldRow.swift */,
+				12A0E90BDD8C1F6B7A4CB8E21952A351 /* DateInlineFieldRow.swift */,
+				305462B45EB68366E9703B59045C77B4 /* DateInlineRow.swift */,
+				685AEC043FBAE791F99AC1A72736A4F0 /* DatePickerRow.swift */,
+				60DC8640527B92DF5EEC3D3AD0146081 /* DateRow.swift */,
+				061E3FB324A2675EB487DC879600E372 /* DecimalFormatter.swift */,
+				59B3AA61B28C7262E8036449A40CB37C /* DoublePickerInputRow.swift */,
+				3A64E809B34E4A2F4216FCD9B5E004A1 /* DoublePickerRow.swift */,
+				D60A4EFFCCA0950FEE10D44F0DD791B3 /* FieldRow.swift */,
+				1D17055B19B1169392C782A35842AA82 /* FieldsRow.swift */,
+				BE9F5460798B24B8B73911305F916CF1 /* Form.swift */,
+				AD5B1351CECF1AAF8F0B3E0189EA11F6 /* GenericMultipleSelectorRow.swift */,
+				32C0375EE7CD116B4FD50B7C62279F68 /* HeaderFooterView.swift */,
+				99125AA2388994461CCC081D70A08672 /* Helpers.swift */,
+				27DD8CD21A9D9AC626FD4D7E2C5B8706 /* InlineRowType.swift */,
+				F5BE6651DB423C3DBE0B5D47A72F2285 /* LabelRow.swift */,
+				8DB43C447BF57DAEFD05DEFA5CF75F4E /* ListCheckRow.swift */,
+				54D98554B576E3E295587B773CADF47E /* MultipleSelectorRow.swift */,
+				DE79018C12070D640C8B5EAF319C4D63 /* MultipleSelectorViewController.swift */,
+				DE2E1E411059D08FFAB629050F2900FA /* NavigationAccessoryView.swift */,
+				F56BC32E20806820B7BD7A0086C4B09D /* Operators.swift */,
+				DCF627D5B458E56F483799EA2C3F7DC8 /* OptionsRow.swift */,
+				8284F786386CE0B5E07E2C1866E4692D /* PickerInlineRow.swift */,
+				1B9809F1F5C071AA1B10DEAA23C50903 /* PickerInputRow.swift */,
+				AC58CAD4C398631337BC6AD1AE0C54DA /* PickerRow.swift */,
+				AE6DAF98EA0643C1DE642BB4803B3298 /* PopoverSelectorRow.swift */,
+				D02C5EB0BC58F19B5997C50B6F0FB317 /* PresenterRowType.swift */,
+				AE5D2BFCA9DD915759551405C7D2E34A /* Protocols.swift */,
+				7413B89DE4A42E8A8AB835C16ED7751A /* PushRow.swift */,
+				8C6C14A01366602E6F644715541ACAAC /* Row.swift */,
+				828CE0ADB38184481B01F553691F7FEB /* RowControllerType.swift */,
+				33FE322F71D5B08053311E6C9932D632 /* RowProtocols.swift */,
+				A108146A45F8A32654ABC419C29BC2A2 /* RowType.swift */,
+				216ADD9B4CA86CE00E5920D19417351B /* RuleClosure.swift */,
+				89E05309A199B82773B1736F6E691422 /* RuleEmail.swift */,
+				0FA7FBF60573043AE271B6721E1ECE50 /* RuleEqualsToRow.swift */,
+				2CF7EBB921B3A7D1A96E2149388054E4 /* RuleLength.swift */,
+				5505F2107E9D047EBB58A35626009425 /* RuleRange.swift */,
+				89313B8E8DC39ACD4597D3071F1B5792 /* RuleRegExp.swift */,
+				C51655596C0C73A2AAA732C15C04AF67 /* RuleRequired.swift */,
+				E0324086E2E90AFA3A15B9A77885A50E /* RuleURL.swift */,
+				BEDAE1CE4930DAD0979F705AF872C2A3 /* Section.swift */,
+				B56E87827601FADC73A9F4B3DF0FDAE2 /* SegmentedRow.swift */,
+				658687D05A5E287E1F1207168687855F /* SelectableRowType.swift */,
+				427A7688402EDE5FCC58E3C163DC427E /* SelectableSection.swift */,
+				56C66C711E7884195FD6B5EF624EB6F9 /* SelectorAlertController.swift */,
+				6C2CCF78F080E160E511662CC785D00B /* SelectorRow.swift */,
+				FCF9FAE318B40F7DC4FBAC8975BB5881 /* SelectorViewController.swift */,
+				05DB9A9BA74075655D86D2AAC2ACBE49 /* SliderRow.swift */,
+				FB097565020D229EA0A69DBB612325CD /* StepperRow.swift */,
+				6780B819F79F743D810CDF8FA3505CA8 /* SwipeActions.swift */,
+				51D9691354B34AF0E7CB4A7BC0122FDA /* SwitchRow.swift */,
+				DE0B82518DDEA84DBF4F32858FF6F46B /* TextAreaRow.swift */,
+				9FB4882529E4A17617FE849DF77BA8C3 /* TriplePickerInputRow.swift */,
+				BDB113456C262E127ECB08A58D41D916 /* TriplePickerRow.swift */,
+				3084FF52F75796BB6A074DD3829639D5 /* Validation.swift */,
+				4515217DC677BC3FADCB06225C5A3AD7 /* Resources */,
+				5813FBE9FF39C3AEED8578267CFB4559 /* Support Files */,
+			);
+			name = Eureka;
+			path = Eureka;
+			sourceTree = "<group>";
+		};
+		8FCDFF08A8CD8A5F3D08A7A4A8714AEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF06D9A29D082731C3DC6D132F67F8CE /* Eureka.framework */,
+				608E1285F8795F4A44D98680C8B8FB71 /* HGRippleRadarView.framework */,
+				589B150D51C6D4A1B2D16ACB3905551A /* ImageRow.framework */,
+				281A3760132FD6C056FCBFF1997FE09F /* Pods_PetSafety.framework */,
+				FB78543F439D26DEBE91CE6264F054E5 /* Pods_PetSafetyTests.framework */,
+				94D048B752CB847953903C6E02C7FB86 /* Pods_PetSafetyUITests.framework */,
+				28EABC4F1BEE519FD55E0083331F5964 /* SwiftyOnboard.framework */,
+				F172EF46E9507D594B7A6C03E7E88216 /* ViewRow.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		944654CA23C0BEDCE8C1D4DDC57354C7 /* Eureka */ = {
+		BE59685A3DD6B8A28CB3EA0E11451AC7 /* SwiftyOnboard */ = {
 			isa = PBXGroup;
 			children = (
-				9CAFC71DD59D32A57D7B871B643864AC /* ActionSheetRow.swift */,
-				9E0AC26FBADD828F931B476E98A189E5 /* AlertOptionsRow.swift */,
-				04EE36EA5A2E8884AAAF77DEF345D92F /* AlertRow.swift */,
-				AC26DAA857A52A2DE0C962AC5913D2A6 /* BaseRow.swift */,
-				4404B8E064FD150F8A2D8D66888C1B9E /* ButtonRow.swift */,
-				DCB3009992E3EDC49B936E447A06EC28 /* ButtonRowWithPresent.swift */,
-				D1BF9A95E724AF503B69588EBE866D0E /* Cell.swift */,
-				E0A939A2E3BF42E32B8F86868258F1CF /* CellType.swift */,
-				43454EC8CA346FDA838EB2645EBAB979 /* CheckRow.swift */,
-				90B1E22F0FCCFA11316F29F5CBFB9D37 /* Core.swift */,
-				3E03650028D34C7B46B9AD96CC5EAD87 /* DateFieldRow.swift */,
-				0506FF689123FCB91E6302F5A8A2D2F9 /* DateInlineFieldRow.swift */,
-				838782FC68CB86ACC40D00347B18EDCC /* DateInlineRow.swift */,
-				9D340B6DEBECC491A32A840CE352BE96 /* DatePickerRow.swift */,
-				5ED9E508175788D25AA5456DCA37481F /* DateRow.swift */,
-				648A606826CBEC8D8CA5EFFA465EE99C /* DecimalFormatter.swift */,
-				7128ADC034D14929B09F340AE6B64B55 /* DoublePickerInputRow.swift */,
-				D3632C9DA34A09B20C44618519375284 /* DoublePickerRow.swift */,
-				00DAA1E029C40091741F0CBFDE7B3DAD /* FieldRow.swift */,
-				2F6B36E77B788E82F54B19B6ED745855 /* FieldsRow.swift */,
-				1DE3700968DE5BC820DF760767022611 /* Form.swift */,
-				BB63FE936A04D11F1C8782B954895CC9 /* GenericMultipleSelectorRow.swift */,
-				345A06548764619315463D16E61CCC9B /* HeaderFooterView.swift */,
-				B8C550100484C3ED6E77B474C886DEE2 /* Helpers.swift */,
-				724242ABEE82AC18D0CEF284AC1371DB /* InlineRowType.swift */,
-				DED51FBFF300CD9592164A8083DE2878 /* LabelRow.swift */,
-				5C55511BE10FB2196F2F20D63B302F4D /* ListCheckRow.swift */,
-				B5B5528D3DE95C16C431BF65C907CB9F /* MultipleSelectorRow.swift */,
-				D8479A6F506F930C94D7709F6D21A077 /* MultipleSelectorViewController.swift */,
-				AFE5BD2434CA5348AB4F4928D2F56541 /* NavigationAccessoryView.swift */,
-				4D75EFE1AFFFABEB57637E4E8226FDF5 /* Operators.swift */,
-				2ECA6BFAF290D001E382185237E057EA /* OptionsRow.swift */,
-				DCB2A2AAA695F5C50ADC5556698FEE98 /* PickerInlineRow.swift */,
-				1742A2C5EB8292FE4F82091F2E869E09 /* PickerInputRow.swift */,
-				947CA9053F1F7923639314DC546B1FCD /* PickerRow.swift */,
-				2C6C65D7F407E2CEB391CE2E467B1F02 /* PopoverSelectorRow.swift */,
-				6F33783DEBA7B11EC03F555B134E9AF7 /* PresenterRowType.swift */,
-				1896151AFE15444A833AE9C3D5713CD7 /* Protocols.swift */,
-				2BBAF6A47D07C574AC27E9D465DDF825 /* PushRow.swift */,
-				A09E7A4F758D5BC8E2C5421672F159DB /* Row.swift */,
-				0A3B6B324D85B6FB22F70299196C0022 /* RowControllerType.swift */,
-				E45D5451E7708A592CEAC7B622CF5409 /* RowProtocols.swift */,
-				4ACB4A4E79F89AAA74861D5AA2DE6388 /* RowType.swift */,
-				76DF67446B890250C690ACBCB58FEEA5 /* RuleClosure.swift */,
-				3DD77E4DA511594D1F25F29CA6C1FB8A /* RuleEmail.swift */,
-				1FBAE8CAC9FFB63AC5FB2CF50EFADECA /* RuleEqualsToRow.swift */,
-				0DA3E2F982327FEF8E8395CE1CC5E30F /* RuleLength.swift */,
-				B902D016F62C0D9F93BF69BC4457AFBA /* RuleRange.swift */,
-				2133138B43887724DB858139E349B2EA /* RuleRegExp.swift */,
-				3AE64EB4ECF5E937B813DB07F97829CD /* RuleRequired.swift */,
-				E5F678045E169050314F7C708742D08C /* RuleURL.swift */,
-				48105582A8B2E30A03FD0E397BE7CCE7 /* Section.swift */,
-				F312AD72CE7F8781DD156E4343BABE2C /* SegmentedRow.swift */,
-				1265ABD0FD21250839CDDA2BC1C8027D /* SelectableRowType.swift */,
-				D893219159C05593359F320EFE715E1A /* SelectableSection.swift */,
-				2F0FA1B536C20067845054908E657363 /* SelectorAlertController.swift */,
-				5280F7D54D41DF2C758D78FD66833B0D /* SelectorRow.swift */,
-				804130DBD92D18F81C87C3DDD3D45E04 /* SelectorViewController.swift */,
-				707B94A51BF773424DF5176625CA98E9 /* SliderRow.swift */,
-				0848646BC13D956DB9D5BBD84D2FFF4A /* StepperRow.swift */,
-				5C2A77F963EDEC218B7D26EAEC7787CB /* SwipeActions.swift */,
-				CB651E1EE03598F74DC3D268E080F276 /* SwitchRow.swift */,
-				27A63BA82220501145756401CF38BA62 /* TextAreaRow.swift */,
-				AB55A4D6C26C21E8A65BE8467D6BC614 /* TriplePickerInputRow.swift */,
-				A450FF08FC019C90F6118C4F12FFC1EA /* TriplePickerRow.swift */,
-				8D9DBF9A8A013AE55EED8A915A6C897A /* Validation.swift */,
-				3D096594050D88A0CA3A697B339DD882 /* Resources */,
-				E20BFBC93C1BC4F4BFFCD1408327B358 /* Support Files */,
+				D02451D489C0546D104866ABA2956BC9 /* SwiftyOnboard.h */,
+				4DE8FE2940C254DBDDA5B726FF47F33F /* SwiftyOnboard.swift */,
+				F390F206BFDC2E66574F7379D843F0A5 /* SwiftyOnboardOverlay.swift */,
+				C70828BF7A570DEA28AA2B06E728C193 /* SwiftyOnboardPage.swift */,
+				7A3FD031BC74E4F7EF26524C05A2C64E /* Support Files */,
 			);
-			path = Eureka;
-			sourceTree = "<group>";
-		};
-		9C57E5422B1D3444C5D6AFDCDAA4C708 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BC125510596878CBD42D64791AD3E663 /* Info.plist */,
-				6935434DF486AB80D63C0FAC5D6EB214 /* SwiftyOnboard.modulemap */,
-				DA03B5267FB50B4689D75BB790208D64 /* SwiftyOnboard.xcconfig */,
-				68E1114D44218DD092A1E47124EE5159 /* SwiftyOnboard-dummy.m */,
-				C6F769FDAB5631773156B003418FDA7A /* SwiftyOnboard-prefix.pch */,
-				F217B13324CA717193B41604F9B4D5A3 /* SwiftyOnboard-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyOnboard";
+			name = SwiftyOnboard;
+			path = SwiftyOnboard;
 			sourceTree = "<group>";
 		};
 		C25A4625CA592D955ADABFC36B29E917 /* Pods-PetSafety */ = {
@@ -598,20 +667,6 @@
 			);
 			name = "Pods-PetSafety";
 			path = "Target Support Files/Pods-PetSafety";
-			sourceTree = "<group>";
-		};
-		CB816CA2B1D034A508054FF2300E0AC6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				15446BC82AFEC5815EB8EA13696DF750 /* ImageRow.modulemap */,
-				A4FD106CE7C01B168129404452172A5B /* ImageRow.xcconfig */,
-				630C70B85EB131A5189E3AEDA2C4A758 /* ImageRow-dummy.m */,
-				9D028515B25BD6E30A1CEAA0C0CF8107 /* ImageRow-prefix.pch */,
-				3645BB38FEAF8333685EF3413A9F5105 /* ImageRow-umbrella.h */,
-				0DFB5E0376994DB161ED09ACEB1E1A01 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ImageRow";
 			sourceTree = "<group>";
 		};
 		CE69EE70CCBDEF50A6970CDE29131462 /* Pods-PetSafetyTests */ = {
@@ -650,37 +705,79 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E20BFBC93C1BC4F4BFFCD1408327B358 /* Support Files */ = {
+		E59D8FEBBF7A1E8D371106D4731A05B0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C4D0B1FB991E59CA431A1755B1ABACF /* Eureka.modulemap */,
-				075BF962EEFBE6943F6185E54C953A8B /* Eureka.xcconfig */,
-				A201CBE68100B1A66E1F625BAC8F242B /* Eureka-dummy.m */,
-				A0ADCFF65BAE82D9744806B246D79E11 /* Eureka-prefix.pch */,
-				F448ED358205FCF29FD0A5F9F2401122 /* Eureka-umbrella.h */,
-				9D030459549056D23AC79B1374F69F2B /* Info.plist */,
+				4DC04DDB5936329B337057AA0BF9C6CA /* Info.plist */,
+				58FF8BC38871735446FF12645AE4306F /* ViewRow.modulemap */,
+				1773225C3734364D6B1F5C5C3F7B6B84 /* ViewRow.xcconfig */,
+				6176F1A81F0C92C6E488E397AAA2F5D6 /* ViewRow-dummy.m */,
+				654D755895EB8290AFF8B02338434C84 /* ViewRow-prefix.pch */,
+				B08E736940F997450DD8C046503EB51A /* ViewRow-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Eureka";
+			path = "../Target Support Files/ViewRow";
+			sourceTree = "<group>";
+		};
+		F4E545AE4F5B71731492AEADBF2B365B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FC61B8241C74D5C95128A43758C0FD4 /* Eureka */,
+				2D2E9514056B626FB999205249CDEAF9 /* HGRippleRadarView */,
+				47258EA128414DC99B50292FDBE9BB18 /* ImageRow */,
+				BE59685A3DD6B8A28CB3EA0E11451AC7 /* SwiftyOnboard */,
+				60F3B8D075829C3BF4CBFCC0C688E18A /* ViewRow */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F713759925092438F1DDDCBA0971C387 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB6C0B2BBB504CF2DEA4EB7B0950B31D /* ImageRow.modulemap */,
+				C6D1E211572F9C1A2C6D80255055BCA4 /* ImageRow.xcconfig */,
+				B450CF9DD722BF65045D73B598E72011 /* ImageRow-dummy.m */,
+				D20D6DEFF3AE92D1E9AF851E57244395 /* ImageRow-prefix.pch */,
+				26E91F531887E7BFE958F1950E8645AD /* ImageRow-umbrella.h */,
+				AAB020CE2E3300921B19F8EB5B10D3FE /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ImageRow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		621BE8B5D49A3AE670DF56F075656413 /* Headers */ = {
+		0E2A179BC0DFAF4F9457572034ACDA69 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E6D7662838012824E02BB9386F511B /* ViewRow-umbrella.h in Headers */,
+				426E7541AEA2AB39396E2D9B0B8B41F1 /* Pods-PetSafety-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D14011AAA70675F08C705B75BA1137B /* Headers */ = {
+		1D7C8D486479DC41077151E373766C7B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5704955E21DB1A85ED88CBAFCEEE6AF /* SwiftyOnboard-umbrella.h in Headers */,
-				55A1C77BEAE81CE78C1A7A792FC2EE20 /* SwiftyOnboard.h in Headers */,
+				FD0B2BF43BD3FEA06FC8B972D9F03DDC /* HGRippleRadarView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6355B226B790EE661895F350D0AB0B68 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FE63E8712561C9D494E2127DD732875 /* SwiftyOnboard-umbrella.h in Headers */,
+				2E9DE897A3910A40A276B0E1568F63B6 /* SwiftyOnboard.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E976AA09EB7B9A982E88C924378941D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66BD7BEC07A7439B2D1058BBE122A268 /* ViewRow-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,14 +805,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E24C271A9B0CC9181EE6C0859691EBCA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				04389EABB774CD1132AA9815EB37B2D2 /* Pods-PetSafety-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EDECEA179C645BCD652711604979CA3F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,6 +816,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0632CF7E3E1916C481207929FE1E6CB0 /* Pods-PetSafety */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DAC6A818FF95AE49FAB4D36D153C807 /* Build configuration list for PBXNativeTarget "Pods-PetSafety" */;
+			buildPhases = (
+				22D9F5933771546BB530D7C03F638039 /* Sources */,
+				0564ECBC84D7C504051A568971D12AB7 /* Frameworks */,
+				0E2A179BC0DFAF4F9457572034ACDA69 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B682409DFF1DF9E3319F2AD8C05B1FF /* PBXTargetDependency */,
+				ED9CC291CC5FB3B52AC8C895E923EA84 /* PBXTargetDependency */,
+				D2492746F228A0D1B33C797CA42C5940 /* PBXTargetDependency */,
+				FE8F4AC69C981C10D5E458CC824EA879 /* PBXTargetDependency */,
+				9CD52017CA3837D8DBF166E557A27FFE /* PBXTargetDependency */,
+			);
+			name = "Pods-PetSafety";
+			productName = "Pods-PetSafety";
+			productReference = 281A3760132FD6C056FCBFF1997FE09F /* Pods_PetSafety.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0F32982340C6013DA81094C00BB2C7B5 /* Eureka */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEEEC40F253F5FFDFB398B3A678C5BAB /* Build configuration list for PBXNativeTarget "Eureka" */;
@@ -742,7 +853,7 @@
 			);
 			name = Eureka;
 			productName = Eureka;
-			productReference = 6F43F015458AD9C2AA53F73E48E5A667 /* Eureka.framework */;
+			productReference = FF06D9A29D082731C3DC6D132F67F8CE /* Eureka.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		37900E72EC972AF6ED5D988BD1F194A0 /* ImageRow */ = {
@@ -760,7 +871,7 @@
 			);
 			name = ImageRow;
 			productName = ImageRow;
-			productReference = 1EE7927A9D8B1FDCFA16EDF7D4F65157 /* ImageRow.framework */;
+			productReference = 589B150D51C6D4A1B2D16ACB3905551A /* ImageRow.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5DFC74F67D4F7727363FAE43FD902E7F /* Pods-PetSafetyTests */ = {
@@ -778,34 +889,16 @@
 			);
 			name = "Pods-PetSafetyTests";
 			productName = "Pods-PetSafetyTests";
-			productReference = A7236D98A1812A86D7C599CF48183C0C /* Pods_PetSafetyTests.framework */;
+			productReference = FB78543F439D26DEBE91CE6264F054E5 /* Pods_PetSafetyTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8407FBB1E78EB2D15C49DF7464DB6F09 /* ViewRow */ = {
+		BC7A6FA04D4E7FA08418A89E1A1C4E8C /* SwiftyOnboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8879C22098F3AC030559BF6FB41006E /* Build configuration list for PBXNativeTarget "ViewRow" */;
+			buildConfigurationList = A6FEE413D774F4DFBB233339B0A07524 /* Build configuration list for PBXNativeTarget "SwiftyOnboard" */;
 			buildPhases = (
-				FA9E8E780A6316DBD87779D540DC8E85 /* Sources */,
-				C6C041F543793B8DDDE8E8E3323B968E /* Frameworks */,
-				621BE8B5D49A3AE670DF56F075656413 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				452C78DC8B827288D8AD5805349977B4 /* PBXTargetDependency */,
-			);
-			name = ViewRow;
-			productName = ViewRow;
-			productReference = B01B7050AE4C64EC7F0D1452A741BA12 /* ViewRow.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		9889FEC1399FBA299B3A163DAA232BA7 /* SwiftyOnboard */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF70FA9657E6DFD18D237CB7FD9FE2AC /* Build configuration list for PBXNativeTarget "SwiftyOnboard" */;
-			buildPhases = (
-				02D2001AFD4F543F1EC64074C17D7974 /* Sources */,
-				D686A1FBED2CE4EC049E44A4B38078AD /* Frameworks */,
-				8D14011AAA70675F08C705B75BA1137B /* Headers */,
+				27D66C6957B8C69124B375040827D6C4 /* Sources */,
+				E2BB42A52B223287180C884C497663B3 /* Frameworks */,
+				6355B226B790EE661895F350D0AB0B68 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -813,28 +906,7 @@
 			);
 			name = SwiftyOnboard;
 			productName = SwiftyOnboard;
-			productReference = B0CE3E7E24156C5CDE23BCB3C0152004 /* SwiftyOnboard.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BFB8D6F11B133728D5A97748C309DCCB /* Pods-PetSafety */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 630F5B8B30A6F1FFB364F38CA927C559 /* Build configuration list for PBXNativeTarget "Pods-PetSafety" */;
-			buildPhases = (
-				4C39664CA1911C81E6D0DD76B6C4E398 /* Sources */,
-				5A49B347D64594F3D697D4F99F70C890 /* Frameworks */,
-				E24C271A9B0CC9181EE6C0859691EBCA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1DCE8CB68934871BCF68C62441A15108 /* PBXTargetDependency */,
-				7F4F082B39A7EF45A2B10C29AF6117C2 /* PBXTargetDependency */,
-				94261EDEA61AEFCA5538527A4F528634 /* PBXTargetDependency */,
-				845BA0D4247725251B4445163C6BF244 /* PBXTargetDependency */,
-			);
-			name = "Pods-PetSafety";
-			productName = "Pods-PetSafety";
-			productReference = 69C1E88D6DE8002F8878807752D4B481 /* Pods_PetSafety.framework */;
+			productReference = 28EABC4F1BEE519FD55E0083331F5964 /* SwiftyOnboard.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CEB1792AA1AFF071BEA779F0DF7309DC /* Pods-PetSafetyUITests */ = {
@@ -852,7 +924,42 @@
 			);
 			name = "Pods-PetSafetyUITests";
 			productName = "Pods-PetSafetyUITests";
-			productReference = 359100EB364AE4A662509FE3A97ECEAE /* Pods_PetSafetyUITests.framework */;
+			productReference = 94D048B752CB847953903C6E02C7FB86 /* Pods_PetSafetyUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E7A1A0EBF3571931F4F65625D860135C /* ViewRow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C4225A8E915020250B27DC817FE7EFC /* Build configuration list for PBXNativeTarget "ViewRow" */;
+			buildPhases = (
+				79611E9B3184DC66E151275679AB5ACA /* Sources */,
+				9DFB89AD527BD5740D2C580E2D7C6685 /* Frameworks */,
+				7E976AA09EB7B9A982E88C924378941D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58F592B35942996FE3FF457D1FF0F98B /* PBXTargetDependency */,
+			);
+			name = ViewRow;
+			productName = ViewRow;
+			productReference = F172EF46E9507D594B7A6C03E7E88216 /* ViewRow.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD174137A0573FF2157AB109E55D69E3 /* HGRippleRadarView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DEB35FC7183DD9A7F6E235FAA7EACDE /* Build configuration list for PBXNativeTarget "HGRippleRadarView" */;
+			buildPhases = (
+				ACF05BD8A751C68E7630892F309B03EC /* Sources */,
+				8A32FE28755CB5A59F8EE1731980D156 /* Frameworks */,
+				1D7C8D486479DC41077151E373766C7B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HGRippleRadarView;
+			productName = HGRippleRadarView;
+			productReference = 608E1285F8795F4A44D98680C8B8FB71 /* HGRippleRadarView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -862,7 +969,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -872,17 +979,18 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8B69AE441BFFB48965ABB5045605D465 /* Products */;
+			productRefGroup = 8FCDFF08A8CD8A5F3D08A7A4A8714AEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0F32982340C6013DA81094C00BB2C7B5 /* Eureka */,
+				FD174137A0573FF2157AB109E55D69E3 /* HGRippleRadarView */,
 				37900E72EC972AF6ED5D988BD1F194A0 /* ImageRow */,
-				BFB8D6F11B133728D5A97748C309DCCB /* Pods-PetSafety */,
+				0632CF7E3E1916C481207929FE1E6CB0 /* Pods-PetSafety */,
 				5DFC74F67D4F7727363FAE43FD902E7F /* Pods-PetSafetyTests */,
 				CEB1792AA1AFF071BEA779F0DF7309DC /* Pods-PetSafetyUITests */,
-				9889FEC1399FBA299B3A163DAA232BA7 /* SwiftyOnboard */,
-				8407FBB1E78EB2D15C49DF7464DB6F09 /* ViewRow */,
+				BC7A6FA04D4E7FA08418A89E1A1C4E8C /* SwiftyOnboard */,
+				E7A1A0EBF3571931F4F65625D860135C /* ViewRow */,
 			);
 		};
 /* End PBXProject section */
@@ -899,22 +1007,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		02D2001AFD4F543F1EC64074C17D7974 /* Sources */ = {
+		22D9F5933771546BB530D7C03F638039 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D460021CDAA9D2A50D1A2C2E3ADF40E4 /* SwiftyOnboard-dummy.m in Sources */,
-				3CFBF86D8DC8F0519DCEB7B83276C502 /* SwiftyOnboard.swift in Sources */,
-				9805FE7CB20FBB60B65F934CE27D92B1 /* SwiftyOnboardOverlay.swift in Sources */,
-				4A45D3E9D6BB19125B5DEF2094F19314 /* SwiftyOnboardPage.swift in Sources */,
+				8E36EF2ED03A58F663508255B04B640A /* Pods-PetSafety-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C39664CA1911C81E6D0DD76B6C4E398 /* Sources */ = {
+		27D66C6957B8C69124B375040827D6C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41074A53FA9609B8F5DD8BBEBEB148D4 /* Pods-PetSafety-dummy.m in Sources */,
+				67195199BA75B7DDEDA0E80F1BE60C8B /* SwiftyOnboard-dummy.m in Sources */,
+				FCF8D230021A360BC3EB81A1CC9EDBF7 /* SwiftyOnboard.swift in Sources */,
+				519490DBA567F6897861A2036195963E /* SwiftyOnboardOverlay.swift in Sources */,
+				88D6C005679B4C3D03E5CC0558A4DFA5 /* SwiftyOnboardPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1111,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79611E9B3184DC66E151275679AB5ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80164264B84D20FE4EBB10139A92D4B9 /* ViewRow-dummy.m in Sources */,
+				95A33E09403B8C4DDB3A0529ABE00310 /* ViewRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CA3F68436FC90BC849C47DBFBECADF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1019,24 +1136,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA9E8E780A6316DBD87779D540DC8E85 /* Sources */ = {
+		ACF05BD8A751C68E7630892F309B03EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F649EC2889986321CEEEA16939DC6F /* ViewRow-dummy.m in Sources */,
-				F5E609BB2597358B1A338F121CDA94C3 /* ViewRow.swift in Sources */,
+				CD985228381999F0E98C43AA3E59EC42 /* Animation.swift in Sources */,
+				2A30EDF34E8EBA7AD18B0CD58BC750FF /* Drawer.swift in Sources */,
+				3FE243D6E0B2C04B826DA294004F5826 /* Geometry.swift in Sources */,
+				6EC19FB810341B8CFE2299CB1641F3EE /* HGRippleRadarView-dummy.m in Sources */,
+				DEDF54D2DAB676C77492608671CBD30E /* Item.swift in Sources */,
+				8E1D1F4DE127572E45BA2FAD20840809 /* ItemView.swift in Sources */,
+				D24F0D0D1FF26DB70FEACA33F756F352 /* RadarView.swift in Sources */,
+				AEED58353A5FB03E52E8116F09568D13 /* RadarViewProtocol.swift in Sources */,
+				E0C8487EAAFA145F873604C95ADF8D01 /* RippleView.swift in Sources */,
+				6A0EEB4682FF9EA1CFCB949780E2850E /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1DCE8CB68934871BCF68C62441A15108 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Eureka;
-			target = 0F32982340C6013DA81094C00BB2C7B5 /* Eureka */;
-			targetProxy = D40E117C4C274A6D16B09ABB253E505A /* PBXContainerItemProxy */;
-		};
 		34D0359571856A80148D942FB3231569 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Eureka;
@@ -1046,45 +1165,57 @@
 		4350E1F9EB991AF55013AC7A6C52D1C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PetSafety";
-			target = BFB8D6F11B133728D5A97748C309DCCB /* Pods-PetSafety */;
+			target = 0632CF7E3E1916C481207929FE1E6CB0 /* Pods-PetSafety */;
 			targetProxy = E1B63280000398571069BBAD133D1442 /* PBXContainerItemProxy */;
-		};
-		452C78DC8B827288D8AD5805349977B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Eureka;
-			target = 0F32982340C6013DA81094C00BB2C7B5 /* Eureka */;
-			targetProxy = 49841E4C0E5588340E33DEF49870E115 /* PBXContainerItemProxy */;
 		};
 		5676E1C5AD63138CB0F87E89D351FBF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PetSafety";
-			target = BFB8D6F11B133728D5A97748C309DCCB /* Pods-PetSafety */;
+			target = 0632CF7E3E1916C481207929FE1E6CB0 /* Pods-PetSafety */;
 			targetProxy = 949A5DF2F07F9FA3F14E3A0D4B3F6B8D /* PBXContainerItemProxy */;
 		};
-		7F4F082B39A7EF45A2B10C29AF6117C2 /* PBXTargetDependency */ = {
+		58F592B35942996FE3FF457D1FF0F98B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			target = 0F32982340C6013DA81094C00BB2C7B5 /* Eureka */;
+			targetProxy = 1BAAAFA45867A121F5FBD61D5EA37710 /* PBXContainerItemProxy */;
+		};
+		7B682409DFF1DF9E3319F2AD8C05B1FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			target = 0F32982340C6013DA81094C00BB2C7B5 /* Eureka */;
+			targetProxy = 51146D2E03F543F5B17AE3E2217FDF3D /* PBXContainerItemProxy */;
+		};
+		9CD52017CA3837D8DBF166E557A27FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ViewRow;
+			target = E7A1A0EBF3571931F4F65625D860135C /* ViewRow */;
+			targetProxy = 90B3CA44A4B9176A393ED165B3A474A8 /* PBXContainerItemProxy */;
+		};
+		D2492746F228A0D1B33C797CA42C5940 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageRow;
 			target = 37900E72EC972AF6ED5D988BD1F194A0 /* ImageRow */;
-			targetProxy = 1A62FFCE20E3DF98A59EB8AB282A19BF /* PBXContainerItemProxy */;
+			targetProxy = B3D6C8A58068CF8CD058D5014E00D008 /* PBXContainerItemProxy */;
 		};
-		845BA0D4247725251B4445163C6BF244 /* PBXTargetDependency */ = {
+		ED9CC291CC5FB3B52AC8C895E923EA84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ViewRow;
-			target = 8407FBB1E78EB2D15C49DF7464DB6F09 /* ViewRow */;
-			targetProxy = E3A5588A45AE9773759925267F0B8258 /* PBXContainerItemProxy */;
+			name = HGRippleRadarView;
+			target = FD174137A0573FF2157AB109E55D69E3 /* HGRippleRadarView */;
+			targetProxy = B10FA4A67D61347553F033C284C46F41 /* PBXContainerItemProxy */;
 		};
-		94261EDEA61AEFCA5538527A4F528634 /* PBXTargetDependency */ = {
+		FE8F4AC69C981C10D5E458CC824EA879 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyOnboard;
-			target = 9889FEC1399FBA299B3A163DAA232BA7 /* SwiftyOnboard */;
-			targetProxy = DBD81C43B578E6C91DB43BC65E310535 /* PBXContainerItemProxy */;
+			target = BC7A6FA04D4E7FA08418A89E1A1C4E8C /* SwiftyOnboard */;
+			targetProxy = 14188E595182FC6B9675733E6CB2699C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		11B69FC8AED6FDFFC4868C1DB1857E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4FD106CE7C01B168129404452172A5B /* ImageRow.xcconfig */;
+			baseConfigurationReference = C6D1E211572F9C1A2C6D80255055BCA4 /* ImageRow.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1099,42 +1230,14 @@
 				INFOPLIST_FILE = "Target Support Files/ImageRow/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/ImageRow/ImageRow.modulemap";
 				PRODUCT_MODULE_NAME = ImageRow;
 				PRODUCT_NAME = ImageRow;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		19538212D5806EA80F1CDF3077161486 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67CE9B23606C3A70BB58AEEE104E6D8C /* ViewRow.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewRow/ViewRow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewRow/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ViewRow/ViewRow.modulemap";
-				PRODUCT_MODULE_NAME = ViewRow;
-				PRODUCT_NAME = ViewRow;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1209,9 +1312,48 @@
 			};
 			name = Debug;
 		};
+		19A91F0488C5305FEACF67840B401568 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F48277C21325D189207E97D91A9F3D /* Pods-PetSafety.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PetSafety/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetSafety/Pods-PetSafety.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		349F0ABA411C1CC4D2026225F5759B35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 075BF962EEFBE6943F6185E54C953A8B /* Eureka.xcconfig */;
+			baseConfigurationReference = FA8BDDA783AE90C6372EFF2B4ED9453A /* Eureka.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1226,7 +1368,11 @@
 				INFOPLIST_FILE = "Target Support Files/Eureka/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Eureka/Eureka.modulemap";
 				PRODUCT_MODULE_NAME = Eureka;
 				PRODUCT_NAME = Eureka;
@@ -1241,9 +1387,9 @@
 			};
 			name = Debug;
 		};
-		63983BDAC562AC6F26AD236592CD093F /* Release */ = {
+		358EBF43B89D96BC34BE6BFE5C0F15D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67CE9B23606C3A70BB58AEEE104E6D8C /* ViewRow.xcconfig */;
+			baseConfigurationReference = 1773225C3734364D6B1F5C5C3F7B6B84 /* ViewRow.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1258,25 +1404,28 @@
 				INFOPLIST_FILE = "Target Support Files/ViewRow/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/ViewRow/ViewRow.modulemap";
 				PRODUCT_MODULE_NAME = ViewRow;
 				PRODUCT_NAME = ViewRow;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		65EEBF39F7EF663859076E5554568B33 /* Release */ = {
+		42AC4D3C513013BF68D51F4AFAD8F41A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4FD106CE7C01B168129404452172A5B /* ImageRow.xcconfig */;
+			baseConfigurationReference = 19074ED72A9D7581CE55E0D64A89A989 /* HGRippleRadarView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1287,14 +1436,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ImageRow/ImageRow-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageRow/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HGRippleRadarView/HGRippleRadarView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HGRippleRadarView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageRow/ImageRow.modulemap";
-				PRODUCT_MODULE_NAME = ImageRow;
-				PRODUCT_NAME = ImageRow;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/HGRippleRadarView/HGRippleRadarView.modulemap";
+				PRODUCT_MODULE_NAME = HGRippleRadarView;
+				PRODUCT_NAME = HGRippleRadarView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1307,9 +1460,9 @@
 			};
 			name = Release;
 		};
-		676618B2CAE056C5C3BA04B001C5C31F /* Debug */ = {
+		53A92993EA171628B93ABD7C6A92B8AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA03B5267FB50B4689D75BB790208D64 /* SwiftyOnboard.xcconfig */;
+			baseConfigurationReference = 2339087F45EC6C850EC21E55D029940B /* SwiftyOnboard.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1324,20 +1477,62 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftyOnboard/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SwiftyOnboard/SwiftyOnboard.modulemap";
 				PRODUCT_MODULE_NAME = SwiftyOnboard;
 				PRODUCT_NAME = SwiftyOnboard;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		65EEBF39F7EF663859076E5554568B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D1E211572F9C1A2C6D80255055BCA4 /* ImageRow.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ImageRow/ImageRow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageRow/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ImageRow/ImageRow.modulemap";
+				PRODUCT_MODULE_NAME = ImageRow;
+				PRODUCT_NAME = ImageRow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		6B54222C60659E85008127BC9C8FFBA2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1356,7 +1551,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PetSafetyTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PetSafetyTests/Pods-PetSafetyTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1373,11 +1572,10 @@
 			};
 			name = Release;
 		};
-		99A88CC6278A0607EEB8332F8F3589FA /* Release */ = {
+		92DAAB9AEF3F10F536487FA185299623 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 064E33848760196A1641823B863214B5 /* Pods-PetSafety.release.xcconfig */;
+			baseConfigurationReference = 19074ED72A9D7581CE55E0D64A89A989 /* HGRippleRadarView.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1387,20 +1585,59 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PetSafety/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HGRippleRadarView/HGRippleRadarView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HGRippleRadarView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PetSafety/Pods-PetSafety.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/HGRippleRadarView/HGRippleRadarView.modulemap";
+				PRODUCT_MODULE_NAME = HGRippleRadarView;
+				PRODUCT_NAME = HGRippleRadarView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9D84AA571878EE9A15B75C136AAF6864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1773225C3734364D6B1F5C5C3F7B6B84 /* ViewRow.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewRow/ViewRow-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewRow/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ViewRow/ViewRow.modulemap";
+				PRODUCT_MODULE_NAME = ViewRow;
+				PRODUCT_NAME = ViewRow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1425,7 +1662,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PetSafetyTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PetSafetyTests/Pods-PetSafetyTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1435,6 +1676,42 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BAB5E97E7BF4A29121558478025F11F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2339087F45EC6C850EC21E55D029940B /* SwiftyOnboard.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyOnboard/SwiftyOnboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyOnboard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyOnboard/SwiftyOnboard.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyOnboard;
+				PRODUCT_NAME = SwiftyOnboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1458,7 +1735,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PetSafetyUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1475,75 +1756,9 @@
 			};
 			name = Release;
 		};
-		CE400855FA0980198C0B2AE3C94E89C2 /* Release */ = {
+		CCC8F01DA078A921C67AB9328A25475C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 075BF962EEFBE6943F6185E54C953A8B /* Eureka.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Eureka/Eureka-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Eureka/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Eureka/Eureka.modulemap";
-				PRODUCT_MODULE_NAME = Eureka;
-				PRODUCT_NAME = Eureka;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DACD474F7C509B0D2D3FB83CA6A9AF2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA03B5267FB50B4689D75BB790208D64 /* SwiftyOnboard.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyOnboard/SwiftyOnboard-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyOnboard/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftyOnboard/SwiftyOnboard.modulemap";
-				PRODUCT_MODULE_NAME = SwiftyOnboard;
-				PRODUCT_NAME = SwiftyOnboard;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DAE76F43F7A3CC56B6B9591DDEF98B20 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9F48277C21325D189207E97D91A9F3D /* Pods-PetSafety.debug.xcconfig */;
+			baseConfigurationReference = 064E33848760196A1641823B863214B5 /* Pods-PetSafety.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1558,7 +1773,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PetSafety/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PetSafety/Pods-PetSafety.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1568,13 +1787,50 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		CE400855FA0980198C0B2AE3C94E89C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8BDDA783AE90C6372EFF2B4ED9453A /* Eureka.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Eureka/Eureka-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Eureka/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Eureka/Eureka.modulemap";
+				PRODUCT_MODULE_NAME = Eureka;
+				PRODUCT_NAME = Eureka;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		FBDFEE067D5FA3B5599C932FA355B527 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1593,7 +1849,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PetSafetyUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1663,7 +1923,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -1680,11 +1939,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1C4225A8E915020250B27DC817FE7EFC /* Build configuration list for PBXNativeTarget "ViewRow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				358EBF43B89D96BC34BE6BFE5C0F15D1 /* Debug */,
+				9D84AA571878EE9A15B75C136AAF6864 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
 				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DAC6A818FF95AE49FAB4D36D153C807 /* Build configuration list for PBXNativeTarget "Pods-PetSafety" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19A91F0488C5305FEACF67840B401568 /* Debug */,
+				CCC8F01DA078A921C67AB9328A25475C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DEB35FC7183DD9A7F6E235FAA7EACDE /* Build configuration list for PBXNativeTarget "HGRippleRadarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DAAB9AEF3F10F536487FA185299623 /* Debug */,
+				42AC4D3C513013BF68D51F4AFAD8F41A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1698,29 +1984,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		630F5B8B30A6F1FFB364F38CA927C559 /* Build configuration list for PBXNativeTarget "Pods-PetSafety" */ = {
+		A6FEE413D774F4DFBB233339B0A07524 /* Build configuration list for PBXNativeTarget "SwiftyOnboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DAE76F43F7A3CC56B6B9591DDEF98B20 /* Debug */,
-				99A88CC6278A0607EEB8332F8F3589FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8879C22098F3AC030559BF6FB41006E /* Build configuration list for PBXNativeTarget "ViewRow" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19538212D5806EA80F1CDF3077161486 /* Debug */,
-				63983BDAC562AC6F26AD236592CD093F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF70FA9657E6DFD18D237CB7FD9FE2AC /* Build configuration list for PBXNativeTarget "SwiftyOnboard" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				676618B2CAE056C5C3BA04B001C5C31F /* Debug */,
-				DACD474F7C509B0D2D3FB83CA6A9AF2F /* Release */,
+				BAB5E97E7BF4A29121558478025F11F4 /* Debug */,
+				53A92993EA171628B93ABD7C6A92B8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
