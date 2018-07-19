@@ -342,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
-                                <rect key="frame" x="181.33333333333334" y="635" width="52" height="32"/>
+                                <rect key="frame" x="181.33333333333334" y="634" width="52" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <state key="normal" title="SHOW"/>
                                 <connections>
@@ -350,13 +350,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
-                                <rect key="frame" x="65.333333333333343" y="358.33333333333331" width="284.66666666666663" height="20"/>
+                                <rect key="frame" x="64.333333333333343" y="358.33333333333331" width="286.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
-                                <rect key="frame" x="25" y="398" width="364" height="39.666666666666686"/>
+                                <rect key="frame" x="25" y="398" width="364" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -463,11 +463,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="70" id="ztd-9M-Def" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="100" id="ztd-9M-Def" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ztd-9M-Def" id="GRv-z2-hnT" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="69.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCU-5M-wJW">
@@ -488,13 +488,19 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ep-5o-NaM">
+                                            <rect key="frame" x="99" y="68" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lblCellName" destination="VCU-5M-wJW" id="W2o-ME-hOT"/>
                                     <outlet property="lblCellRace" destination="ARM-x9-Y3C" id="Srg-BL-YaU"/>
                                     <outlet property="petThumb" destination="BrS-o7-UzJ" id="x7f-jp-piZ"/>
-                                    <segue destination="ngF-pD-KKT" kind="show" identifier="segueInfoFoundPet" id="qvk-8y-tWs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -518,31 +524,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3T-u1-iWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1807"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="k7b-el-tfH">
-            <objects>
-                <viewController id="ngF-pD-KKT" customClass="ViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zdy-Ai-AnB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="MjP-hw-xeE"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="MSk-EK-Sgp"/>
-                        <barButtonItem title="Register" id="saL-Pq-QwJ">
-                            <connections>
-                                <action selector="Register:" destination="ngF-pD-KKT" id="3nY-Xm-v5t"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vPL-TS-0GB"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DeT-rD-obq" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2516" y="1807"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
