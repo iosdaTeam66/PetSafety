@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -162,6 +163,20 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         let dataArr: [String] = ["22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/12/18 12:00"]
         let coord: [(lat:Double, lag: Double)] = [(44.4068692,8.9291704),(43.6890842,10.3978845),(40.8555186,14.274207),(40.6824408,14.7680961),(41.1171432,16.8718715)]
         //let locationObj = CloudManager.
+        
+        let myPet = petPList![pageControl.currentPage]
+        
+        var newPositions = [CKRecord]()
+        
+        print(myPet.beaconid)
+        
+        newPositions = CloudManager.select(recordType: "Coordinate", fieldName: "beaconID", searched: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1")
+         print(newPositions.count)
+        var stringPos = [String]()
+        stringPos = newPositions[0].allKeys()
+        
+        print("prova bottone \(stringPos[0])")
+        print("prova bottone2 \(stringPos[1])")
         
         //arre auto generati da coordinate
         let cittaArr: [String] = [String] ()
