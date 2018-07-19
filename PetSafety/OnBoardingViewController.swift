@@ -17,8 +17,8 @@ class OnBoardingViewController: UIViewController {
     }
     var swiftyOnboard: SwiftyOnboard!
     let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1)]
-    var titleArray: [String] = ["Welcome on PetSafety!", "We will help you monitoring your pets...", "...and find them if they run away"]
-    var subTitleArray: [String] = ["1","2","3"]
+    var titleArray: [String] = ["Welcome on FindMyPet!", "We will help you monitoring your pets...", "...and find them if they run away"]
+    var subTitleArray: [String] = ["Bring your device closer to the spotted pets and the application will alert you if they are lost","When you find a lost pet a notification with its location will be sent on the owner's smartphone","Before starting to use locator do not forget to activate the bluetooth and the location on your device"]
     
     var gradiant: CAGradientLayer = {
         //Gradiant for the background view
@@ -81,8 +81,8 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         view.imageView.image = UIImage(named: "onboard\(index)")
         
         //Set the font and color for the labels:
-        view.title.font = UIFont(name: "Lato-Heavy", size: 22)
-        view.subTitle.font = UIFont(name: "Lato-Regular", size: 16)
+        view.title.font = UIFont(name: "SF Pro Display Regular ", size: 22)
+        view.subTitle.font = UIFont(name: "SF Pro Display Regular ", size: 16)
         
         //Set the text in the page:
         view.title.text = titleArray[index]
@@ -100,10 +100,10 @@ extension OnBoardingViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSour
         overlay.continueButton.addTarget(self, action: #selector(handleContinue), for: .touchUpInside)
         
         //Setup for the overlay buttons:
-        overlay.continueButton.titleLabel?.font = UIFont(name: "Lato-Bold", size: 16)
+        overlay.continueButton.titleLabel?.font = UIFont(name: "SF Pro Display Regular ", size: 16)
         overlay.continueButton.setTitleColor(UIColor.white, for: .normal)
         overlay.skipButton.setTitleColor(UIColor.white, for: .normal)
-        overlay.skipButton.titleLabel?.font = UIFont(name: "Lato-Heavy", size: 16)
+        overlay.skipButton.titleLabel?.font = UIFont(name: "SF Pro Display Regular ", size: 16)
         
         //Return the overlay view:
         return overlay

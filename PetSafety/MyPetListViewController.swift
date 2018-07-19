@@ -15,6 +15,7 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var switchMissing: UISwitch!
     @IBOutlet weak var buttonMap: UIButton!
+    @IBOutlet weak var imageNoPet: UIImageView!
     
     var petPList: [PPet]?
     
@@ -25,14 +26,18 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         
         petPList = PersistenceManager.fetchData()
         
+        imageNoPet.image = UIImage(named: "sleeping-dog")
+        
         if(petPList?.count == 0){
             labelNoPet.isHidden = false
             switchMissing.isHidden = true
             buttonMap.isHidden = true
+            
         } else {
             labelNoPet.isHidden = true
             switchMissing.isHidden = false
             buttonMap.isHidden = false
+            imageNoPet.isHidden = true
         }
         
         let layout = UPCarouselFlowLayout()
@@ -61,10 +66,12 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
             labelNoPet.isHidden = false
             switchMissing.isHidden = true
             buttonMap.isHidden = true
+            imageNoPet.isHidden = false
         } else {
             labelNoPet.isHidden = true
             switchMissing.isHidden = false
             buttonMap.isHidden = false
+            imageNoPet.isHidden = true
         }
         
     }
