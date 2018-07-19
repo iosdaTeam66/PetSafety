@@ -39,7 +39,7 @@ class UserController: FormViewController {
             var temp = CloudManager.select(recordType: "Owners", fieldName: "emailAddress", searched: pUser.email!)
             if temp.count != 0{
                 let prova = temp.popLast()
-                print(prova?.allKeys() ?? "Void")
+//                print(prova?.allKeys() ?? "Void")
             }
             else{
                 _ = CloudManager.insert(userID: "Prova", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)

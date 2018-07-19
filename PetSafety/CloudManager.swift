@@ -3,33 +3,113 @@
 //  PetSafety
 //
 //  Created by Giaquinto Alessandro on 16/07/18.
-//  Copyright © 2018 De Cristofaro Paolo. All rights reserved.
+//  Copyright © 2018 Giaquinto Alessandro. All rights reserved.
 //
 
 import Foundation
 import CloudKit
 import CoreLocation
 
-/*
- Sintassi utilizzata:
- 
- upload(<generic>)                           Store di un oggetto completo
- storeTo<recordType>(<ID>, <param>)                        Store di un determinato valore associato ad un oggetto, riconosciuto mediante ID
- download(<recordType>, <ID>)            Obtain di un oggetto completo
- retrieveForm<recordName>(<ID>, <param>)   Retrieve di uno specifico valore associato ad un determinato ID
- 
- Nota bene: Questi metodi lavorano SEMPRE sul public Database del nostro container
- Nota bene: L'handler viene gestito a parte
- Suggerimento: Usare sempre upload per l'invio, di modo che si scriva una sola volta tutti i dati
- */
-
 class CloudManager{
-    
     static let publicDB = CKContainer.default().publicCloudDatabase
+    //    Select
+    //    Ricorda, se la ricerca non produce risultati, l'array restituito può essere vuoto nil
+    static func selectPosition(rcdTp: String, fieldName: String, searched: String) -> [(pos: CLLocation, email: String, date: String)]{
+        var arr = [(pos: CLLocation, email: String, date: String)]()
+        let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
+        let userQuery = CKQuery(recordType: rcdTp, predicate: pred)
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        print("Query correctly executed")
+                        var i = 0
+                        for entry in results!{
+                            arr[i].pos = entry["position"] as! CLLocation
+                            arr[i].email = entry["emailAddress"] as! String
+                            arr[i].date = entry["findinfDate"] as! String
+                            i+=1
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("Not found")
+                    }
+                }
+            }
+        }))
+        return arr
+    }
     
+    /*static func select(recordType: String, fieldName: String, searched: String) -> Array<CKRecord>{
+        var arr = [CKRecord]()
+        let pred = NSPredicate(format: fieldName + " == " + "\"" + searched + "\"" )
+        let userQuery = CKQuery(recordType: recordType, predicate: pred)
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        print("Query correctly executed")
+                        arr = results!
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("Not found")
+                    }
+                }
+            }
+        }))
+        return arr
+    }*/
+    
+    static func select(recordType: String, fieldName: String, searched: String) -> [(k: String, v: String)]{
+        var arr = [(k: String, v: String)]()
+        let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
+        let userQuery = CKQuery(recordType: recordType, predicate: pred)
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for result in results! {
+                            let prova = result.allKeys()
+                            let numCol = prova.count-1
+                            for index in 0...numCol {
+                                print("ciclo \(index) + \(String(describing: result.value(forKey: prova[index])!))")
+                                arr.append((k: prova[index], v: String(describing: result.value(forKey: prova[index])!)))
+                            }
+                        }
+                        
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("Not found")
+                    }
+                }
+            }
+        }))
+        print("salvo")
+        print(arr.count)
+        return arr
+    }
     
     //    Upload: Public Database -> Owners list
-    static func insert(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String){
+    static func insert(userID: String, name: String, surname: String, phoneNumber: String, emailAddress: String) -> Bool{
+        var retValue = true;
         let userRecord = CKRecord(recordType: "Owners")
         print(userRecord.recordID)
         print(userRecord.allKeys())
@@ -43,13 +123,15 @@ class CloudManager{
             (userRecord,error) in
             if error != nil{
                 print("DB ERROR")
-                return
+                retValue = false
             }
         }
+        return retValue
     }
     
     //    Upload: Public Database -> Pets list
-    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String){
+    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String) -> Bool{
+        var retValue = true
         let petRecord = CKRecord(recordType: "Pet")
         petRecord["beaconID"] = beaconID as CKRecordValue
         petRecord["microchipID"] = microchipID as CKRecordValue
@@ -62,14 +144,16 @@ class CloudManager{
             (petRecord,error) in
             if error != nil{
                 print("DB ERROR")
-                return
+                retValue = false
             }
         }
+        return retValue
     }
     
     //    Upload: Public Database -> Missing list
     //    La chiave primaria qui è il beaconID
-    static func insert(beaconID: String, emailAddress: String){
+    static func insert(beaconID: String, emailAddress: String) -> Bool{
+        var retValue = true;
         let missingRecord = CKRecord(recordType: "Missing")
         missingRecord["beaconID"] = beaconID as CKRecordValue
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
@@ -77,13 +161,15 @@ class CloudManager{
             (missingRecord,error) in
             if error != nil{
                 print("DB ERROR")
-                return
+                retValue = false
             }
         }
+        return retValue
     }
     
     //    Upload: Public Database -> Coordinate list
-    static func insert(beaconID: String, emailAddress: String, location: CLLocation, findingDate: Date){
+    static func insert(beaconID: String, emailAddress: String, location: CLLocation, findingDate: Date) -> Bool{
+        var retValue = true;
         let coordinateRecord = CKRecord(recordType: "Coordinate")
         coordinateRecord["beaconID"] = beaconID as CKRecordValue
         coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
@@ -93,250 +179,10 @@ class CloudManager{
             (coordinateRecord,error) in
             if error != nil{
                 print("DB ERROR")
-                return
+                retValue = false
             }
         }
+        return retValue
     }
     
-    static func select(userIDValue: String) -> User{
-        let user = User(name: "", surname: "", phoneNumber: "", emailAddress: "", userID: "")
-        let pred = NSPredicate(format: "UserID == \"Pippo\"")
-        print(pred)
-        let userQuery = CKQuery(recordType: "Owners", predicate: pred)
-        print(userQuery)
-        print("\n\n\nEseguo la query\n\n")
-        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    print("Cloud Query Error - Fetch Establishments: \(error)")
-                }
-                return
-            } else {
-                if results!.count > 0 {
-                    DispatchQueue.main.async {
-                        for entry in results! {
-                            let userID = entry["userID"] as? String
-                            user.userID = userID!
-                            print("UPC from CloudKit \(String(describing: userID))")
-                            
-                            let name = entry["name"] as? String
-                            user.name = name!
-                            print("Name from CloudKit \(String(describing: name))")
-                            
-                            let surname = entry["surname"] as? String
-                            user.surname = surname!
-                            print("Surname from CloudKit \(String(describing: surname))")
-                            
-                            let email = entry["emailAddress"] as? String
-                            user.emailAddress = email!
-                            print("Email from CloudKit \(String(describing: email))")
-                            
-                            let phone = entry["phoneNumber"] as? String
-                            user.phoneNumber = phone!
-                            print("Phone from CloudKit \(String(describing: phone))")
-                        }
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        print("UPC Not Found")
-                    }
-                }
-            }
-        }))
-        return user
-    }
-    
-    static func storeMicrochipToPet(beaconID: String, microchipID: String){
-        let rcd = CKRecord(recordType: "Pet")
-        rcd["microchipID"] = microchipID as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeNameToPet(beaconID: String, name: String){
-        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd["name"] = name as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeTypeToPet(beaconID: String, type: String){
-        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd["type"] = type as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeraceToPet(beaconID: String, race: String){
-        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd["race"] = race as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeBirthDateToPet(beaconID: String, birthDate: String){
-        let rcd = CKRecord(recordType: "Pet", recordID: CKRecordID(recordName: beaconID))
-        rcd["birthDate"] = birthDate as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    
-    
-    static func storeUserIDToUser(emailAddress: String, userID: String){
-        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd["userID"] = userID as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeNameToUser(emailAddress: String, name: String){
-        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd["name"] = name as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storeSurnameToUser(emailAddress: String, surname: String){
-        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd["surname"] = surname as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    static func storePhoneNumberToUser(emailAddress: String, phoneNumber: String){
-        let rcd = CKRecord(recordType: "Users", recordID: CKRecordID(recordName: emailAddress))
-        rcd["phoneNumber"] = phoneNumber as CKRecordValue
-        publicDB.save(rcd){
-            (rcd,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    
-    
-    static func storeEmailToMissing(beaconID: String, emailAddress: String){
-        let missingRecord = CKRecord(recordType: "Missing", recordID: CKRecordID(recordName: beaconID))
-        missingRecord["emailAddress"] = emailAddress as CKRecordValue
-        publicDB.save(missingRecord){
-            (missingRecord,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    
-    static func storeEmailToCoordinate(beaconID: String, emailAddress: String){
-        let coordRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
-        coordRecord["emailAddress"] = emailAddress as CKRecordValue
-        publicDB.save(coordRecord){
-            (coordRecord,error) in
-            if error != nil{
-                print("DB ERROR")
-                return
-            }
-        }
-    }
-    
-    
-    static func storeLocationToCoordinate(beaconID: String, location: CLLocation){
-        let crdRecord = CKRecord(recordType: "Coordinate", recordID: CKRecordID(recordName: beaconID))
-        crdRecord["position"] = location as CKRecordValue
-        publicDB.save(crdRecord){
-            (crdRecord,error) in
-            if error != nil{
-                print("DBERROR")
-                return
-            }
-        }
-    }
-    
-    static func downloadUsers(emailAddress: String){
-        let temp = CKRecord(recordType: emailAddress, recordID: CKRecordID(recordName: "Users"))
-        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
-            print("DB ERROR")
-        }
-    }
-    
-    static func downloadPet(beaconID: String){
-        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Pet"))
-        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
-            print("DB ERROR")
-        }
-    }
-    
-    static func downloadMissingList(beaconID: String){
-        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Missing"))
-        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
-            print("DB ERROR")
-        }
-    }
-    
-    static func downloadCoordinate(beaconID: String){
-        let temp = CKRecord(recordType: beaconID, recordID: CKRecordID(recordName: "Missing"))
-        publicDB.fetch(withRecordID: temp.recordID) { (temp, error) in
-            print("DB ERROR")
-        }
-    }
-    
-    static func retrieveFromUser(emailAddress: String){
-        
-    }
-    
-    static func retrieveFromPet(beaconID: String){
-        
-    }
-    
-    static func retrieveFromMissingList(beaconID: String){
-        
-    }
-    
-    static func retrieveFromCoordinate(beaconID: String){
-        
-    }
 }

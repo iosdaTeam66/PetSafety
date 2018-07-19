@@ -170,7 +170,7 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         
         print(myPet.beaconid)
         
-        newPositions = CloudManager.select(recordType: "Coordinate", fieldName: "beaconID", searched: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1")
+//        newPositions = CloudManager.select(recordType: "Coordinate", fieldName: "beaconID", searched: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1")
          print(newPositions.count)
         var stringPos = [String]()
         stringPos = newPositions[0].allKeys()
