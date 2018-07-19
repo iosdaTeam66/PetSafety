@@ -83,11 +83,12 @@ class CloudManager{
     }
     
     //    Upload: Public Database -> Coordinate list
-    static func insert(beaconID: String, emailAddress: String, location: CLLocation){
+    static func insert(beaconID: String, emailAddress: String, location: CLLocation, findingDate: Date){
         let coordinateRecord = CKRecord(recordType: "Coordinate")
         coordinateRecord["beaconID"] = beaconID as CKRecordValue
         coordinateRecord["emailAddress"] = emailAddress as CKRecordValue
         coordinateRecord["position"] = location as CKRecordValue
+        coordinateRecord["findinfDate"] = findingDate as CKRecordValue
         publicDB.save(coordinateRecord){
             (coordinateRecord,error) in
             if error != nil{
@@ -97,7 +98,8 @@ class CloudManager{
         }
     }
     
-    static func select(userIDValue: String){
+    static func select(userIDValue: String) -> User{
+        let user = User(name: "", surname: "", phoneNumber: "", emailAddress: "", userID: "")
         let pred = NSPredicate(format: "UserID == \"Pippo\"")
         print(pred)
         let userQuery = CKQuery(recordType: "Owners", predicate: pred)
@@ -114,10 +116,24 @@ class CloudManager{
                     DispatchQueue.main.async {
                         for entry in results! {
                             let userID = entry["userID"] as? String
+                            user.userID = userID!
                             print("UPC from CloudKit \(String(describing: userID))")
                             
                             let name = entry["name"] as? String
+                            user.name = name!
                             print("Name from CloudKit \(String(describing: name))")
+                            
+                            let surname = entry["surname"] as? String
+                            user.surname = surname!
+                            print("Surname from CloudKit \(String(describing: surname))")
+                            
+                            let email = entry["emailAddress"] as? String
+                            user.emailAddress = email!
+                            print("Email from CloudKit \(String(describing: email))")
+                            
+                            let phone = entry["phoneNumber"] as? String
+                            user.phoneNumber = phone!
+                            print("Phone from CloudKit \(String(describing: phone))")
                         }
                     }
                 } else {
@@ -127,6 +143,7 @@ class CloudManager{
                 }
             }
         }))
+        return user
     }
     
     static func storeMicrochipToPet(beaconID: String, microchipID: String){

@@ -20,8 +20,28 @@ class ViewController: FormViewController {
     
     @IBAction func Register(_ sender: UIBarButtonItem) {
         let pUser = PersistenceManager.fetchDataUser()
-        print (pUser.count)
-        CloudManager.insert(beaconID: pPet.beaconid!, microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
+        if ((pPet.name! == "") || (pPet.race! == "") || (pPet.type! == "") || (pPet.microchipid! == "")){
+            let alert = UIAlertController(title: "Fields required", message: "One or more field have no data", preferredStyle: UIAlertControllerStyle.alert)
+            print("if")
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print ("else")
+            print(pPet.race!)
+            print("36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))")
+            CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))", microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
+        }
+        
     }
     
     override func viewDidLoad() {

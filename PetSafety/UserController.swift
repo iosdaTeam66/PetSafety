@@ -18,7 +18,45 @@ class UserController: FormViewController {
     var image: UIImageView!
     
     @IBAction func Register(_ sender: UIBarButtonItem) {
-        CloudManager.insert(userID: "Pippo", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
+        
+        if (pUser.name! == "" || pUser.surname! == "" || pUser.email! == "" || pUser.phonenumber == ""){
+            let alert = UIAlertController(title: "Fields required", message: "One or more field have no data", preferredStyle: UIAlertControllerStyle.alert)
+            print("if")
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else{
+            let temp = CloudManager.select(userIDValue: "Pippo")
+            if temp.emailAddress == pUser.email{
+                if temp.name != pUser.name{
+                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.name!)
+                }
+                if temp.surname != pUser.surname{
+                    CloudManager.storeSurnameToUser(emailAddress: pUser.email!, surname: pUser.surname!)
+                }
+                if temp.emailAddress != pUser.email{
+                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.email!)
+                }
+                if temp.phoneNumber != pUser.phonenumber{
+                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.phonenumber!)
+                }
+                print("Campi aggiornati!")
+            }
+            else{
+                CloudManager.insert(userID: "Pippo", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
+                print("Utente creato!")
+            }
+        }
     }
     
     override func viewDidLoad() {
