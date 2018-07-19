@@ -126,8 +126,8 @@ class MapController: UIViewController {
                 let nameToShow = self.nomeArr[i]
                 let dataToShow = self.dataArr[i]
                 //devono essere generati
-                    var titleToShow = " empty "
-                    var subtitleToShow = " empty "
+                    var titleToShow = " "
+                    var subtitleToShow = " "
                 
                 //genera l'indirizzo
                 CLGeocoder().reverseGeocodeLocation(clocation, completionHandler: {(placemarks, error) in
