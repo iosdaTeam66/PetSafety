@@ -90,9 +90,14 @@ class MapController: UIViewController {
         
         self.nomeArr = valueCane.nomeArr
         self.dataArr = valueCane.dataArr
-        self.cittaArr = valueCane.cittaArr
-        self.viaArr = valueCane.viaArr
+        self.cittaArr = []
+        self.viaArr = []
         self.coord = valueCane.coord
+        
+        for _ in valueCane.coord {
+            cittaArr.append("")
+            viaArr.append("")
+        }
     }
     
     
@@ -146,12 +151,12 @@ class MapController: UIViewController {
                         if pm.thoroughfare != nil {
                             //addressString = addressString + pm.thoroughfare! + ", "
                             subtitleToShow = pm.thoroughfare!
-                            self.viaArr.append(pm.thoroughfare!)
+                            self.viaArr[i] = pm.thoroughfare!
                         }
                         if pm.locality != nil {
                             //addressString = addressString + pm.locality! + ", "
                             titleToShow = pm.locality!
-                            self.cittaArr.append(pm.locality!)
+                            self.cittaArr[i] = pm.locality!
                         }
                         
                         //print(addressString)
