@@ -246,7 +246,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
                 var i = 0
                 print("leggo count: \(foundID.count)")
                 for _ in foundID {
-                    CloudManager.insert(beaconID: foundID[i], emailAddress: pUser.email!, location: currentLocation, findingDate: Date())
+                    _ = CloudManager.insert(beaconID: foundID[i], emailAddress: pUser.email!, location: currentLocation, findingDate: Date())
                     print("inserisco coord per: \(foundID[i])")
                     i+=1
                 }

@@ -39,7 +39,7 @@ class ViewController: FormViewController {
             print ("else")
             print(pPet.race!)
             print("36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))")
-            CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))", microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Pippo")
+            _ = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))", microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Prova")
         }
         
     }

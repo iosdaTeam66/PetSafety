@@ -36,24 +36,13 @@ class UserController: FormViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else{
-            let temp = CloudManager.select(userIDValue: "Pippo")
-            if temp.emailAddress == pUser.email{
-                if temp.name != pUser.name{
-                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.name!)
-                }
-                if temp.surname != pUser.surname{
-                    CloudManager.storeSurnameToUser(emailAddress: pUser.email!, surname: pUser.surname!)
-                }
-                if temp.emailAddress != pUser.email{
-                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.email!)
-                }
-                if temp.phoneNumber != pUser.phonenumber{
-                    CloudManager.storeNameToUser(emailAddress: pUser.email!, name: pUser.phonenumber!)
-                }
-                print("Campi aggiornati!")
+            var temp = CloudManager.select(recordType: "Owners", fieldName: "emailAddress", searched: pUser.email!)
+            if temp.count != 0{
+                let prova = temp.popLast()
+                print(prova?.allKeys() ?? "Void")
             }
             else{
-                CloudManager.insert(userID: "Pippo", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
+                _ = CloudManager.insert(userID: "Prova", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
                 print("Utente creato!")
             }
         }
