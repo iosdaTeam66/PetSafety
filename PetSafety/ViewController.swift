@@ -14,6 +14,7 @@ import ViewRow
 class ViewController: FormViewController {
 
     var pPet: PPet!
+    var pUser: PUser!
     let formatter = DateFormatter()
     // initially set the format based on your datepicker date / server String
     var image: UIImageView!
@@ -36,10 +37,71 @@ class ViewController: FormViewController {
                 }}))
             self.present(alert, animated: true, completion: nil)
         } else {
-            print ("else")
-            print(pPet.race!)
-            print("36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))")
-            _ = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: pPet.beaconid!))", microchipID: pPet.microchipid!, name: pPet.name!, type: pPet.type!, race: pPet.race!, birthDate: pPet.birthdate!, ownerID: "Prova")
+            CloudManager.select(recordType: "Pet", fieldName: "microchipID", searched: pPet.microchipid!)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            if CloudManager.userDB.count > 0 {
+                var ismodified = false
+                print("Qui ci va un update!")
+                if self.pPet.name != CloudManager.userDB[6].v {
+                    CloudManager.update(recordType: "Pet", recordName: "name", oldValue: CloudManager.userDB[6].v, newValue: self.pPet.name!)
+                    print ("Serve un update del nome!")
+                    ismodified = true
+                }
+                if self.pPet.type != CloudManager.userDB[3].v {
+                    CloudManager.update(recordType: "Pet", recordName: "type", oldValue: CloudManager.userDB[3].v, newValue: self.pPet.type!)
+                    print ("Serve un update del tipo!")
+                    ismodified = true
+                }
+                if self.pPet.race != CloudManager.userDB[5].v {
+                    CloudManager.update(recordType: "Pet", recordName: "race", oldValue: CloudManager.userDB[5].v, newValue: self.pPet.race!)
+                    print ("Serve un update della razza!")
+                    ismodified = true
+                }
+                if "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))" != CloudManager.userDB[0].v {
+                    CloudManager.update(recordType: "Pet", recordName: "beaconID", oldValue: CloudManager.userDB[0].v, newValue: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))")
+                    print ("Serve un update del beaconid!")
+                    ismodified = true
+                }
+                if ismodified == true {
+                    let alert = UIAlertController(title: "Infos Updated", message: "Now your pet infos are up to date!", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                        }}))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+            else {
+                let pUser = PersistenceManager.fetchDataUser()
+                let imageName = self.pPet.photouuid // your image name here
+                let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+                print (imagePath)
+                let imageUrl: URL = URL(fileURLWithPath: imagePath)
+                _ = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))", microchipID: self.pPet.microchipid!, name: self.pPet.name!, type: self.pPet.type!, race: self.pPet.race!, birthDate: self.pPet.birthdate!, ownerID: pUser[0].email!, photo: imageUrl)
+                let alert = UIAlertController(title: "Pet Registered", message: "Now other users can help you find your pet!", preferredStyle: UIAlertControllerStyle.alert)
+                print("if")
+                
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                    }}))
+                self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
+            
         }
         
     }

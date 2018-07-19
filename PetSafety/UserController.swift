@@ -37,17 +37,63 @@ class UserController: FormViewController {
         }
         else{
             CloudManager.select(recordType: "Owners", fieldName: "emailAddress", searched: pUser.email!)
-//            if temp.count != 0{
-//                let prova = temp.popLast()
-//                print(prova?.allKeys() ?? "Void")
-//            }
-//            else{
-//                _ = CloudManager.insert(userID: "Prova", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
-//                print("Utente creato!")
-//            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//                acquisisco i dati dal db dopo un ritardo
-                CloudManager.userDB[0].k // k è la colonna, v è il valore
+                if CloudManager.userDB.count > 0 {
+                    var ismodified = false
+                    print("Qui ci va un update!")
+                    if self.pUser.name != CloudManager.userDB[3].v {
+                        CloudManager.update(recordType: "Owners", recordName: "name", oldValue: CloudManager.userDB[3].v, newValue: self.pUser.name!)
+                        print ("Serve un update del nome!")
+                        ismodified = true
+                    }
+                    if self.pUser.surname != CloudManager.userDB[2].v
+                    {
+                        CloudManager.update(recordType: "Owners", recordName: "surname", oldValue: CloudManager.userDB[2].v, newValue: self.pUser.surname!)
+                        print ("Serve un update del cognome!")
+                        ismodified = true
+                    }
+                    if self.pUser.email != CloudManager.userDB[1].v {
+                        CloudManager.update(recordType: "Owners", recordName: "emailAddress", oldValue: CloudManager.userDB[1].v, newValue: self.pUser.email!)
+                        print ("Serve un update dell'email!")
+                        ismodified = true
+                    }
+                    if self.pUser.phonenumber != CloudManager.userDB[4].v {
+                        CloudManager.update(recordType: "Owners", recordName: "phoneNumber", oldValue: CloudManager.userDB[4].v, newValue: self.pUser.phonenumber!)
+                        print ("Serve un update del numero!")
+                        ismodified = true
+                    }
+                    if ismodified == true {
+                        let alert = UIAlertController(title: "Infos Updated", message: "Now your user infos are up to date!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                            switch action.style{
+                            case .default:
+                                print("default")
+                            case .cancel:
+                                print("cancel")
+                                
+                            case .destructive:
+                                print("destructive")
+                            }}))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                else {
+                    _ = CloudManager.insert(userID: "Pippo", name: self.pUser.name!, surname: self.pUser.surname!, phoneNumber: self.pUser.phonenumber!, emailAddress: self.pUser.email!)
+                    let alert = UIAlertController(title: "User Registered", message: "Now you can be contacted in case your pet has been found!", preferredStyle: UIAlertControllerStyle.alert)
+                    print("if")
+                    
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                        }}))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }

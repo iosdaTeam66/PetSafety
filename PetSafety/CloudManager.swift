@@ -13,10 +13,11 @@ import CoreLocation
 class CloudManager{
     static let publicDB = CKContainer.default().publicCloudDatabase
     static var userDB = [(k: String, v: String)]()
+    //    static var positionDB = [(beaconID: String, emailAddress: String, position: CLLocation, foundIt: Date)]
     //    Select
     //    Ricorda, se la ricerca non produce risultati, l'array restituito può essere vuoto nil
-    static func selectPosition(rcdTp: String, fieldName: String, searched: String) -> [(pos: CLLocation, email: String, date: String)]{
-        var arr = [(pos: CLLocation, email: String, date: String)]()
+    static func selectPosition(rcdTp: String, fieldName: String, searched: String, index: Int) {
+        //positionDB.removeAll()
         let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
         let userQuery = CKQuery(recordType: rcdTp, predicate: pred)
         publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
@@ -28,13 +29,8 @@ class CloudManager{
             } else {
                 if results!.count > 0 {
                     DispatchQueue.main.async {
-                        print("Query correctly executed")
-                        var i = 0
-                        for entry in results!{
-                            arr[i].pos = entry["position"] as! CLLocation
-                            arr[i].email = entry["emailAddress"] as! String
-                            arr[i].date = entry["findinfDate"] as! String
-                            i+=1
+                        for result in results! {
+//                            MyPetListViewController.positionDB.append((pos: result.value(forKey: "position") as! CLLocation, email: result.value(forKey: "emailAddress") as! String, date: Date(), index))
                         }
                     }
                 } else {
@@ -44,34 +40,36 @@ class CloudManager{
                 }
             }
         }))
-        return arr
+        
     }
     
-    /*static func select(recordType: String, fieldName: String, searched: String) -> Array<CKRecord>{
-        var arr = [CKRecord]()
-        let pred = NSPredicate(format: fieldName + " == " + "\"" + searched + "\"" )
-        let userQuery = CKQuery(recordType: recordType, predicate: pred)
-        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    print("Cloud Query Error - Fetch Establishments: \(error)")
-                }
-                return
-            } else {
-                if results!.count > 0 {
-                    DispatchQueue.main.async {
-                        print("Query correctly executed")
-                        arr = results!
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        print("Not found")
-                    }
+    static func update(recordType: String, recordName: String, oldValue: String, newValue: String){
+        var ctUsers = [CKRecord]()
+        let predicate = NSPredicate(format: "\(recordName) == \"\(oldValue)\"")
+        let query = CKQuery(recordType: recordType, predicate: predicate)
+        publicDB.perform(query, inZoneWith: nil, completionHandler:  ({results, error in
+            if error != nil {
+                print("NO ERROR")
+            }
+            if let users = results {
+                ctUsers = users
+                print("\nSELECT RETURN VALUE?\n")
+                if ctUsers.count != 0 {
+                    let user =  users.first
+                    user?[recordName] = newValue as CKRecordValue
+                    publicDB.save(user!, completionHandler: ({record, error in
+                        if error == nil {
+                            print("\nUPDATE SUCCESSFULLY\n")
+                        }else {
+                            print("\nDB ERROR\n")
+                        }
+                    }))
+                }else{
+                    print("\nNOT FOUND\n")
                 }
             }
         }))
-        return arr
-    }*/
+    }
     
     static func select(recordType: String, fieldName: String, searched: String){
         userDB.removeAll()
@@ -128,7 +126,7 @@ class CloudManager{
     }
     
     //    Upload: Public Database -> Pets list
-    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String) -> Bool{
+    static func insert(beaconID: String, microchipID: String, name: String, type: String, race: String, birthDate: NSDate, ownerID: String, photo: URL) -> Bool{
         var retValue = true
         let petRecord = CKRecord(recordType: "Pet")
         petRecord["beaconID"] = beaconID as CKRecordValue
@@ -138,6 +136,7 @@ class CloudManager{
         petRecord["race"] = race as CKRecordValue
         petRecord["birthDate"] = birthDate as CKRecordValue
         petRecord["ownerID"] = ownerID as CKRecordValue
+        petRecord["photo"] = CKAsset(fileURL: photo)
         publicDB.save(petRecord){
             (petRecord,error) in
             if error != nil{
