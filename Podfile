@@ -7,6 +7,7 @@ target 'PetSafety' do
   use_frameworks!
 pod 'ImageRow', '~> 3.0'
 pod 'Eureka'
+pod 'HGRippleRadarView'
 pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
 pod 'SwiftyOnboard'
   # Pods for PetSafety

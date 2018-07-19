@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -343,43 +342,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
-                                <rect key="frame" x="181.33333333333334" y="634" width="52" height="33"/>
+                                <rect key="frame" x="181.33333333333334" y="635" width="52" height="32"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <state key="normal" title="SHOW"/>
                                 <connections>
                                     <segue destination="xhP-As-cem" kind="show" identifier="segueFoundPet" id="0Pt-DF-ure"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radar" translatesAutoresizingMaskIntoConstraints="NO" id="eKK-Wo-6yp">
-                                <rect key="frame" x="107.00000000000001" y="104" width="200.33333333333337" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="HVf-9m-0m5"/>
-                                    <constraint firstAttribute="height" constant="200" id="PNM-Ai-wr1"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
-                                <rect key="frame" x="64.333333333333343" y="358.33333333333331" width="286.66666666666663" height="20"/>
+                                <rect key="frame" x="65.333333333333343" y="358.33333333333331" width="284.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
-                                <rect key="frame" x="25" y="398" width="364" height="40.666666666666686"/>
+                                <rect key="frame" x="25" y="398" width="364" height="39.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgT-id-mcQ" customClass="RadarView" customModule="HGRippleRadarView">
+                                <rect key="frame" x="107" y="128.33333333333334" width="200" height="200.00000000000003"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eHy-mC-dTH"/>
+                                    <constraint firstAttribute="height" constant="200" id="uKe-DN-tN0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GWN-Pb-hz3" firstAttribute="top" secondItem="MgT-id-mcQ" secondAttribute="bottom" constant="30" id="448-tC-90P"/>
                             <constraint firstItem="Ulr-AY-k2h" firstAttribute="bottom" secondItem="SmR-bt-fIh" secondAttribute="bottom" constant="20" id="6b4-DC-8CZ"/>
                             <constraint firstItem="GWN-Pb-hz3" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="UQM-Il-V6G"/>
                             <constraint firstItem="GWN-Pb-hz3" firstAttribute="centerY" secondItem="HYp-ps-1H6" secondAttribute="centerY" id="UTM-U5-tq3"/>
                             <constraint firstItem="SmR-bt-fIh" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="c0u-X5-IQe"/>
-                            <constraint firstItem="eKK-Wo-6yp" firstAttribute="top" secondItem="HYp-ps-1H6" secondAttribute="topMargin" constant="40" id="enU-X4-igD"/>
+                            <constraint firstItem="MgT-id-mcQ" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="j9u-Be-GUu"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="kGT-03-nIf"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="top" secondItem="GWN-Pb-hz3" secondAttribute="bottom" constant="20" id="ptx-Ar-OVi"/>
-                            <constraint firstItem="eKK-Wo-6yp" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="uE6-DT-gmq"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="width" secondItem="Ulr-AY-k2h" secondAttribute="width" constant="-50" id="yp4-cB-9eX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ulr-AY-k2h"/>
@@ -387,14 +387,13 @@
                     <navigationItem key="navigationItem" id="sgr-lp-Szf"/>
                     <connections>
                         <outlet property="buttonShow" destination="SmR-bt-fIh" id="Gdb-AO-maf"/>
-                        <outlet property="imgRadar" destination="eKK-Wo-6yp" id="6W8-Cm-EWI"/>
                         <outlet property="labelFound" destination="GWN-Pb-hz3" id="8iY-wc-cLI"/>
                         <outlet property="labelNotification" destination="tGg-Vf-QWl" id="7ds-zZ-ZgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sd0-Px-ZMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="1807"/>
+            <point key="canvasLocation" x="608.69565217391312" y="1806.521739130435"/>
         </scene>
         <!--On Boarding View Controller-->
         <scene sceneID="FRQ-L1-Cwq">
@@ -546,9 +545,6 @@
             <point key="canvasLocation" x="2516" y="1807"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="radar" width="100" height="100"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xf1-4Q-68b"/>
     </inferredMetricsTieBreakers>
