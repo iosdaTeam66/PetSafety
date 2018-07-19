@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -132,11 +133,11 @@
             </objects>
             <point key="canvasLocation" x="609" y="31"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Account-->
         <scene sceneID="fyu-uA-b53">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Dul-e0-69K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="iQP-jo-cZI"/>
+                    <tabBarItem key="tabBarItem" title="Account" id="iQP-jo-cZI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5o-ha-iNg">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -155,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="-431.8840579710145" y="31.793478260869566"/>
         </scene>
-        <!--My Pet List View Controller-->
+        <!--Pet's List-->
         <scene sceneID="gcS-2m-T9d">
             <objects>
                 <viewController id="2d6-BT-mLk" customClass="MyPetListViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +184,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-IB-K41">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is no Pet yet, you can add a new pet from the Account tab" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olk-1g-dUJ">
+                                <rect key="frame" x="51.666666666666657" y="343.33333333333331" width="310.66666666666674" height="50.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AdT-IB-K41">
                                 <rect key="frame" x="188" y="537" width="39" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AdT-IB-K41" secondAttribute="height" multiplier="39:37" id="9M5-kw-ylH"/>
@@ -192,17 +198,19 @@
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-Op-Txg">
-                                <rect key="frame" x="90.333333333333314" y="584" width="234" height="31"/>
+                                <rect key="frame" x="80" y="584" width="254" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-Hr-q9h">
-                                        <rect key="frame" x="0.0" y="1" width="85" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Find on Map"/>
                                         <connections>
                                             <segue destination="sw7-eo-SHb" kind="show" id="BJ2-0h-VVI"/>
                                         </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-bp-G2j">
-                                        <rect key="frame" x="185" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="205" y="4" width="51" height="31"/>
+                                        <rect key="contentStretch" x="1" y="1" width="1" height="0.0"/>
                                         <color key="onTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="clickSwitchMissing:" destination="2d6-BT-mLk" eventType="valueChanged" id="6bl-AW-a8o"/>
@@ -215,19 +223,23 @@
                         <constraints>
                             <constraint firstItem="IQc-wr-60g" firstAttribute="bottom" secondItem="XkG-uC-8yH" secondAttribute="bottom" constant="150" id="G5U-Br-UdL"/>
                             <constraint firstItem="AdT-IB-K41" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="VVU-lu-Lpc"/>
+                            <constraint firstItem="olk-1g-dUJ" firstAttribute="width" secondItem="IQc-wr-60g" secondAttribute="width" multiplier="0.75" id="Ybn-6C-pC5"/>
                             <constraint firstItem="VYn-Op-Txg" firstAttribute="top" secondItem="AdT-IB-K41" secondAttribute="bottom" constant="10" id="ZlC-Dd-FZ0"/>
                             <constraint firstItem="VYn-Op-Txg" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="bUY-9n-Laf"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="leading" secondItem="IQc-wr-60g" secondAttribute="leading" id="f6j-UI-PHg"/>
                             <constraint firstItem="AdT-IB-K41" firstAttribute="top" secondItem="XkG-uC-8yH" secondAttribute="bottom" id="fs8-et-M3H"/>
                             <constraint firstItem="XkG-uC-8yH" firstAttribute="top" secondItem="IQc-wr-60g" secondAttribute="top" constant="50" id="gQW-UC-mh9"/>
                             <constraint firstItem="IQc-wr-60g" firstAttribute="trailing" secondItem="XkG-uC-8yH" secondAttribute="trailing" id="hAr-gy-kKI"/>
+                            <constraint firstItem="olk-1g-dUJ" firstAttribute="centerY" secondItem="5YQ-Db-fs3" secondAttribute="centerY" id="hlT-ZK-jYx"/>
+                            <constraint firstItem="olk-1g-dUJ" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="wqL-7f-Nee"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQc-wr-60g"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="TRK-Cg-cNc"/>
+                    <tabBarItem key="tabBarItem" title="Pet's List" id="TRK-Cg-cNc"/>
                     <connections>
                         <outlet property="buttonMap" destination="UBS-Hr-q9h" id="D0n-o0-Ask"/>
                         <outlet property="collectionView" destination="XkG-uC-8yH" id="n00-1K-vTi"/>
+                        <outlet property="labelNoPet" destination="olk-1g-dUJ" id="8BH-Kz-wYm"/>
                         <outlet property="pageControl" destination="AdT-IB-K41" id="KTo-rR-xEm"/>
                         <outlet property="switchMissing" destination="Oll-bp-G2j" id="04b-MD-y5P"/>
                     </connections>
@@ -403,11 +415,11 @@
             </objects>
             <point key="canvasLocation" x="-1745" y="893"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pet Finder-->
         <scene sceneID="nid-eD-70P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dfh-Om-ypl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="loV-8O-u0l"/>
+                    <tabBarItem key="tabBarItem" title="Pet Finder" id="loV-8O-u0l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t3Q-Cp-qMH">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
