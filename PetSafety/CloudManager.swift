@@ -12,6 +12,7 @@ import CoreLocation
 
 class CloudManager{
     static let publicDB = CKContainer.default().publicCloudDatabase
+    static var userDB = [(k: String, v: String)]()
     //    Select
     //    Ricorda, se la ricerca non produce risultati, l'array restituito può essere vuoto nil
     static func selectPosition(rcdTp: String, fieldName: String, searched: String) -> [(pos: CLLocation, email: String, date: String)]{
@@ -72,8 +73,8 @@ class CloudManager{
         return arr
     }*/
     
-    static func select(recordType: String, fieldName: String, searched: String) -> [(k: String, v: String)]{
-        var arr = [(k: String, v: String)]()
+    static func select(recordType: String, fieldName: String, searched: String){
+        userDB.removeAll()
         let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
         let userQuery = CKQuery(recordType: recordType, predicate: pred)
         publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
@@ -90,7 +91,7 @@ class CloudManager{
                             let numCol = prova.count-1
                             for index in 0...numCol {
                                 print("ciclo \(index) + \(String(describing: result.value(forKey: prova[index])!))")
-                                arr.append((k: prova[index], v: String(describing: result.value(forKey: prova[index])!)))
+                                userDB.append((k: prova[index], v: String(describing: result.value(forKey: prova[index])!)))
                             }
                         }
                         
@@ -102,9 +103,6 @@ class CloudManager{
                 }
             }
         }))
-        print("salvo")
-        print(arr.count)
-        return arr
     }
     
     //    Upload: Public Database -> Owners list

@@ -36,14 +36,18 @@ class UserController: FormViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else{
-            var temp = CloudManager.select(recordType: "Owners", fieldName: "emailAddress", searched: pUser.email!)
-            if temp.count != 0{
-                let prova = temp.popLast()
+            CloudManager.select(recordType: "Owners", fieldName: "emailAddress", searched: pUser.email!)
+//            if temp.count != 0{
+//                let prova = temp.popLast()
 //                print(prova?.allKeys() ?? "Void")
-            }
-            else{
-                _ = CloudManager.insert(userID: "Prova", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
-                print("Utente creato!")
+//            }
+//            else{
+//                _ = CloudManager.insert(userID: "Prova", name: pUser.name!, surname: pUser.surname!, phoneNumber: pUser.phonenumber!, emailAddress: pUser.email!)
+//                print("Utente creato!")
+//            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//                acquisisco i dati dal db dopo un ritardo
+                CloudManager.userDB[0].k // k è la colonna, v è il valore
             }
         }
     }
