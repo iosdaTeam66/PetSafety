@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -150,18 +152,18 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func buttonMap(_ sender: Any) {
-        //oggetti per riempire
+        //oggetti per riempirecon il db
         let nomeArr: [String] = ["peppe siani","nicola tesla","pinko pallino","aquaro gerardo","Barese alfonso"]
         let dataArr: [String] = ["22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/12/18 12:00"]
-        let cittaArr: [String] = ["Genova","Pisa","Napoli","Salerno","Bari"]
-        let viaArr: [String] = ["via San Bernardo","piazzale D'ascanio","via Nazionale","via roma","via volta"]
         let coord: [(lat:Double, lag: Double)] = [(44.4068692,8.9291704),(43.6890842,10.3978845),(40.8555186,14.274207),(40.6824408,14.7680961),(41.1171432,16.8718715)]
+        
+        //arre auto generati da coordinate
+        let cittaArr: [String] = [String] ()
+        let viaArr: [String] = [String] ()
         
         //oggetto da passare
         let cane1: StoreMap = StoreMap(nomeArr: nomeArr, dataArr: dataArr, viaArr: viaArr, cittaArr: cittaArr, coord: coord)
-        
         self.performSegue(withIdentifier: "showMap", sender: cane1)
-        
         
     }
     

@@ -100,18 +100,18 @@ class MapController: UIViewController {
     func aggiungiAnnotation(){
         
         
-        let ultimo = valueCane.cittaArr.count - 1
+        let ultimo = valueCane.coord.count - 1
         var iniziale = 0
         dataUlt.text = " "
         addressUlt.text = "non ci sono posizioni"
         
-        if(valueCane.cittaArr.count > 10){
-            iniziale = valueCane.cittaArr.count - 10
+        if(valueCane.coord.count > 10){
+            iniziale = valueCane.coord.count - 10
         }else{
             iniziale = 0
         }
         
-        if(valueCane.cittaArr.isEmpty == false ){
+        if(valueCane.coord.isEmpty == false ){
             for i in iniziale...ultimo{
                 let cittaAnnotation = MKAnnotationView()
                 
@@ -120,14 +120,63 @@ class MapController: UIViewController {
                 
                 let co = CLLocation(latitude: latToShow, longitude: longToShow)
                 let CLLCoordType = CLLocationCoordinate2D(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
+                let clocation = CLLocation(latitude: co.coordinate.latitude, longitude: co.coordinate.longitude)
                 
                 
                 let nameToShow = self.nomeArr[i]
                 let dataToShow = self.dataArr[i]
-                let titleToShow = self.cittaArr[i]
-                let subtitleToShow = self.viaArr[i]
+                //devono essere generati
+                    var titleToShow = " empty "
+                    var subtitleToShow = " empty "
                 
-                cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
+                //genera l'indirizzo
+                CLGeocoder().reverseGeocodeLocation(clocation, completionHandler: {(placemarks, error) in
+                    
+                    if (error != nil)
+                    {
+                        print("reverse geodcode fail: \(error!.localizedDescription)")
+                    }
+                    let pm = placemarks! as [CLPlacemark]
+                    
+                    if pm.count > 0 {
+                        let pm = placemarks![0]
+                        
+                        var addressString : String = ""
+                        
+                        if pm.thoroughfare != nil {
+                            addressString = addressString + pm.thoroughfare! + ", "
+                            subtitleToShow = pm.thoroughfare!
+                            self.viaArr.append(pm.thoroughfare!)
+                        }
+                        if pm.locality != nil {
+                            addressString = addressString + pm.locality! + ", "
+                            titleToShow = pm.locality!
+                            self.cittaArr.append(pm.locality!)
+                        }
+                        
+                        print(addressString)
+                        
+                        cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
+                        
+                        //aggiunge label
+                        if(i == ultimo){
+                            //scrive nei label
+                            self.dataUlt.text = dataToShow
+                            self.addressUlt.text = "\(titleToShow), \(subtitleToShow)"
+                           
+                        }
+                        
+                        //aggiunge alla mappa
+                        if let ann = cittaAnnotation.annotation{
+                            
+                            self.BigMap.addAnnotation(ann)
+                            
+                            print("Annotation aggiunta")
+                        }
+                    }
+                })
+                
+                //cittaAnnotation.annotation = PetAnnotation(name: nameToShow, title: titleToShow, subtitle: subtitleToShow, indice: i, coordinate: CLLCoordType,data: dataToShow)
                 
                 //aggiunge point
                 points.append(CLLCoordType)
@@ -148,12 +197,12 @@ class MapController: UIViewController {
                 }
                 
                 //aggiunge alla mappa
-                if let ann = cittaAnnotation.annotation{
+                /*if let ann = cittaAnnotation.annotation{
                     
                     self.BigMap.addAnnotation(ann)
                     
                     print("Annotation aggiunta")
-                }
+                }*/
                 
             }
         }
