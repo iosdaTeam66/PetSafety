@@ -29,8 +29,6 @@ class RadarViewController: UIViewController {
                                      userInfo: nil,
                                      repeats: true)
         
-        addItem()
-        addItem()
     }
     
     override func didReceiveMemoryWarning() {

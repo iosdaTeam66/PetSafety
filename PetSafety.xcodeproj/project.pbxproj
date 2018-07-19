@@ -46,7 +46,6 @@
 		702276A62100B31F001AD3D9 /* PetFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702276A52100B31F001AD3D9 /* PetFoundCell.swift */; };
 		704EA6EA20FF8927000B1DBB /* FoundPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */; };
 		7052152B20FCB2E80022DE36 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7052152A20FCB2E80022DE36 /* MyTabBarController.swift */; };
-		70AC40062100D95E000A7FF3 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC40052100D95E000A7FF3 /* RadarViewController.swift */; };
 		70F8869F20F4A61100D09EE4 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8869E20F4A61100D09EE4 /* Pet.swift */; };
 		70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FED89420F4A56D00C9258D /* AppDelegate.swift */; };
 		70FED89720F4A56D00C9258D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FED89620F4A56D00C9258D /* ViewController.swift */; };
@@ -131,7 +130,6 @@
 		702276A52100B31F001AD3D9 /* PetFoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFoundCell.swift; sourceTree = "<group>"; };
 		704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundPetViewController.swift; sourceTree = "<group>"; };
 		7052152A20FCB2E80022DE36 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
-		70AC40052100D95E000A7FF3 /* RadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
 		70F8869E20F4A61100D09EE4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		70FED89120F4A56D00C9258D /* PetSafety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetSafety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FED89420F4A56D00C9258D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 				70FED89820F4A56D00C9258D /* Main.storyboard */,
 				704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */,
 				702276A52100B31F001AD3D9 /* PetFoundCell.swift */,
-				70AC40052100D95E000A7FF3 /* RadarViewController.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -634,7 +631,6 @@
 				70FED89520F4A56D00C9258D /* AppDelegate.swift in Sources */,
 				BB53E84B20FC97CB00DA1B30 /* MapController.swift in Sources */,
 				BB53E84D20FC987600DA1B30 /* StoreMap.swift in Sources */,
-				70AC40062100D95E000A7FF3 /* RadarViewController.swift in Sources */,
 				0221FA7320F4BE4400F935D7 /* PetEditCell.swift in Sources */,
 				704EA6EA20FF8927000B1DBB /* FoundPetViewController.swift in Sources */,
 			);

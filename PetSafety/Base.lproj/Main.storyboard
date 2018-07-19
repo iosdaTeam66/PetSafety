@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vc0-ws-nCa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ueO-rW-FSi">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -335,7 +335,7 @@
         <scene sceneID="GIH-jf-QBL">
             <objects>
                 <viewController title="Beacon Search" id="ahi-0P-p90" customClass="BeaconManager" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HYp-ps-1H6">
+                    <view key="view" contentMode="scaleToFill" id="HYp-ps-1H6" customClass="RadarView" customModule="HGRippleRadarView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -348,36 +348,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
-                                <rect key="frame" x="64.333333333333343" y="358.33333333333331" width="286.66666666666663" height="20"/>
+                                <rect key="frame" x="64.333333333333343" y="533.66666666666663" width="286.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
-                                <rect key="frame" x="25" y="398" width="364" height="40.666666666666686"/>
+                                <rect key="frame" x="25" y="573.33333333333337" width="364" height="40.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zv-co-3os" customClass="RadarView" customModule="HGRippleRadarView">
-                                <rect key="frame" x="107" y="103" width="200" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="8z0-ta-O36"/>
-                                    <constraint firstAttribute="height" constant="200" id="pVW-AX-X5m"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ulr-AY-k2h" firstAttribute="bottom" secondItem="SmR-bt-fIh" secondAttribute="bottom" constant="20" id="6b4-DC-8CZ"/>
                             <constraint firstItem="GWN-Pb-hz3" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="UQM-Il-V6G"/>
-                            <constraint firstItem="GWN-Pb-hz3" firstAttribute="centerY" secondItem="HYp-ps-1H6" secondAttribute="centerY" id="UTM-U5-tq3"/>
-                            <constraint firstItem="GWN-Pb-hz3" firstAttribute="top" secondItem="7Zv-co-3os" secondAttribute="bottom" constant="20" id="WgH-wQ-4Gj"/>
                             <constraint firstItem="SmR-bt-fIh" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="c0u-X5-IQe"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="kGT-03-nIf"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="top" secondItem="GWN-Pb-hz3" secondAttribute="bottom" constant="20" id="ptx-Ar-OVi"/>
-                            <constraint firstItem="7Zv-co-3os" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="s9M-Lr-Xun"/>
+                            <constraint firstItem="SmR-bt-fIh" firstAttribute="top" secondItem="tGg-Vf-QWl" secondAttribute="bottom" constant="20" id="tzw-CM-tn1"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="width" secondItem="Ulr-AY-k2h" secondAttribute="width" constant="-50" id="yp4-cB-9eX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ulr-AY-k2h"/>
