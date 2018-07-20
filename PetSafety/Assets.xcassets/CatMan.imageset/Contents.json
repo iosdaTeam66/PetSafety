@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "caticon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "114469.png",
       "scale" : "2x"
     },
     {

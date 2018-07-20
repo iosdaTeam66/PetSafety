@@ -52,7 +52,7 @@ class FoundPetViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "petFoundCell", for: indexPath) as! PetFoundCell
         
         let pet = arrayPet[indexPath.row]
-        cell.labelNomeRazza.text = "NOME: \(pet.name), RAZZA: \(pet.race)"
+        cell.labelNomeRazza.text = "NAME: \(pet.name), RACE: \(pet.race)"
         
         cell.labelContatto.text = "VUOTO"
         cell.labelNomePadrone.text = "VUOTO"
