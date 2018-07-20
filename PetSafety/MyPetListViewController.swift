@@ -104,9 +104,9 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPetListID", for: indexPath) as! MyPetListCollectionViewCell
         
-        cell.labelNome.text = "Nome: \(petPList![indexPath.row].name ?? "error")"
+        cell.labelNome.text = "Name: \(petPList![indexPath.row].name ?? "error")"
         
-        cell.labelRazza.text = "Razza: \(petPList![indexPath.row].race ?? "error")"
+        cell.labelRazza.text = "Race: \(petPList![indexPath.row].race ?? "error")"
         
         //cell.image.image = UIImage(named: petPList![indexPath.row].photo)
         if (petPList![indexPath.row].photouuid == nil){
