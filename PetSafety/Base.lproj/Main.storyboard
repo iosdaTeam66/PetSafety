@@ -27,7 +27,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Dp-xJ-3CE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petEditCell" rowHeight="70" id="iMo-M9-vlF" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -56,6 +56,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.4823529412" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="lblCellName" destination="3E5-Oi-MYK" id="dhD-zN-Qof"/>
                                     <outlet property="lblCellRace" destination="Dvh-KT-I57" id="Dmh-6B-NuQ"/>
@@ -93,7 +94,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems>
@@ -118,7 +119,7 @@
                     <view key="view" contentMode="scaleToFill" id="Vpn-ml-Z6D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="9LZ-cy-nqK"/>
                     </view>
                     <toolbarItems>
@@ -347,26 +348,26 @@
                                     <segue destination="xhP-As-cem" kind="show" identifier="segueFoundPet" id="0Pt-DF-ure"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
-                                <rect key="frame" x="64.333333333333343" y="533.66666666666663" width="286.66666666666663" height="20"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
                                 <rect key="frame" x="25" y="573.33333333333337" width="364" height="40.666666666666629"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching missing pets in your area..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-Pb-hz3">
+                                <rect key="frame" x="64.333333333333343" y="94" width="286.66666666666663" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="GWN-Pb-hz3" firstAttribute="top" secondItem="Ulr-AY-k2h" secondAttribute="top" constant="30" id="2Cs-PD-TAg"/>
                             <constraint firstItem="Ulr-AY-k2h" firstAttribute="bottom" secondItem="SmR-bt-fIh" secondAttribute="bottom" constant="20" id="6b4-DC-8CZ"/>
                             <constraint firstItem="GWN-Pb-hz3" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="UQM-Il-V6G"/>
                             <constraint firstItem="SmR-bt-fIh" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="c0u-X5-IQe"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="centerX" secondItem="HYp-ps-1H6" secondAttribute="centerX" id="kGT-03-nIf"/>
-                            <constraint firstItem="tGg-Vf-QWl" firstAttribute="top" secondItem="GWN-Pb-hz3" secondAttribute="bottom" constant="20" id="ptx-Ar-OVi"/>
                             <constraint firstItem="SmR-bt-fIh" firstAttribute="top" secondItem="tGg-Vf-QWl" secondAttribute="bottom" constant="20" id="tzw-CM-tn1"/>
                             <constraint firstItem="tGg-Vf-QWl" firstAttribute="width" secondItem="Ulr-AY-k2h" secondAttribute="width" constant="-50" id="yp4-cB-9eX"/>
                         </constraints>
@@ -449,7 +450,7 @@
                     <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZ0-o0-CtJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="100" id="ztd-9M-Def" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -484,7 +485,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.4823529412" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="imagePet" destination="K3r-3h-dnt" id="isu-Qv-jff"/>
                                     <outlet property="labelContatto" destination="SId-Pi-Tx1" id="Cxn-uq-FQN"/>

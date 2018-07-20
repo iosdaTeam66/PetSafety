@@ -49,6 +49,15 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         let options = [CBCentralManagerOptionShowPowerAlertKey:0]
         bluetoothPeripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
         
+        let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.7673729658, blue: 0.3670938015, alpha: 1),#colorLiteral(red: 0.8428154588, green: 0.5546826124, blue: 0, alpha: 1)]
+        radarView?.delegate = self
+        radarView?.diskColor = colors[0]
+        radarView?.circleOnColor = colors [0]
+        radarView?.circleOffColor = .black
+        
+        radarView?.itemBackgroundColor = colors[0]
+        
+        
         // simulazione animali smarriti
         //let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1", ownerID: "PippoID")
         lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
@@ -58,11 +67,45 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         //let petLost3 = PetLost.init(lostDate: Date(), microchipID: "chip-blueberry", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3", ownerID: "TopolinoID")
         //lostPets.append(petLost3)
         
-        
-        radarView?.delegate = self
 //        timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector: #selector(addItem),userInfo: nil,repeats: true)
         
     
+        /*
+         // sfondo bianco
+         let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
+         view.backgroundColor = whiteColor
+         // celle senza bordi
+         self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.none
+         // immagine radar
+         form +++ Section()
+         <<< ViewRow<UIImageView>("radar")
+         
+         .cellSetup { (cell, row) in
+         // Construct the view for the cell
+         cell.view = UIImageView()
+         cell.contentView.addSubview(cell.view!)
+         cell.backgroundColor = nil // sfondo trasparente
+         
+         // Get something to display
+         let image = UIImageView(image: UIImage(named: "radar"))
+         cell.view = image
+         cell.view?.frame = CGRect(x: 0, y: 40, width: 20, height: 200)
+         cell.view?.contentMode = .scaleAspectFit
+         cell.view!.clipsToBounds = true
+         }
+         
+         <<< LabelRow() {
+         $0.title = "Searching missing pets in your area..."
+         $0.cellStyle = .default
+         }
+         .cellUpdate({ (cell, row) in
+         cell.backgroundColor = nil
+         cell.contentView.backgroundColor = nil
+         cell.textLabel?.textColor = .black
+         cell.textLabel?.textAlignment = .center
+         })
+         
+         */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -248,7 +291,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             
             
             buttonShow.isEnabled = true
-            labelFound.text = "Found lost pets near you"
+            labelFound.text = "Found lost pets near you!!!"
             
             labelNotification.isHidden = false
             
@@ -354,7 +397,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
     }
 }
 
-extension BeaconManager: RadarViewDelegate {
+extension BeaconManager: RadarViewDelegate,RadarViewDataSource {
     func radarView(radarView: RadarView, didSelect item: Item) {
         print(item.uniqueKey)
     }
@@ -362,7 +405,9 @@ extension BeaconManager: RadarViewDelegate {
     func radarView(radarView: RadarView, didDeselect item: Item) {}
     
     func radarView(radarView: RadarView, didDeselectAllItems lastSelectedItem: Item) {}
-}
-
     
-
+    func radarView(radarView: RadarView, viewFor item: Item, preferredSize: CGSize) -> UIView {
+        let myCustomItemView = UIView(frame: CGRect(x: 0, y: 0, width: preferredSize.width, height: preferredSize.height))
+        return myCustomItemView
+    }
+}
