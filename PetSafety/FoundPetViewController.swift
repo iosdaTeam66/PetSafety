@@ -52,11 +52,11 @@ class FoundPetViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "petFoundCell", for: indexPath) as! PetFoundCell
         
         let pet = arrayPet[indexPath.row]
-        cell.labelNomeRazza.text = "NAME: \(pet.name), RACE: \(pet.race)"
+        cell.labelNomeRazza.text = "NAME: \(pet.name)"
         
-        cell.labelContatto.text = "VUOTO"
-        cell.labelNomePadrone.text = "VUOTO"
-        cell.imagePet.image = UIImage(named: pet.photo)
+        cell.labelContatto.text = "OWNER INFO: \(pet.microchipID)"
+        cell.labelNomePadrone.text = "RACE: \(pet.race)"
+        cell.imagePet.image = UIImage(named: "CatMan")
 
         return cell
     }

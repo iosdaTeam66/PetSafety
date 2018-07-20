@@ -76,6 +76,40 @@ class CloudManager{
         }))
     }
     
+    static func selectPet(recordType: String, fieldName: String, searched: String){
+        //userDB.removeAll()
+        let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
+        let userQuery = CKQuery(recordType: recordType, predicate: pred)
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for result in results! {
+                            let pet : Pet = Pet(name: result.value(forKey: "name") as! String, race: result.value(forKey: "race") as! String, type: result.value(forKey: "type") as! String, photo: "", birthDate: Date(), microchipID: result.value(forKey: "ownerID") as! String, beaconUUID: result.value(forKey: "beaconID") as! String)
+                            if !BeaconManager.petList.contains(pet) {
+                                BeaconManager.petList.append(pet)
+                                print("pet inserito \(pet.beaconUUID)\n\n\n")
+                            }
+                            
+                        }
+                        
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("Not found")
+                    }
+                }
+            }
+        }))
+    }
+    
+    
+    
     static func select(recordType: String, fieldName: String, searched: String){
         userDB.removeAll()
         let pred = NSPredicate(format: "\(fieldName) == \"\(searched)\"")
@@ -96,6 +130,36 @@ class CloudManager{
                                 print("ciclo \(index) + \(String(describing: result.value(forKey: prova[index])!))")
                                 userDB.append((k: prova[index], v: String(describing: result.value(forKey: prova[index])!)))
                             }
+                        }
+                        
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        print("Not found")
+                    }
+                }
+            }
+        }))
+    }
+    
+    static func selectMissing(recordType: String){
+        
+        let pred = NSPredicate(value: true)
+        let userQuery = CKQuery(recordType: recordType, predicate: pred)
+        publicDB.perform(userQuery, inZoneWith: nil, completionHandler: ({results, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Establishments: \(error)")
+                }
+                return
+            } else {
+                if results!.count > 0 {
+                    DispatchQueue.main.async {
+                        for result in results! {
+                            //let prova = result.allKeys()
+                                //print("ciclo \(index) + \(String(describing: result.value(forKey: prova[index])!))")
+                            BeaconManager.lostPets.append((k: result.value(forKey: "beaconID") as! String, v: result.value(forKey: "emailAddress") as! String))
+                            BeaconManager.lostPets2["\(String(describing: result.value(forKey: "beaconID")))"] = (result.value(forKey: "emailAddress") as! String)
                         }
                         
                     }
@@ -188,6 +252,21 @@ class CloudManager{
             }
         }
         return retValue
+    }
+    
+    static func deleteMissing(recordType: String, recordName: String, deleteValue: String){
+        let pred = NSPredicate(format: "\(recordName) == \"\(deleteValue)\"")
+        let delq = CKQuery(recordType: recordType, predicate: pred)
+        publicDB.perform(delq, inZoneWith: nil, completionHandler: ({results, error in
+            if error != nil{
+                print("ERROR")
+            } else{
+                for res in results!{
+                    publicDB.delete(withRecordID: res.recordID, completionHandler: ({s, e in
+                        NSLog("OK or \(String(describing: e))")}))
+                }
+            }
+        }))
     }
     
     

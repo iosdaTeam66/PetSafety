@@ -108,7 +108,7 @@ class MapController: UIViewController {
         let ultimo = valueCane.coord.count - 1
         var iniziale = 0
         dataUlt.text = " "
-        addressUlt.text = "non ci sono posizioni"
+        addressUlt.text = "There are no locations"
         
         if(valueCane.coord.count > 10){
             iniziale = valueCane.coord.count - 10

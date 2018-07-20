@@ -18,13 +18,15 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
     @IBOutlet weak var labelNotification: UILabel!
     
     var locationManager: CLLocationManager!
-    var lostPets = Dictionary<String, String>()
+    static var lostPets = [(k: String, v: String)]()
+    static var lostPets2 = Dictionary<String,String>()
     var foundPets = [String]()
     var foundObj: [(id: String, pos: CLLocation)] = []
     var foundID = [String]()
     var currentLocation: CLLocation!
     var oldLocation: CLLocation = CLLocation(latitude: 0.0,longitude: 0.0)
     var pUser: PUser!
+    static var petList = [Pet]()
     
     var bluetoothPeripheralManager: CBPeripheralManager!
     
@@ -60,8 +62,8 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         
         // simulazione animali smarriti
         //let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1", ownerID: "PippoID")
-        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
-        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1"] = "PippoID"
+        BeaconManager.lostPets2["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
+        BeaconManager.lostPets2["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1"] = "PippoID"
         //let petLost2 = PetLost.init(lostDate: Date(), microchipID: "chip-mint", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:2", ownerID: "PlutoID")
         //lostPets.append(petLost2)
         //let petLost3 = PetLost.init(lostDate: Date(), microchipID: "chip-blueberry", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3", ownerID: "TopolinoID")
@@ -112,6 +114,9 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         labelFound.text = "Searching missing pets in your area..."
         labelNotification.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector: #selector(addItem),userInfo: nil,repeats: true)
+        
+        BeaconManager.lostPets.removeAll()
+        CloudManager.selectMissing(recordType: "Missing")
         
     }
     
@@ -265,10 +270,11 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             for _ in beacons {
                 tempStr="\(beacons[i].proximityUUID):\(beacons[i].major):\(beacons[i].minor)"
                 //print(lostPets.keys.contains(tempStr))
-                if lostPets.keys.contains(tempStr) {
+                if BeaconManager.lostPets2.keys.contains(tempStr) {
                     if !foundID.makeIterator().contains(tempStr) {
                         foundID.append(tempStr)
                         foundObj.append((id: tempStr, pos: oldLocation))
+                        CloudManager.selectPet(recordType: "Pet", fieldName: "beaconID", searched: tempStr)
                         print("inserisco stringa per: \(tempStr)")
                     }
                 }
@@ -348,16 +354,16 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             
 //            TODO INFO PER IL SEGUE
             
-            let p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
-            let p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
+            //let p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
+            //let p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
             
-            var petlist: [Pet] = []
-            petlist.append(p)
-            petlist.append(p2)
-            petlist.append(p)
+            //var petlist: [Pet] = []
+            //petlist.append(p)
+            //petlist.append(p2)
+            //petlist.append(p)
             
             let dstView = segue.destination as! FoundPetViewController
-            dstView.arrayPet = petlist
+            dstView.arrayPet = BeaconManager.petList
             
             for _ in 0..<foundID.count {
                 //                    chiamate al server una per id

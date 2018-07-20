@@ -146,11 +146,12 @@
         <scene sceneID="fyu-uA-b53">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Dul-e0-69K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="iQP-jo-cZI"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="contact" id="iQP-jo-cZI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K5o-ha-iNg">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="My1-Br-Fnh">
@@ -215,19 +216,18 @@
                                 <color key="pageIndicatorTintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="bottom" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-Op-Txg">
-                                <rect key="frame" x="80" y="584" width="254" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-Op-Txg">
+                                <rect key="frame" x="114" y="584" width="186" height="37"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-Hr-q9h">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <state key="normal" title="Find on Map"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBS-Hr-q9h">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="37"/>
+                                        <state key="normal" title="Find on Map" image="globe"/>
                                         <connections>
                                             <action selector="buttonMap:" destination="2d6-BT-mLk" eventType="touchUpInside" id="hTE-fv-wgM"/>
                                         </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oll-bp-G2j">
-                                        <rect key="frame" x="205" y="4" width="51" height="31"/>
+                                        <rect key="frame" x="137" y="6" width="51" height="31"/>
                                         <rect key="contentStretch" x="1" y="1" width="1" height="0.0"/>
                                         <color key="onTintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -348,7 +348,7 @@
                                     <color key="titleColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xhP-As-cem" kind="show" identifier="segueFoundPet" id="0Pt-DF-ure"/>
+                                    <segue destination="C45-ar-s6k" kind="show" identifier="segueFoundPet" id="Ha3-fj-OCB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A notification with the location has just been sent to the owners" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-Vf-QWl">
@@ -431,11 +431,12 @@
         <scene sceneID="nid-eD-70P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dfh-Om-ypl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pet Finder" id="loV-8O-u0l"/>
+                    <tabBarItem key="tabBarItem" title="Pet Finder" image="search" id="loV-8O-u0l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t3Q-Cp-qMH">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -447,40 +448,40 @@
             <point key="canvasLocation" x="-433.33333333333337" y="1806.521739130435"/>
         </scene>
         <!--Found Pet View Controller-->
-        <scene sceneID="t41-iV-Sux">
+        <scene sceneID="WoF-UC-kEL">
             <objects>
-                <tableViewController id="xhP-As-cem" customClass="FoundPetViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZ0-o0-CtJ">
+                <tableViewController id="C45-ar-s6k" customClass="FoundPetViewController" customModule="PetSafety" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hh1-hs-L6g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="100" id="ztd-9M-Def" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="100" id="2Ev-Zz-ao2" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ztd-9M-Def" id="GRv-z2-hnT" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ev-Zz-ao2" id="OKv-Is-R4x" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3r-3h-dnt">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mT0-0h-mM4">
                                             <rect key="frame" x="30" y="16" width="76" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARM-x9-Y3C">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubV-Y6-iuF">
                                             <rect key="frame" x="124" y="44" width="270" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SId-Pi-Tx1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-Ij-JnQ">
                                             <rect key="frame" x="124" y="72" width="270" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCU-5M-wJW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO8-V2-T3D">
                                             <rect key="frame" x="124" y="16" width="270" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
@@ -492,43 +493,33 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="imagePet" destination="K3r-3h-dnt" id="isu-Qv-jff"/>
-                                    <outlet property="labelContatto" destination="SId-Pi-Tx1" id="Cxn-uq-FQN"/>
-                                    <outlet property="labelNomePadrone" destination="ARM-x9-Y3C" id="hvh-0P-dAT"/>
-                                    <outlet property="labelNomeRazza" destination="VCU-5M-wJW" id="AB0-yg-SOn"/>
+                                    <outlet property="imagePet" destination="mT0-0h-mM4" id="SjR-Hp-7Xl"/>
+                                    <outlet property="labelContatto" destination="fyB-Ij-JnQ" id="Nfl-S3-0XZ"/>
+                                    <outlet property="labelNomePadrone" destination="ubV-Y6-iuF" id="gqI-VS-oa1"/>
+                                    <outlet property="labelNomeRazza" destination="cO8-V2-T3D" id="GYG-sE-76c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="xhP-As-cem" id="F7u-E4-VZx"/>
-                            <outlet property="delegate" destination="xhP-As-cem" id="n2H-2V-8Nt"/>
+                            <outlet property="dataSource" destination="C45-ar-s6k" id="WKf-ex-cim"/>
+                            <outlet property="delegate" destination="C45-ar-s6k" id="QPt-HZ-HF1"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7hp-h0-1ul"/>
-                        <barButtonItem systemItem="add" id="2jF-8g-HGS">
-                            <connections>
-                                <action selector="addNewPet:" destination="xhP-As-cem" id="itO-SJ-Ppz"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aZ6-Ub-200"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="168-FW-Suw"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y3T-u1-iWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hga-FN-Vpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560.8695652173915" y="1806.521739130435"/>
+            <point key="canvasLocation" x="1516" y="1807"/>
         </scene>
         <!--Pet's List-->
         <scene sceneID="ksN-a9-sCi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMf-Xa-C2q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pet's List" id="TRK-Cg-cNc"/>
+                    <tabBarItem key="tabBarItem" title="Pet's List" image="zampa" id="TRK-Cg-cNc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9gs-YT-V5F">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -540,6 +531,12 @@
             <point key="canvasLocation" x="-433.33333333333337" y="892.66304347826099"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="contact" width="37" height="37"/>
+        <image name="globe" width="37" height="37"/>
+        <image name="search" width="37" height="37"/>
+        <image name="zampa" width="37" height="37"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Xf1-4Q-68b"/>
     </inferredMetricsTieBreakers>

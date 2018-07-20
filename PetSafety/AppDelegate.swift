@@ -63,12 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
             //notification on new record of coordinate
-            let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID",cani[i].beaconid!]), options: .firesOnRecordCreation)
+            let subscription = CKQuerySubscription(recordType: "Coordinate", predicate: NSPredicate(format: "%K == %@",argumentArray: ["beaconID","36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(cani[i].beaconid!)"]), options: .firesOnRecordCreation)
             
             print("subscription: \(subscription.predicate)")
             
             let info = CKNotificationInfo()
-            info.alertBody = ("è stato localizzato \(cani[i].name!)")
+            info.alertBody = ("\(cani[i].name!) has been localized")
             info.shouldBadge = true
             info.soundName = "default"
             subscription.notificationInfo = info

@@ -18,6 +18,8 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var buttonMap: UIButton!
     @IBOutlet weak var imageNoPet: UIImageView!
     
+
+    var pUser: [PUser]!
     var petPList: [PPet]?
     static var positionDB = [(pos: CLLocation, email: String, date: String, index: Int)]()
     var items = [(pos: CLLocation, email: String, date: String)]()
@@ -28,6 +30,8 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.register(UINib.init(nibName: "MyPetListCollectionViewCell",bundle: nil), forCellWithReuseIdentifier: "MyPetListID")
         
         petPList = PersistenceManager.fetchData()
+        pUser = PersistenceManager.fetchDataUser()
+        
         let reqNum = petPList?.count ?? 0
         var reqNum2 = 0
         if(reqNum != 0) {
@@ -163,11 +167,19 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     @IBAction func clickSwitchMissing(_ sender: UISwitch) {
+        
+        let beaconString = petPList![pageControl.currentPage].beaconid
+        let mail = pUser[0].email
+        let date = Date()
+        
         if sender.isOn {
-// azione quando si attiva
-                CloudManager.insert(beaconID: <#T##String#>, emailAddress: <#T##String#>)
+                // azione quando si attiva
+            let bool = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(beaconString!)", emailAddress: mail!, date: date)
+            print("bool switch missing \(bool)")
+            
         } else {
-//   azione quando si spegne
+                //   azione quando si spegne
+            CloudManager.deleteMissing(recordType: "Missing", recordName: "beaconID", deleteValue: beaconString!)
             
         }
     }

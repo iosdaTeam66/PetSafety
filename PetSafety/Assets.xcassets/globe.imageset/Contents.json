@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "_ionicons_svg_md-globe.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "_ionicons_svg_md-globe.png",
       "scale" : "2x"
     },
     {
