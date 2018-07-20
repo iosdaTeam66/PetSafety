@@ -165,8 +165,10 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBAction func clickSwitchMissing(_ sender: UISwitch) {
         if sender.isOn {
 // azione quando si attiva
+                CloudManager.insert(beaconID: <#T##String#>, emailAddress: <#T##String#>)
         } else {
 //   azione quando si spegne
+            
         }
     }
     

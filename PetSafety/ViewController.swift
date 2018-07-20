@@ -18,12 +18,13 @@ class ViewController: FormViewController {
     let formatter = DateFormatter()
     // initially set the format based on your datepicker date / server String
     var image: UIImageView!
+    let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.7673729658, blue: 0.3670938015, alpha: 1),#colorLiteral(red: 0.8428154588, green: 0.5546826124, blue: 0, alpha: 1)]
     
     @IBAction func Register(_ sender: UIBarButtonItem) {
         let pUser = PersistenceManager.fetchDataUser()
         if ((pPet.name! == "") || (pPet.race! == "") || (pPet.type! == "") || (pPet.microchipid! == "")){
             let alert = UIAlertController(title: "Fields required", message: "One or more field have no data", preferredStyle: UIAlertControllerStyle.alert)
-            print("if")
+//            print("if")
             
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
                 switch action.style{
@@ -41,25 +42,25 @@ class ViewController: FormViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             if CloudManager.userDB.count > 0 {
                 var ismodified = false
-                print("Qui ci va un update!")
+//                print("Qui ci va un update!")
                 if self.pPet.name != CloudManager.userDB[6].v {
                     CloudManager.update(recordType: "Pet", recordName: "name", oldValue: CloudManager.userDB[6].v, newValue: self.pPet.name!)
-                    print ("Serve un update del nome!")
+//                    print ("Serve un update del nome!")
                     ismodified = true
                 }
                 if self.pPet.type != CloudManager.userDB[3].v {
                     CloudManager.update(recordType: "Pet", recordName: "type", oldValue: CloudManager.userDB[3].v, newValue: self.pPet.type!)
-                    print ("Serve un update del tipo!")
+//                    print ("Serve un update del tipo!")
                     ismodified = true
                 }
                 if self.pPet.race != CloudManager.userDB[5].v {
                     CloudManager.update(recordType: "Pet", recordName: "race", oldValue: CloudManager.userDB[5].v, newValue: self.pPet.race!)
-                    print ("Serve un update della razza!")
+//                    print ("Serve un update della razza!")
                     ismodified = true
                 }
                 if "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))" != CloudManager.userDB[0].v {
                     CloudManager.update(recordType: "Pet", recordName: "beaconID", oldValue: CloudManager.userDB[0].v, newValue: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))")
-                    print ("Serve un update del beaconid!")
+//                    print ("Serve un update del beaconid!")
                     ismodified = true
                 }
                 if ismodified == true {
@@ -81,11 +82,11 @@ class ViewController: FormViewController {
                 let pUser = PersistenceManager.fetchDataUser()
                 let imageName = self.pPet.photouuid // your image name here
                 let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
-                print (imagePath)
+//                print (imagePath)
                 let imageUrl: URL = URL(fileURLWithPath: imagePath)
                 _ = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))", microchipID: self.pPet.microchipid!, name: self.pPet.name!, type: self.pPet.type!, race: self.pPet.race!, birthDate: self.pPet.birthdate!, ownerID: pUser[0].email!, photo: imageUrl)
                 let alert = UIAlertController(title: "Pet Registered", message: "Now other users can help you find your pet!", preferredStyle: UIAlertControllerStyle.alert)
-                print("if")
+//                print("if")
                 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action in
                     switch action.style{
@@ -108,7 +109,7 @@ class ViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         LabelRow.defaultCellUpdate = { cell, row in
             cell.contentView.backgroundColor = .red
             cell.textLabel?.textColor = .white
@@ -138,12 +139,12 @@ class ViewController: FormViewController {
                     else {
                         let imageName = self.pPet.photouuid // your image name here
                         let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
-                        print (imagePath)
+//                        print (imagePath)
                         let imageUrl: URL = URL(fileURLWithPath: imagePath)
                         guard FileManager.default.fileExists(atPath: imagePath),
                             let imageData: Data = try? Data(contentsOf: imageUrl),
                             let photo: UIImage = UIImage(data: imageData, scale: UIScreen.main.scale) else {
-                                print ("Immagine non trovata!")
+//                                print ("Immagine non trovata!")
                                 return // No image found!
                         }
                         self.image = UIImageView(image: photo)
@@ -172,7 +173,7 @@ class ViewController: FormViewController {
                     let imageUrl: URL = URL(fileURLWithPath: imagePath)
                     let newImage: UIImage = row.value!.fixOrientation()!// create your UIImage here
                     try? UIImagePNGRepresentation(newImage)?.write(to: imageUrl)
-                    print ("Immagine Salvata!")
+//                    print ("Immagine Salvata!")
                     PersistenceManager.saveContext()
                 }
             }

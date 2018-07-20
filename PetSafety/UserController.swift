@@ -185,6 +185,12 @@ class UserController: FormViewController {
             
         form +++ Section()
             <<< SwitchRow("Disable Editing"){
+               
+                SwitchRow.defaultCellUpdate = { cell, row in
+                    cell.switchControl?.onTintColor = #colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1)
+                    
+                }
+                
                 $0.title = $0.tag
                 $0.value = true
             }
