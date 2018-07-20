@@ -9,6 +9,7 @@ pod 'ImageRow', '~> 3.0'
 pod 'Eureka'
 pod 'ViewRow', :git => 'https://github.com/EurekaCommunity/ViewRow'
 pod 'SwiftyOnboard'
+pod 'HGRippleRadarView'
   # Pods for PetSafety
 
   target 'PetSafetyTests' do

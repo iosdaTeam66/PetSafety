@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var cani: [PPet] = PersistenceManager.fetchData()
         
         for i in 0..<cani.count {
-            print("CANE: \(cani[i].name)")
+            print("CANE: \(String(describing: cani[i].name))")
         }
         
         for i in 0..<cani.count  {

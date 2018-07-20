@@ -43,6 +43,7 @@
 		02EEC5FE20F6692F001AE51A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EEC5FD20F6692F001AE51A /* User.swift */; };
 		10420CA25D9406CE973B1A4E /* Pods_PetSafetyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D78D66368594BE25373247 /* Pods_PetSafetyTests.framework */; };
 		6816973049B172E0098E81EB /* Pods_PetSafety.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D581E9A483A07CEFDC22D9 /* Pods_PetSafety.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		702276A62100B31F001AD3D9 /* PetFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702276A52100B31F001AD3D9 /* PetFoundCell.swift */; };
 		704EA6EA20FF8927000B1DBB /* FoundPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */; };
 		7052152B20FCB2E80022DE36 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7052152A20FCB2E80022DE36 /* MyTabBarController.swift */; };
 		70F8869F20F4A61100D09EE4 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8869E20F4A61100D09EE4 /* Pet.swift */; };
@@ -126,6 +127,7 @@
 		02EEC5FD20F6692F001AE51A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		304220CE20082BFA6712549C /* Pods-PetSafetyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetSafetyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetSafetyUITests/Pods-PetSafetyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA0B87D1A9D8D7639AD23EF /* Pods_PetSafetyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetSafetyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		702276A52100B31F001AD3D9 /* PetFoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetFoundCell.swift; sourceTree = "<group>"; };
 		704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundPetViewController.swift; sourceTree = "<group>"; };
 		7052152A20FCB2E80022DE36 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		70F8869E20F4A61100D09EE4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				BB7252BF20F8DC8C00504D3B /* BeaconManager.swift */,
 				70FED89820F4A56D00C9258D /* Main.storyboard */,
 				704EA6E920FF8927000B1DBB /* FoundPetViewController.swift */,
+				702276A52100B31F001AD3D9 /* PetFoundCell.swift */,
 			);
 			path = PetSafety;
 			sourceTree = "<group>";
@@ -409,6 +412,9 @@
 		70FED88920F4A56D00C9258D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					petFoundCell,
+				);
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "De Cristofaro Paolo";
@@ -571,6 +577,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PetSafety/Pods-PetSafety-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/HGRippleRadarView/HGRippleRadarView.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewRow/ViewRow.framework",
@@ -578,6 +585,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGRippleRadarView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewRow.framework",
@@ -596,6 +604,7 @@
 			files = (
 				02B1D1DF20FA4D7A005BA296 /* PPet+CoreDataProperties.swift in Sources */,
 				BB53E84F20FC98C300DA1B30 /* PetAnnotation.swift in Sources */,
+				702276A62100B31F001AD3D9 /* PetFoundCell.swift in Sources */,
 				BBD719BE20F7984700EC6935 /* MyPetListViewController.swift in Sources */,
 				70FED89D20F4A56D00C9258D /* PetSafety.xcdatamodeld in Sources */,
 				BB53E84520FC8BB700DA1B30 /* OnBoardingViewController.swift in Sources */,

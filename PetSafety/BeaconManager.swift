@@ -9,10 +9,10 @@
 import UIKit
 import CoreLocation
 import CoreBluetooth
+import HGRippleRadarView
 
 class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate {
     
-    @IBOutlet weak var imgRadar: UIImageView!
     @IBOutlet weak var buttonShow: UIButton!
     @IBOutlet weak var labelFound: UILabel!
     @IBOutlet weak var labelNotification: UILabel!
@@ -41,6 +41,35 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             pUser = pUserList[0]
         }
         
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
+        requestLocationInUse()
+        
+        let options = [CBCentralManagerOptionShowPowerAlertKey:0]
+        bluetoothPeripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
+        
+        let colors:[UIColor] = [#colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1),#colorLiteral(red: 1, green: 0.7673729658, blue: 0.3670938015, alpha: 1),#colorLiteral(red: 0.8428154588, green: 0.5546826124, blue: 0, alpha: 1)]
+        radarView?.delegate = self
+        radarView?.diskColor = colors[0]
+        radarView?.circleOnColor = colors [0]
+        radarView?.circleOffColor = .black
+        
+        radarView?.itemBackgroundColor = colors[0]
+        
+        
+        // simulazione animali smarriti
+        //let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1", ownerID: "PippoID")
+        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
+        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1"] = "PippoID"
+        //let petLost2 = PetLost.init(lostDate: Date(), microchipID: "chip-mint", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:2", ownerID: "PlutoID")
+        //lostPets.append(petLost2)
+        //let petLost3 = PetLost.init(lostDate: Date(), microchipID: "chip-blueberry", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3", ownerID: "TopolinoID")
+        //lostPets.append(petLost3)
+        
+//        timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector: #selector(addItem),userInfo: nil,repeats: true)
+        
+    
         /*
          // sfondo bianco
          let whiteColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
@@ -77,35 +106,42 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
          })
          
          */
-        
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        
-        requestLocationInUse()
-        
-        let options = [CBCentralManagerOptionShowPowerAlertKey:0]
-        bluetoothPeripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: options)
-        
-        // simulazione animali smarriti
-        //let petLost1 = PetLost.init(lostDate: Date(), microchipID: "chip-icy", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1", ownerID: "PippoID")
-        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3"] = "PippoID"
-        lostPets["36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1"] = "PippoID"
-        //let petLost2 = PetLost.init(lostDate: Date(), microchipID: "chip-mint", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:2", ownerID: "PlutoID")
-        //lostPets.append(petLost2)
-        //let petLost3 = PetLost.init(lostDate: Date(), microchipID: "chip-blueberry", beaconUUID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:3", ownerID: "TopolinoID")
-        //lostPets.append(petLost3)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         labelFound.text = "Searching missing pets in your area..."
         labelNotification.isHidden = true
+        timer = Timer.scheduledTimer(timeInterval: 1.0,target: self,selector: #selector(addItem),userInfo: nil,repeats: true)
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         // implementare chiusura GPS una volta chiusa la view (riapro in viewWillAppear?????)
         buttonShow.isEnabled = false
+        
+        if (timer != nil) {
+            timer?.invalidate()
+            timer = nil
+        }
+        for i in 0..<items.count {
+            radarView?.remove(item: items[i])
+        }
+        items.removeAll()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if (timer != nil) {
+            timer?.invalidate()
+            timer = nil
+        }
+        
+        for i in 0..<items.count {
+            radarView?.remove(item: items[i])
+        }
+        items.removeAll()
+        
+
     }
     
     func requestLocationInUse() {
@@ -255,7 +291,7 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
             
             
             buttonShow.isEnabled = true
-            labelFound.text = "Found lost pets near you"
+            labelFound.text = "Found lost pets near you!!!"
             
             labelNotification.isHidden = false
             
@@ -310,8 +346,10 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         switch segue.identifier {
         case "segueFoundPet":
             
-            var p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
-            var p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
+//            TODO INFO PER IL SEGUE
+            
+            let p: Pet = Pet(name: "name", race: "race", type: "type", photo: "CatMan", birthDate: Date(), microchipID: "", beaconUUID: "")
+            let p2: Pet = Pet(name: "name", race: "race", type: "type", photo: "radar", birthDate: Date(), microchipID: "", beaconUUID: "")
             
             var petlist: [Pet] = []
             petlist.append(p)
@@ -330,4 +368,46 @@ class BeaconManager: UIViewController, CLLocationManagerDelegate, CBPeripheralMa
         }
     }
     
+    
+//    FUNZIONI PER IL RADAR
+    
+    var timer: Timer?
+    var items = [Item]()
+    let maxItems: Int = 10
+    
+    var radarView: RadarView? {
+        return view as? RadarView
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    @objc func addItem() {
+        if items.count < maxItems {
+            let item = Item(uniqueKey: "", value:"")
+            items.append(item)
+            radarView?.add(item: item)
+        } else {
+            radarView?.remove(item: items.first!)
+            items.remove(at: 0)
+        }
+    }
+}
+
+extension BeaconManager: RadarViewDelegate,RadarViewDataSource {
+    func radarView(radarView: RadarView, didSelect item: Item) {
+        print(item.uniqueKey)
+    }
+    
+    func radarView(radarView: RadarView, didDeselect item: Item) {}
+    
+    func radarView(radarView: RadarView, didDeselectAllItems lastSelectedItem: Item) {}
+    
+    func radarView(radarView: RadarView, viewFor item: Item, preferredSize: CGSize) -> UIView {
+        let myCustomItemView = UIView(frame: CGRect(x: 0, y: 0, width: preferredSize.width, height: preferredSize.height))
+        return myCustomItemView
+    }
 }

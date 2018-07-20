@@ -21,9 +21,12 @@ class MyPetListCollectionViewCell: UICollectionViewCell {
 
         DispatchQueue.main.async {
             
+            
+            let color: UIColor = #colorLiteral(red: 1, green: 0.5791348219, blue: 0, alpha: 1)
+            self.cntView.backgroundColor = color
             self.cntView.layer.cornerRadius = 20
             self.cntView.layer.shadowColor = UIColor.lightGray.cgColor
-            self.cntView.layer.shadowOpacity = 0.5
+            self.cntView.layer.shadowOpacity = 0
             self.cntView.layer.shadowOffset = .zero
             self.cntView.layer.shadowPath = UIBezierPath(rect: self.cntView.bounds).cgPath
         }
