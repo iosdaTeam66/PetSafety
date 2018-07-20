@@ -27,7 +27,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Dp-xJ-3CE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="petEditCell" rowHeight="70" id="iMo-M9-vlF" customClass="PetEditCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -55,9 +55,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="lblCellName" destination="3E5-Oi-MYK" id="dhD-zN-Qof"/>
                                     <outlet property="lblCellRace" destination="Dvh-KT-I57" id="Dmh-6B-NuQ"/>
@@ -95,7 +97,6 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems>
@@ -120,7 +121,6 @@
                     <view key="view" contentMode="scaleToFill" id="Vpn-ml-Z6D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="9LZ-cy-nqK"/>
                     </view>
                     <toolbarItems>
@@ -175,7 +175,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-uC-8yH">
                                 <rect key="frame" x="0.0" y="114" width="414" height="423"/>
-                                <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wI6-vZ-AAY">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -237,7 +237,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="olk-1g-dUJ" firstAttribute="top" secondItem="mj8-n2-vFb" secondAttribute="bottom" constant="20" id="7yt-FR-28b"/>
                             <constraint firstItem="mj8-n2-vFb" firstAttribute="centerX" secondItem="5YQ-Db-fs3" secondAttribute="centerX" id="Doq-bQ-tcX"/>
@@ -344,7 +344,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-bt-fIh">
                                 <rect key="frame" x="181.33333333333334" y="634" width="52" height="33"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="17"/>
-                                <state key="normal" title="SHOW"/>
+                                <state key="normal" title="SHOW">
+                                    <color key="titleColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="xhP-As-cem" kind="show" identifier="segueFoundPet" id="0Pt-DF-ure"/>
                                 </connections>
@@ -362,7 +364,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GWN-Pb-hz3" firstAttribute="top" secondItem="Ulr-AY-k2h" secondAttribute="top" constant="30" id="2Cs-PD-TAg"/>
                             <constraint firstItem="Ulr-AY-k2h" firstAttribute="bottom" secondItem="SmR-bt-fIh" secondAttribute="bottom" constant="20" id="6b4-DC-8CZ"/>
@@ -451,7 +453,7 @@
                     <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VZ0-o0-CtJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="petFoundCell" rowHeight="100" id="ztd-9M-Def" customClass="PetFoundCell" customModule="PetSafety" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -486,10 +488,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.60392156860000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="1" green="0.72156862749999995" blue="0.29803921570000003" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="imagePet" destination="K3r-3h-dnt" id="isu-Qv-jff"/>
                                     <outlet property="labelContatto" destination="SId-Pi-Tx1" id="Cxn-uq-FQN"/>
