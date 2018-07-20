@@ -30,7 +30,12 @@ class CloudManager{
                 if results!.count > 0 {
                     DispatchQueue.main.async {
                         for result in results! {
-//                            MyPetListViewController.positionDB.append((pos: result.value(forKey: "position") as! CLLocation, email: result.value(forKey: "emailAddress") as! String, date: Date(), index))
+                            let date = result.value(forKey: "findinfDate") as? NSDate ?? NSDate()
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                            let dateString = dateFormatter.string(from: date as Date)
+                            print(dateString)
+                            MyPetListViewController.positionDB.append((pos: result.value(forKey: "position") as! CLLocation, email: result.value(forKey: "emailAddress") as! String, date: dateString, index))
                         }
                     }
                 } else {

@@ -802,7 +802,7 @@
 				PROVISIONING_PROFILE = "b2b66a94-97fa-4f08-82f0-dc1df0cf7b52";
 				PROVISIONING_PROFILE_SPECIFIER = petsafety_d1;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -824,7 +824,7 @@
 				PROVISIONING_PROFILE = "b2b66a94-97fa-4f08-82f0-dc1df0cf7b52";
 				PROVISIONING_PROFILE_SPECIFIER = petsafety_d1;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

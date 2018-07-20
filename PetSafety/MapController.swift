@@ -216,7 +216,7 @@ class MapController: UIViewController {
     
     //notifica al click piu informazioni
     func notificaInfo(citta: String,via: String,coordinate:CLLocationCoordinate2D,nome: String,data: String){
-        let alert = UIAlertController(title: " Avvistamento\n\n", message: " Città: \(citta)\n\n Via: \(via)\n\n Coord.latitudine: \(coordinate.latitude) \n\n Coord.longitudine: \(coordinate.longitude) \n\n Data: \(data) \n\n Da: \(nome) \n\n", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: " Sighted\n\n", message: " City: \(citta)\n\n\(via)\n\n Coord.latitudine: \(coordinate.latitude) \n\n Coord.longitudine: \(coordinate.longitude) \n\n Date: \(data) \n\n", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
         self.present(alert, animated: true, completion: nil)

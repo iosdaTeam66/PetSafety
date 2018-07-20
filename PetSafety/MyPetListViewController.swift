@@ -19,6 +19,8 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var imageNoPet: UIImageView!
     
     var petPList: [PPet]?
+    static var positionDB = [(pos: CLLocation, email: String, date: String, index: Int)]()
+    var items = [(pos: CLLocation, email: String, date: String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,14 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.register(UINib.init(nibName: "MyPetListCollectionViewCell",bundle: nil), forCellWithReuseIdentifier: "MyPetListID")
         
         petPList = PersistenceManager.fetchData()
+        let reqNum = petPList?.count ?? 0
+        let reqNum2 = reqNum-1
+        for i in 0...reqNum2 {
+            if((petPList?.count)! > 0) {
+                let myPet = petPList![i]
+                CloudManager.selectPosition(rcdTp: "Coordinate", fieldName: "beaconID", searched: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(myPet.beaconid!)", index: i)
+            }
+        }
         
         imageNoPet.image = UIImage(named: "sleeping-dog")
         
@@ -158,25 +168,28 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func buttonMap(_ sender: Any) {
-        //oggetti per riempirecon il db
-        let nomeArr: [String] = ["peppe siani","nicola tesla","pinko pallino","aquaro gerardo","Barese alfonso"]
-        let dataArr: [String] = ["22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/08/12 12:00","22/12/18 12:00"]
-        let coord: [(lat:Double, lag: Double)] = [(44.4068692,8.9291704),(43.6890842,10.3978845),(40.8555186,14.274207),(40.6824408,14.7680961),(41.1171432,16.8718715)]
-        //let locationObj = CloudManager.
+        var nomeArr: [String] = []
+        var dataArr: [String] = []
+        var coord: [(lat:Double, lag: Double)] = []
+
         
-        let myPet = petPList![pageControl.currentPage]
-        
-        var newPositions = [CKRecord]()
-        
-        print(myPet.beaconid)
-        
-//        newPositions = CloudManager.select(recordType: "Coordinate", fieldName: "beaconID", searched: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:1")
-         print(newPositions.count)
-        var stringPos = [String]()
-        stringPos = newPositions[0].allKeys()
-        
-        print("prova bottone \(stringPos[0])")
-        print("prova bottone2 \(stringPos[1])")
+        var i = 0
+        for _ in MyPetListViewController.positionDB {
+            self.items.removeAll()
+
+            if(MyPetListViewController.positionDB[i].index == self.pageControl.currentPage) {
+
+                self.items.append((pos: MyPetListViewController.positionDB[i].pos, email: MyPetListViewController.positionDB[i].email, date: MyPetListViewController.positionDB[i].date))
+                nomeArr.append(" ")
+                let dateformatter = DateFormatter()
+                dateformatter.dateFormat = "yyyy-MM-dd HH:mm"
+                
+                dateformatter.dateStyle = DateFormatter.Style.medium
+                dataArr.append(MyPetListViewController.positionDB[i].date)
+                coord.append((MyPetListViewController.positionDB[i].pos.coordinate.latitude, MyPetListViewController.positionDB[i].pos.coordinate.longitude))
+            }
+            i+=1
+        }
         
         //arre auto generati da coordinate
         let cittaArr: [String] = [String] ()
