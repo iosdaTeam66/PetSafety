@@ -141,7 +141,9 @@ class CloudManager{
         petRecord["race"] = race as CKRecordValue
         petRecord["birthDate"] = birthDate as CKRecordValue
         petRecord["ownerID"] = ownerID as CKRecordValue
-        petRecord["photo"] = CKAsset(fileURL: photo)
+        if !String(describing: photo).contains("null"){
+            petRecord["photo"] = CKAsset(fileURL: photo)
+        }
         publicDB.save(petRecord){
             (petRecord,error) in
             if error != nil{
@@ -154,11 +156,12 @@ class CloudManager{
     
     //    Upload: Public Database -> Missing list
     //    La chiave primaria qui è il beaconID
-    static func insert(beaconID: String, emailAddress: String) -> Bool{
+    static func insert(beaconID: String, emailAddress: String, date: Date) -> Bool{
         var retValue = true;
         let missingRecord = CKRecord(recordType: "Missing")
         missingRecord["beaconID"] = beaconID as CKRecordValue
         missingRecord["emailAddress"] = emailAddress as CKRecordValue
+        missingRecord["missinDate"] = date as CKRecordValue
         publicDB.save(missingRecord){
             (missingRecord,error) in
             if error != nil{
@@ -186,5 +189,7 @@ class CloudManager{
         }
         return retValue
     }
+    
+    
     
 }

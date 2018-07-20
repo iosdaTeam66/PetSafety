@@ -80,9 +80,16 @@ class ViewController: FormViewController {
             else {
                 let pUser = PersistenceManager.fetchDataUser()
                 let imageName = self.pPet.photouuid // your image name here
-                let imagePath: String = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+                let imagePath: String?
+                if imageName == nil {
+                    imagePath = "null"
+                }
+                else {
+                    imagePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(imageName!).png"
+
+                }
                 print (imagePath)
-                let imageUrl: URL = URL(fileURLWithPath: imagePath)
+                let imageUrl: URL = URL(fileURLWithPath: imagePath!)
                 _ = CloudManager.insert(beaconID: "36996E77-5789-6AA5-DF5E-25FB5D92B34B:1:\(String(describing: self.pPet.beaconid!))", microchipID: self.pPet.microchipid!, name: self.pPet.name!, type: self.pPet.type!, race: self.pPet.race!, birthDate: self.pPet.birthdate!, ownerID: pUser[0].email!, photo: imageUrl)
                 let alert = UIAlertController(title: "Pet Registered", message: "Now other users can help you find your pet!", preferredStyle: UIAlertControllerStyle.alert)
                 print("if")

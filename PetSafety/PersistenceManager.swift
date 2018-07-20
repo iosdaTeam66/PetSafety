@@ -23,6 +23,12 @@ class PersistenceManager {
         let pets = fetchData()
         let index = pets.count-1
         pPet.order = Int16(index)
+        pPet.type = "Dog"
+        pPet.birthdate = NSDate()
+        pPet.name = ""
+        pPet.microchipid = ""
+        pPet.race = ""
+        pPet.beaconid = ""
         return pPet
     }
     
