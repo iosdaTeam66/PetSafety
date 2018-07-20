@@ -29,7 +29,10 @@ class MyPetListViewController: UIViewController, UICollectionViewDelegate, UICol
         
         petPList = PersistenceManager.fetchData()
         let reqNum = petPList?.count ?? 0
-        let reqNum2 = reqNum-1
+        var reqNum2 = 0
+        if(reqNum != 0) {
+            reqNum2 = reqNum-1
+        }
         for i in 0...reqNum2 {
             if((petPList?.count)! > 0) {
                 let myPet = petPList![i]
